@@ -28,7 +28,6 @@ import AdminBarChart from "./Components/Admin/AdminChartPage/AdminBarChart";
 import AdminLineChart from "./Components/Admin/AdminChartPage/AdminLineChart";
 import AdminPieChart from "./Components/Admin/AdminChartPage/AdminPieChart";
 import AdminLogin from "./Components/Admin/AdminLoginSign/AdminLogin";
-import AdminSignUp from "./Components/Admin/AdminLoginSign/AdminSignup";
 
 function App() {
   return (
@@ -54,7 +53,6 @@ function App() {
           <Route path="/adminblogpage" element={<AdminBlogPage />}></Route>
 
           <Route path="/adminlogin" element={<AdminLogin />}></Route>
-          <Route path="/adminsignup" element={<AdminSignUp />}></Route>
 
         </Routes>
       </BrowserRouter>
