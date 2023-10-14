@@ -1,0 +1,31 @@
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+.btn-purple {
+  background-color: #7a4bcf;
+  color: white;
+  outline: 1px solid #7a4bcf;
+}
+
+.btn-purple:hover {
+  background-color: #4f2f8a;
+  color: white;
+}
+
+.text-purple {
+  color: #7a4bcf;
+}
+
+.bg-primary {
+  background-color: #7a4bcf;
+}
+
+.btn-outline-purple {
+  outline: 1px solid #9469e2;
+}
+
+.btn-outline-purple:hover {
+  background-color: #9469e2;
+  color: white;
+}

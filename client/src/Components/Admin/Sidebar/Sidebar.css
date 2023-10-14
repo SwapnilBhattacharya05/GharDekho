@@ -1,0 +1,117 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    /* Behind the navbar */
+    padding: 48px 0 0;
+    /* Height of navbar */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.admin-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+.nav-item {
+    margin-top: -7px;
+    margin-left: 10px;
+}
+
+.admin-sidebar-icons {
+    color: #885adf;
+}
+
+.admin-sidebar-options {
+    color: #69666d;
+    margin-left: 5px;
+}
+
+.navbar-admin {
+    background-color: #a9a2aa;
+
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #d4d2d2;
+
+    /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+    .sidebar-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+}
+
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #d3bdfb;
+    color: white;
+}
+
+
+.admin-nav-top-heading {
+    font-size: 20px;
+    font-weight: bolder !important;
+}
+.text-dekho-admin{
+    color: black;
+}
+
+.admin-navbar-brand {
+    padding-top: .60rem;
+    padding-bottom: .60rem;
+    font-size: 1rem;
+    background-color: rgba(42, 42, 42, 0.25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+    top: .25rem;
+    right: 1rem;
+}
+
+#submenu {
+    display: none;
+}
+
+#admin-color-options-wrapper {
+    display: flex;
+
+}
+
+.admin-coloroptions {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 2px solid #885adf;
+
+    &:nth-child(1) {
+        background-color: #333;
+    }
+
+    &:nth-child(2) {
+        background-color: whitesmoke;
+    }
+}

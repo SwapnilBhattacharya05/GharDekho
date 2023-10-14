@@ -1,0 +1,30 @@
+.admin-main-container{
+    background-color: rgb(230, 227, 213);
+    padding:10px;
+    height: 92vh;
+}
+.admin-page-main-headers{
+    color: #885adf;
+    margin-left: 60px;
+    
+}
+@media only screen and  (min-width: 768px){
+	.admin-main-container{
+        margin-left: 16%;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 828px){
+	.admin-main-container{
+        margin-left: 25%;
+    }
+}
+@media only screen and (min-width: 0px) and (max-width:768px){
+	.admin-main-container{
+        margin-left: 25%;
+    }
+}
+@media(max-width:767px){
+    .admin-main-container{
+        margin: 0;
+    }
+}

@@ -1,0 +1,29 @@
+.admin-main-container-charts {
+    background-color: rgb(230, 227, 213);
+    padding: 20px;
+    height: 92vh;
+}
+
+@media only screen and (min-width: 768px) {
+    .admin-main-container-charts {
+        margin-left: 16%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 828px) {
+    .admin-main-container-charts {
+        margin-left: 25%;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width:768px) {
+    .admin-main-container-charts {
+        margin-left: 25%;
+    }
+}
+
+@media(max-width:767px) {
+    .admin-main-container-charts {
+        margin: 0;
+    }
+}

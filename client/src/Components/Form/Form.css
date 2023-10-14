@@ -1,0 +1,55 @@
+.form {
+    height: auto;
+    width: auto;
+    padding-bottom: 10px;
+    background-color: #ebcff7;
+    border-radius: 10px;
+    box-shadow: rgba(125, 103, 138, 0.2) 0px 7px 29px 0px;
+}
+
+.form-filed .form-group input[type="text"],
+input[type="email"],
+input[type="file"],
+input[type="number"] {
+    height: 45px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+.form-filed .form-group select {
+    height: 45px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+.submit-btn {
+    display: block;
+    float: right;
+}
+
+.submit-btn .btn-submit {
+    background-color: #0079FF;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    padding: 8px 40px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+.submit-btn input[type="reset"] {
+    background-color: #FF0060;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    padding: 8px 40px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+#name {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    display: none;
+}

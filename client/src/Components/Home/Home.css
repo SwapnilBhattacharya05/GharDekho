@@ -1,0 +1,463 @@
+.video-container {
+    background-color: #7a4bcf;
+    height: 630px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.video-container video {
+    margin-top: 10px;
+    height: 620px;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.home-card-left {
+    background-color: #9c6cf5;
+    width: 50%;
+    position: relative;
+}
+
+.home-card-right {
+    background-color: #2623e0;
+    width: 50%;
+    position: relative;
+}
+
+.home-card-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    font-weight: bolder;
+    font-size: 80px;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.home-card img {
+    opacity: 0.8;
+    filter: blur(2px);
+}
+
+.home-card img:hover {
+    filter: none;
+}
+
+.home-card-text:hover {
+    color: rgb(250, 250, 250);
+}
+
+.home-content h4 {
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.home-content h3 {
+    font-size: 30px;
+}
+
+.card {
+    height: 350px;
+    border: none;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.card img {
+    height: 200px;
+    border-radius: 10px 10px 0px 0px;
+    object-fit: cover;
+}
+
+.card p {
+    font-size: 15px;
+}
+
+/* to view the description of tour packages */
+.card input {
+    height: 10px;
+    padding-bottom: 30px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+/* location name  */
+.card .location {
+    position: absolute;
+    bottom: 1px;
+    left: 35px;
+}
+
+/* view  more option to explore*/
+.view-more {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.view-more:hover {
+    text-decoration: none;
+}
+
+/* view  more button*/
+.view-more input {
+    font-size: 20px;
+    width: 30%;
+}
+
+
+.blog h2 {
+    padding-top: 10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.blog-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-card .blog-button input {
+    right: 32.5%;
+    left: 34%;
+    width: 100px;
+    bottom: 20px;
+}
+
+.features-card {
+    /* background-color: white; */
+    margin-top: 30px 0px 10px 10px;
+    height: 320px;
+    border-bottom: 10px solid #2f3d4d;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    align-content: center;
+    justify-content: center;
+}
+
+/* featurs-cirlce */
+.circle {
+    background: #2f3d4d;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    font-size: 80px;
+
+}
+
+.testimonilas-conatiner {
+    background-color: #8875a3bd;
+    height: 480px;
+}
+
+.testimonilas-img {
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+}
+
+.testimonilas-img:hover {
+    border: 5px solid #582da8;
+}
+
+.testimonilas-quotes {
+    font-size: 19px;
+    font-weight: 20px;
+}
+
+.newsletter-conatiner input[type="email"] {
+    width: 30%;
+    padding: 10px;
+
+}
+
+/* newsletter submit button */
+.newsletter-btn {
+    width: 10%;
+    height: 48px;
+}
+
+/* Controls the Css for the card */
+.home-buy-card {
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    /* background-color: blue; */
+}
+
+/* Controls the Css for the top part of the cards */
+.home-buy-card .home-buy-card-top {
+    /* background-color: aqua; */
+    height: 180px;
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.home-buy-card-top img {
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+}
+
+/* Controls the Css for the bottom part of the card*/
+.home-buy-card .home-buy-card-bottom {
+    /* background-color: aquamarine; */
+    border-radius: 0px 0px 20px 20px;
+    height: 185px;
+    width: 100%;
+
+
+}
+
+.home-buy-card .home-buy-card-bottom .home-buy-card-prize {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: -120px;
+    color: #7a4bcf;
+    font-weight: 500;
+
+}
+
+.home-buy-card .home-buy-card-bottom .home-buy-card-heading {
+    font-size: 25px;
+    margin-left: -120px;
+    margin-top: -13px;
+    font-weight: bold;
+}
+
+
+
+.home-buy-card .home-buy-card-bottom .home-buy-card-bhk {
+    margin-left: 10px;
+    margin-top: -20px;
+    color: red;
+
+}
+
+
+
+/* Controls the Css for the icons in botton part of card*/
+.home-buy-icons {
+    font-size: 13px;
+    position: absolute;
+    top: 345px;
+    left: -2px;
+
+}
+
+.home-buy-card ul {
+    list-style: none;
+    /* gap: 10px; */
+}
+
+.home-buy-card .home-buy-card-bottom .home-buy-icons .home-includesWrapper {
+    display: flex;
+    margin: 5px;
+
+}
+
+.home-buy-card .home-buy-card-bottom .home-buy-icons .home-includesWrapper .home-blackText {
+    font-size: 9px;
+    display: flex;
+    margin-left: 2px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Controls the Css for the card description of the bottom part of the card*/
+.home-buy-card .home-buy-card-bottom .home-buy-card-desc {
+    font-size: 10px;
+    color: rgb(125, 122, 122);
+    margin: 47px 0px 0px 10px;
+}
+
+/* Controls the Css for the build completion icon and text*/
+.home-buy-card .home-buy-card-bottom .home-buy-card-Loc-status {
+    margin: 10px;
+    gap: 5px;
+}
+
+.home-buy-card .home-buy-card-bottom .home-buildingstatus {
+    color: #7a4bcf;
+
+}
+
+.home-buy-card .home-buy-card-bottom .home-buy-card-build-symbol {
+    color: #b8a6d8;
+    margin-top: -2px;
+
+
+}
+
+.home-buy-card .home-buy-card-bottom .home-buy-card-Loc-status .home-buy-card-Loc-status-text {
+    font-size: 10px;
+    margin-top: -2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.home-buying .home-buying-page-header-hero {
+    height: 450px;
+    width: 100%;
+    background-color: #7a4bcf;
+
+}
+
+
+.home-buying .home-buying-page-header-heading-hero {
+    position: absolute;
+    top: 180px;
+    left: 420px;
+    letter-spacing: 2px;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    z-index: 3;
+}
+
+.home-buying .home-buying-page-header-subheading-hero {
+    position: absolute;
+    top: 250px;
+    left: 430px;
+    letter-spacing: 2px;
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    z-index: 3;
+}
+
+
+
+.home-buy-page-header-hero-search-complete {
+    display: flex;
+    justify-content: center;
+
+}
+
+.home-buying-page-header-hero-search-button {
+    padding: 8px 9px 8px 9px;
+    color: white;
+    border: none;
+    background-color: black;
+    border-radius: 100px 100px;
+    position: absolute;
+    top: 304px;
+    right: 500.5px;
+
+
+}
+
+.home-buying-page-header-hero-search {
+    position: absolute;
+    top: 300px;
+    border: none;
+    border-radius: 15px;
+    width: 550px;
+    padding: 9px 5px;
+    border: 2.5px solid #7a4bcf;
+    text-decoration: none;
+    opacity: 70%;
+    text-align: left !important;
+}
+
+@media(max-width:500px) {
+    .video-container {
+        height: 310px;
+    }
+
+    .home-card h3 {
+        font-size: 15px;
+    }
+
+    .home-card-text {
+        font-size: 35px;
+    }
+
+    .video-container video {
+        object-fit: cover;
+        height: 300px;
+    }
+
+    .home-content h4 {
+        font-size: 12px;
+    }
+
+    .home-content h3 {
+        font-size: 15px;
+    }
+
+    .card img {
+        object-fit: cover;
+    }
+
+    .carousel-item .caption h1,
+    p {
+        font-size: 10px;
+        font-weight: 10px;
+    }
+
+    .view-more input {
+        width: auto;
+    }
+
+    .testimonilas-conatiner {
+        height: auto;
+    }
+
+    .features-text {
+        font-size: auto;
+        font-weight: auto;
+    }
+
+    .newsletter-conatiner input[type="email"] {
+        width: auto;
+        padding: auto;
+    }
+
+    .newsletter-btn {
+        width: auto;
+        height: auto;
+    }
+}
+
+@media(max-width:900px) {
+
+    .card img {
+        object-fit: cover;
+    }
+
+    .carousel-item .caption h1,
+    p {
+        font-size: 10px;
+        font-weight: 10px;
+    }
+
+    .view-more input {
+        width: auto;
+    }
+
+    .testimonilas-conatiner {
+        height: 600px;
+    }
+
+    .features-text {
+        font-size: auto;
+        font-weight: auto;
+    }
+
+    .newsletter-conatiner input[type="email"] {
+        width: auto;
+        padding: auto;
+    }
+
+    .newsletter-btn {
+        width: auto;
+        height: auto;
+    }
+}
