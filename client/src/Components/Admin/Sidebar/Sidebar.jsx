@@ -125,7 +125,7 @@ const Sidebar = () => {
                                 </li>
                                 <div className="admin-title">SERVICE</div>
                                 <li class="nav-item">
-                                    <Link class="nav-link" to="/admin   " onClick={backToTop}>
+                                    <Link class="nav-link" to="/adminlogin" onClick={backToTop}>
                                         <LogoutIcon className="admin-sidebar-icons" />
                                         <span className="admin-sidebar-options">Log out</span>
 

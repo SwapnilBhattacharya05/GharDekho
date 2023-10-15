@@ -1,5 +1,5 @@
 .admin-login-background-image {
-    background-image: url("../../../../public/img/admin_background.jpg");
+    background-image: url("../../../../public/img/admin_login_background.jpg");
     background-repeat: no-repeat;
     position: fixed;
     top: 0;
@@ -11,6 +11,9 @@
     width: 100%;
     opacity: 0.7;
 }
+
+
+
 
 .admin-login-background-color {
     background-color: #8e60e3;
@@ -33,7 +36,7 @@
     -webkit-backdrop-filter: blur(3px) saturate(131%);
     background-color: rgba(17, 25, 40, 0.36);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+    border: 2px solid rgba(255, 255, 255, 0.125);
     width: 25%;
     position: absolute;
     top: 50%;
@@ -55,7 +58,7 @@
     margin-top: 10px;
     font-weight: bold;
     font-size: 16px;
-    color: rgb(224, 221, 221);
+    color: white;
 
 }
 

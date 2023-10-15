@@ -68,65 +68,65 @@ const Home = () => {
                 <div className="row">
                     {
                         filteredSalesData.map((value) => {
-                            const { photo, photoAlt, buyHeading, bhk, buyPrize, sqftIcon,doorIcon, buildLoc,buildLocText, sqft, persqft, statusIcon, status, stairIcon, floors, cardDesc, buildStatus, buildStatusText } = value;
+                            const { photo, photoAlt, buyHeading, bhk, buyPrize, sqftIcon, doorIcon, buildLoc, buildLocText, sqft, persqft, statusIcon, status, stairIcon, floors, cardDesc, buildStatus, buildStatusText } = value;
                             return (
                                 <div className="col-lg-3 col-md-6 col-sm-12 mb-5">
-                                <div className="home-buy-card bg-light">
+                                    <div className="home-buy-card bg-light">
 
-                                    {/* top side of the card */}
-                                    <div className="home-buy-card-top">
-                                        <img src={photo} alt={photoAlt} height={"100%"} width={"100%"}></img>
-                                    </div>
-
-                                    {/* bottom side if the card */}
-                                    <div className="home-buy-card-bottom">
-                                        <p className="home-buy-card-prize">₹{buyPrize}<span className="home-buy-persqft" style={{ color: "#B7B7B7" }}></span></p>
-                                        <p className="home-buy-card-heading">{buyHeading}</p>
-                                        {/* <p className="buy-card-bhk">{bhk}</p> */}
-
-
-                                        {/* Sybmbol and text to check location */}
-                                        <div className="home-buy-card-Loc-status d-flex">
-                                            <p className="home-buy-card-build-symbol">
-                                                <i className={buildLoc}></i>
-                                            </p>
-                                            <p className="home-buy-card-Loc-status-text">
-                                                {buildLocText}
-                                            </p>
-
+                                        {/* top side of the card */}
+                                        <div className="home-buy-card-top">
+                                            <img src={photo} alt={photoAlt} height={"100%"} width={"100%"}></img>
                                         </div>
-                                        <div className="container">
-                                            <hr className="home-buy-card-hr-line-custom" style={{ marginTop: "-10px" }} />
+
+                                        {/* bottom side if the card */}
+                                        <div className="home-buy-card-bottom">
+                                            <p className="home-buy-card-prize">₹{buyPrize}<span className="home-buy-persqft" style={{ color: "#B7B7B7" }}></span></p>
+                                            <p className="home-buy-card-heading">{buyHeading}</p>
+                                            {/* <p className="buy-card-bhk">{bhk}</p> */}
+
+
+                                            {/* Sybmbol and text to check location */}
+                                            <div className="home-buy-card-Loc-status d-flex">
+                                                <p className="home-buy-card-build-symbol">
+                                                    <i className={buildLoc}></i>
+                                                </p>
+                                                <p className="home-buy-card-Loc-status-text">
+                                                    {buildLocText}
+                                                </p>
+
+                                            </div>
+                                            <div className="container">
+                                                <hr className="home-buy-card-hr-line-custom" style={{ marginTop: "-10px" }} />
+                                            </div>
+                                            {/* Dimensions icon and status */}
+                                            <ul className="home-buy-icons d-flex">
+
+                                                <li className="home-includesWrapper">
+                                                    <p className="home-buildingstatus">
+                                                        <i className={sqftIcon}></i>
+                                                    </p>
+                                                    <p className="home-blackText">{sqft}</p>
+                                                </li>
+
+                                                {/* Ready to move or not icon and status */}
+                                                <li className="home-includesWrapper">
+                                                    <p className="home-buildingstatus">
+                                                        <i className={statusIcon}></i>
+                                                    </p>
+                                                    <p className="home-blackText">{status}</p>
+                                                </li>
+
+                                                {/* Total Floors */}
+                                                <li className="home-includesWrapper">
+                                                    <p className="home-buildingstatus">
+                                                        <i className={doorIcon}></i>
+                                                    </p>
+                                                    <p className="home-blackText">{bhk}</p>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        {/* Dimensions icon and status */}
-                                        <ul className="home-buy-icons d-flex">
-
-                                            <li className="home-includesWrapper">
-                                                <p className="home-buildingstatus">
-                                                    <i className={sqftIcon}></i>
-                                                </p>
-                                                <p className="home-blackText">{sqft}</p>
-                                            </li>
-
-                                            {/* Ready to move or not icon and status */}
-                                            <li className="home-includesWrapper">
-                                                <p className="home-buildingstatus">
-                                                    <i className={statusIcon}></i>
-                                                </p>
-                                                <p className="home-blackText">{status}</p>
-                                            </li>
-
-                                            {/* Total Floors */}
-                                            <li className="home-includesWrapper">
-                                                <p className="home-buildingstatus">
-                                                    <i className={doorIcon}></i>
-                                                </p>
-                                                <p className="home-blackText">{bhk}</p>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
-                            </div>
                             )
                         })
                     }
