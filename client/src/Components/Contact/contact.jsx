@@ -10,8 +10,7 @@ const Contact = () => {
     }
     return (
         <>
-            <div className="contact-us-page-background">
-                <Menu />
+            <Menu />
                 <div className='contact-page container d-flex'>
                     <div className='contactpage-leftside'>
                         <div className='contactpage-header'>
@@ -60,7 +59,7 @@ const Contact = () => {
                         </div>
                     </div>
                     <div className="contactpage-rightside">
-                        <img src="img/contactpage.jpg" alt="there is some pic" height={"100%"} width={"135%"} style={{ objectFit: "cover" }} />
+                        <img src="img/contactpage.jpg" alt="there is some pic" height={"100%"} width={"100%"} style={{ objectFit: "cover" }} />
                     </div>
                 </div>
                 <div className="contact-page-map mt-5 mb-5">
@@ -75,10 +74,6 @@ const Contact = () => {
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <Footer />
-            </div>
-
-
-
 
         </>
     )

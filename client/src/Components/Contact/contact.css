@@ -1,12 +1,6 @@
-.contactpage-content {
-    display: flex;
-    text-align: left;
-
-}
-
 .contact-page {
     margin-top: 50px;
-    margin-left: 145px;
+    width: 100%;
 
 }
 
@@ -18,7 +12,7 @@
 }
 
 .contactpage-content input {
-    width: 190%;
+    width: 100%;
     border: 2px solid #7a4bcf;
     text-align: left;
     border-radius: 5px;
@@ -29,22 +23,31 @@
 
 .contactpage-leftside {
     width: 50%;
+
     background-color: rgba(181, 152, 234, .5);
 
 }
 
+.contactpage-rightside {
+    width: 50%;
+
+    background-color: rgba(181, 152, 234, .5);
+
+}
+
+
 .contactpage-content textarea {
     border-radius: 5px;
     border: 2px solid #7a4bcf;
-    width: 190%;
-    
+    width: 100%;
+
 }
 
 #contact-submit {
     padding: 10px 30px;
-    position: absolute;
-    left: 59%;
-    bottom: -5%;
+    /* position: absolute; */
+    /* left: 59%; */
+    /* bottom: -5%; */
     background-color: #9965f3;
     border-radius: 10px;
     color: white;
