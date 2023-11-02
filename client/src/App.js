@@ -26,11 +26,14 @@ import AdminSellPage from "./Components/Admin/AdminPages/AdminSellPage";
 import AdminRentPage from "./Components/Admin/AdminPages/AdminRentPage";
 import AdminBlogPage from "./Components/Admin/AdminPages/AdminBlogPage";
 
-//? Dashboard Chart Pages Imports
+// ?Dashboard Chart Pages Imports
 import AdminBarChart from "./Components/Admin/AdminChartPage/AdminBarChart";
 import AdminLineChart from "./Components/Admin/AdminChartPage/AdminLineChart";
 import AdminPieChart from "./Components/Admin/AdminChartPage/AdminPieChart";
 import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
+
+// ?Imports for forms 
+import PostProperty from "./Components/Form/PostProperty";
 
 
 
@@ -65,6 +68,9 @@ function App() {
           <Route path="/barchart" element={<AdminBarChart />}></Route>
           <Route path="/linechart" element={<AdminLineChart />}></Route>
           <Route path="/piechart" element={<AdminPieChart />}></Route>
+
+
+          <Route path="/postproperty" element={<PostProperty />}></Route>
 
         </Routes>
       </BrowserRouter>

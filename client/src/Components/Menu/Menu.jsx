@@ -52,7 +52,7 @@ const Menu = () => {
                                 <div className="dropdown-divider"></div>
                                 <Link
                                     className="dropdown-item sub-nav-link"
-                                    to="/"
+                                    to="/postproperty"
                                     onClick={backToTop}
                                 >
                                     Sell
