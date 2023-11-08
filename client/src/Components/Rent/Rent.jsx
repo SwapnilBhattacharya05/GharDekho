@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./RentingPage.css";
-import RentCategories from "../.././Data/RentingPageCategories.js";
-import Footer from "../Footer/Footer";
-import Menu from "../Menu/Menu";
+import "./Rent.css";
+import RentCategories from "../../Data/RentingPageCategories.js";
+import Footer from "../Footer/Footer.jsx";
+import Menu from "../Menu/Menu.jsx";
 
 
 const RentPackages = () => {
@@ -53,7 +53,14 @@ const RentPackages = () => {
                                     <div className="container col-lg-3 col-md-6 col-sm-12 mb-5">
                                         <div className="rent-card bg-light">
                                             <div className="rent-card-top">
-                                                <img src={photo} alt={photoAlt} height={"100%"} width={"100%"}></img>
+                                                <img src={photo}
+                                                    alt={photoAlt}
+                                                    height={"100%"}
+                                                    width={"100%"}
+                                                />
+                                                <span className="wishlist-rent-wrapper">
+                                                    <i className="fa-regular fa-heart wishlist-rent" />
+                                                </span>
                                             </div>
                                             <div className="rent-card-bottom">
                                                 <p className="rent-card-prize">₹{rentPrice}<span className="rent-persqft" style={{ color: "#B7B7B7" }}></span></p>

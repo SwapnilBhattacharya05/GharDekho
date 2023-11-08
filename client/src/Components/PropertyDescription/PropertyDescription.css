@@ -1,0 +1,267 @@
+.property-description-header {
+    margin-top: 100px;
+}
+
+.property-description-sub-header {
+    color: rgb(165, 164, 164);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.property-description-album {
+    height: 450px;
+    border-radius: 30px 30px 30px 30px;
+
+}
+
+.property-description-album-left {
+    /* background-color: red; */
+    height: 100%;
+    width: 70%;
+    border-radius: 20px 20px 20px 20px;
+}
+
+#pic-catalogue-meain {
+    border-radius: 20px 20px 20px 20px;
+    border: 2px solid #7a4bcf;
+
+}
+
+.property-description-album-right {
+    /* background-color: blue; */
+    height: 100%;
+    width: 30%;
+    border-radius: 20px 20px 20px 20px;
+    margin-left: 5px;
+
+}
+
+#pic-catalogue {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 20px 20px 20px 20px;
+    border: 2px solid #7a4bcf;
+}
+
+.icons-and-text-wrapper {
+    margin-top: 10px;
+    width: 100%;
+    padding: 5px 0px 5px 0px;
+    box-shadow: rgba(126, 44, 233, 0.682) 0px 0px 0px 2px, rgba(126, 44, 233, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.icon-description-pair {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.icon-text-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icons-in-description-blacktext {
+    margin-top: 5px;
+}
+
+#icons-in-description {
+    margin-right: 10px;
+    color: #7c5bba;
+}
+
+.icons-description-blacktext-status {
+    font-weight: bold;
+    color: #9773dc;
+}
+
+.icons-blacktext-description {
+    font-size: 16px;
+}
+
+.about-text-description-page-wrapper {
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.about-text-description-blacktexts {
+    width: 75%;
+    color: rgb(68, 67, 67);
+}
+
+.listed-property-owner-card {
+    padding-top: 1px;
+    box-shadow: rgba(183, 38, 223, 0.63)0px 1px 3px 0px, rgba(183, 38, 223, 0.15) 0px 0px 0px 1px;
+    margin-top: 20px;
+    height: 90px;
+    background-color: #f4eeff;
+    width: 100%;
+
+}
+
+#property-owner-image-description {
+    height: 60px;
+    width: 60px;
+    border-radius: 100px;
+}
+
+.listed-property-owner-header {
+    margin-left: 10px;
+    color: grey;
+}
+
+.owner-image-and-name-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+
+}
+
+
+.owner-details-property-description {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.owner-name-property-description {
+    font-size: 20px;
+}
+
+.owner-profession-description {
+    color: grey;
+    margin-top: -10px;
+    font-size: 14px;
+
+}
+
+.listed-property-owner-card-left {
+    width: 70%;
+
+}
+
+.listed-property-owner-card-right {
+    width: 30%;
+}
+
+
+.listed-property-owner-email-main {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #7a4bcf;
+}
+
+.listed-property-owner-email-address {
+    margin-top: -7px;
+}
+
+.listed-property-owner-phone-main {
+    color: #7a4bcf;
+    font-weight: bold;
+}
+
+.listed-property-owner-call-number {
+    margin-top: -7px;
+
+}
+
+.complete-property-description-wrapper-left {
+    /* background-color: aqua; */
+    width: 70%;
+    padding-right: 5px;
+
+}
+
+.complete-property-description-wrapper-right {
+    margin-top: 10px;
+    margin-left: 10px;
+    box-shadow: rgba(138, 30, 227, 0.625) 0px 3px 8px;
+    width: 30%;
+    padding-right: 10px;
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+.contact-property-agent-form {
+    margin-left: 10px;
+    height: 500px;
+
+}
+
+.contact-property-agent-form-header {
+    margin-top: 20px;
+    color: #7a4bcf;
+}
+
+.contact-property-agent-form-sub-header {
+    font-size: 12px;
+    color: #906cd3;
+
+}
+
+#tenant-property-details {
+    border: 1px solid #7a4bcf;
+    height: 30px;
+    border-radius: 5px 5px 5px 5px !important;
+    margin-bottom: 20px;
+    width: 100%;
+    padding-left: 5px;
+
+    &:focus {
+        outline: 2px solid #895bdd;
+    }
+
+}
+
+#tenant-property-details::-webkit-inner-spin-button,
+#tenant-property-details::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+#owner-contact-button {
+    margin-top: 30px;
+    float: right;
+    padding: 5px 10px 5px 10px;
+    background-color: #f1dbf9;
+    color: #7a4bcf;
+    border-radius: 10px 10px 10px 10px;
+
+
+    &:hover {
+        color: white;
+        background-color: #ebc6f8;
+        transition: all 500ms;
+
+    }
+}
+
+/* .communication-medium-options {
+    color: #7a4bcf;
+
+}
+
+.communication-medium-wrapper label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #7a4bcf;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.communication-medium-wrapper input[type="radio"] {
+    display: none;
+}
+
+.communication-medium-wrapper input[type="radio"]:checked+label {
+    background-color: #7a4bcf;
+    color: white;
+} */

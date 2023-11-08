@@ -1,25 +1,26 @@
 /* Controls the Css for the card */
-.rent-card {
+.buy-card {
+    position: relative;
     border-radius: 20px 20px 20px 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     /* background-color: blue; */
 }
 
 /* Controls the Css for the top part of the cards */
-.rent-card .rent-card-top {
+.buy-card .buy-card-top {
     /* background-color: aqua; */
     height: 180px;
     width: 100%;
     border-radius: 20px 20px 0px 0px;
 }
 
-.rent-card-top img {
+.buy-card-top img {
     object-fit: cover;
     border-radius: 20px 20px 0px 0px;
 }
 
 /* Controls the Css for the bottom part of the card*/
-.rent-card .rent-card-bottom {
+.buy-card .buy-card-bottom {
     /* background-color: aquamarine; */
     border-radius: 0px 0px 20px 20px;
     height: 185px;
@@ -28,7 +29,7 @@
 
 }
 
-.rent-card .rent-card-bottom .rent-card-prize {
+.buy-card .buy-card-bottom .buy-card-prize {
     font-size: 25px;
     margin-top: 20px;
     margin-left: 10px;
@@ -37,7 +38,7 @@
 
 }
 
-.rent-card .rent-card-bottom .rent-card-heading {
+.buy-card .buy-card-bottom .buy-card-heading {
     font-size: 25px;
     margin-left: 10px;
     margin-top: -13px;
@@ -46,7 +47,7 @@
 
 
 
-.rent-card .rent-card-bottom .rent-card-bhk {
+.buy-card .buy-card-bottom .buy-card-bhk {
     margin-left: 10px;
     margin-top: -20px;
     color: red;
@@ -56,7 +57,7 @@
 
 
 /* Controls the Css for the icons in botton part of card*/
-.rent-icons {
+.buy-icons {
     font-size: 13px;
     position: absolute;
     top: 345px;
@@ -64,18 +65,18 @@
 
 }
 
-.rent-card ul {
+.buy-card ul {
     list-style: none;
     /* gap: 10px; */
 }
 
-.rent-card .rent-card-bottom .rent-icons .includesWrapper {
+.buy-card .buy-card-bottom .buy-icons .includesWrapper {
     display: flex;
     margin: 5px;
 
 }
 
-.rent-card .rent-card-bottom .rent-icons .includesWrapper .blackText {
+.buy-card .buy-card-bottom .buy-icons .includesWrapper .blackText {
     font-size: 9px;
     display: flex;
     margin-left: 2px;
@@ -85,31 +86,31 @@
 }
 
 /* Controls the Css for the card description of the bottom part of the card*/
-.rent-card .rent-card-bottom .rent-card-desc {
+.buy-card .buy-card-bottom .buy-card-desc {
     font-size: 10px;
     color: rgb(125, 122, 122);
     margin: 47px 0px 0px 10px;
 }
 
 /* Controls the Css for the build completion icon and text*/
-.rent-card .rent-card-bottom .rent-card-Loc-status {
+.buy-card .buy-card-bottom .buy-card-Loc-status {
     margin: 10px;
     gap: 5px;
 }
 
-.rent-card .rent-card-bottom .buildingstatus {
+.buy-card .buy-card-bottom .buildingstatus {
     color: #7a4bcf;
 
 }
 
-.rent-card .rent-card-bottom .rent-card-build-symbol {
+.buy-card .buy-card-bottom .buy-card-build-symbol {
     color: #b8a6d8;
     margin-top: -2px;
 
 
 }
 
-.rent-card .rent-card-bottom .rent-card-Loc-status .rent-card-Loc-status-text {
+.buy-card .buy-card-bottom .buy-card-Loc-status .buy-card-Loc-status-text {
     font-size: 10px;
     margin-top: -2px;
     display: flex;
@@ -118,67 +119,87 @@
 
 }
 
-.renting .renting-page-header-hero {
-    height: 450px;
-    width: 100%;
+.buying .buying-page-header-hero {
     background-color: #7a4bcf;
-
 }
 
-
-.renting .renting-page-header-heading-hero {
+.buying .buying-page-header-heading-hero {
     position: absolute;
-    top: 180px;
+    top: 110px;
     left: 420px;
     letter-spacing: 2px;
     font-size: 50px;
     color: white;
     font-weight: bold;
     background-color: transparent;
-    z-index: 3;
 }
 
-.renting .renting-page-header-subheading-hero {
+.buying .buying-page-header-subheading-hero {
     position: absolute;
-    top: 250px;
+    top: 170px;
     left: 430px;
     letter-spacing: 2px;
     color: white;
     font-weight: bold;
     background-color: transparent;
-    z-index: 3;
 }
 
-
-
-.rent-page-header-hero-search-complete {
-    display: flex;
-    justify-content: center;
+#buy-page-header-image {
+    opacity: 70%;
+    z-index: 2;
 
 }
 
-.renting-page-header-hero-search-button {
-    padding: 8px 9px 8px 9px;
+.buying-page-header-hero-search {
+    background-color: rgb(204, 204, 204);
+    border-radius: 100px 100px;
+    width: 50%;
+    color: black;
+    text-align: left;
+    padding: 15px;
+    border: 3px solid #7a4bcf;
+    opacity: 70%;
+
+}
+
+.buying-page-header-hero-search-button {
+    padding: 9px 10px 9px 10px;
     color: white;
-    border: none;
     background-color: black;
     border-radius: 100px 100px;
     position: absolute;
-    top: 304px;
-    right: 500.5px;
-
+    left: 965px;
+    top: 227px;
+    opacity: 70%;
+    border: none;
 
 }
 
-.renting-page-header-hero-search {
-    position: absolute;
-    top: 300px;
-    border: none;
-    border-radius: 15px;
-    width: 550px;
-    padding: 9px 5px;
-    border: 2.5px solid #7a4bcf;
+.buy-page-header-hero-search-complete {
+    /* margin-top: -10px; */
+    z-index: 10;
+    /* position: absolute; */
+    margin-top: -230px;
+    margin-bottom: 230px;
+    margin-left: 530px;
+    top: 170px;
+    left: 460px;
+}
+
+.buy-page-link-wrapper {
     text-decoration: none;
-    opacity: 70%;
-    text-align: left !important;
+    color: inherit;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+
+    }
+}
+
+.wishlist-buy{
+    margin-left: -40px;
+    margin-top: 10px;
+    font-size: 25px;
+    color: #7a4bcf;
 }

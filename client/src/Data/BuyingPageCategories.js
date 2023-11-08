@@ -12,7 +12,59 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
+    },
+
+    
+    {
+        photo: 'img/elysia.jpg',
+        photoAlt: 'elysia img',
+        buyPrize: '65.4Lakhs',
+        buyHeading: 'Tiru Elysia',
+        sqftIcon: 'fa-solid fa-building',
+        sqft: '1650 Sqft',
+        statusIcon: 'fa-solid fa-building-user',
+        status: 'Ready to move',
+        doorIcon: 'fa-solid fa-door-open',
+        bhk: '3 BHK Flat',
+        buildLoc: 'fa-solid fa-location-dot',
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -27,7 +79,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -42,7 +112,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -57,7 +145,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -72,7 +178,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -87,7 +211,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -102,7 +244,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -117,7 +277,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -132,7 +310,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -147,7 +343,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -162,7 +376,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -177,7 +409,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -192,7 +442,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -207,7 +475,25 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
+
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
     {
@@ -222,25 +508,28 @@ const BuyCategories = [
         doorIcon: 'fa-solid fa-door-open',
         bhk: '3 BHK Flat',
         buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
-    },
+        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur',
 
-    {
-        photo: 'img/elysia.jpg',
-        photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
-        buyHeading: 'Tiru Elysia',
-        sqftIcon: 'fa-solid fa-building',
-        sqft: '1650 Sqft',
-        statusIcon: 'fa-solid fa-building-user',
-        status: 'Ready to move',
-        doorIcon: 'fa-solid fa-door-open',
-        bhk: '3 BHK Flat',
-        buildLoc: 'fa-solid fa-location-dot',
-        buildLocText: 'Mahatma Gandhi Rd, Purbasan, Thakurpukur'
+        // ?Property Description data
+        photo2: 'img/tiru_elysia_room',
+        photo3: 'img/tiru_elysia_room2',
+        propertyAbout: ' The Tiru Elysia is a luxurious residential project that is built with two towers, Aria and Luma, which stands tall and beautiful. Offering a perfect balance of natural air and sunlight to all the residents, the Tiru Elysia in Thakur Pukur, Kolkata features modern, spacious and well-ventilated residential flats. If you live here, you will get to enjoy the beautiful view around as all the flats in Tiru Elysia are open from 3 sides. Designed to offer affordable housing in Thakur Pukur, Kolkata, these 2BHK and 3BHK residential apartments are available for sale at prices starting from Rs. 48.2 lac. There are 2 towers and 48 residential flats in the society.',
+        bedicon: 'BedIcon',
+        subIcon1Status: 3,
+        tubicon: 'BathtubIcon',
+        subIcon2Status: 2,
+        bulbicon: 'LightbulbIcon',
+        subIcon3Status: 'yes',
+        lifticon: 'ElevatorIcon',
+        subIcon4Status: 2,
+        propertyOwnerPic: 'img/shreyan_banerjee.jpg',
+        propertyOwnerName: 'Shreyan Banerjee',
+        propertyOwnerProfession: 'Jaro Education Sales Head',
+        propertyOwnerEmail: 'shreyaanbanerjee@gmail.com',
+        propertyOwnerPhone: 93302037451
     },
 
 
 ]
 
-export default BuyCategories ;
+export default BuyCategories;

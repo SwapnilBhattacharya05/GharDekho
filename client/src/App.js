@@ -2,14 +2,13 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // ?Buy and rent packages Imports
-import BuyPackages from "./Components/BuyCategory/BuyingPage";
-import RentPackages from "./Components/RentCategory/RentingPage";
+import BuyPackages from "./Components/BuyCategory/Buy";
+import RentPackages from "./Components/Rent/Rent";
 
 // ?Home Contact About and Forms Imports
 import Home from "./Components/Home/Home";
-import Contact from "./Components/Contact/contact";
-import AboutUs from "./Components/AboutUs/About";
-import Forms from "./Components/Form/Form";
+import Contact from "./Components/Contact/Contact";
+import AboutUs from "./Components/About/About";
 
 // ?Login and Signup Imports
 import Login from "./Components/Login/Login"
@@ -34,6 +33,7 @@ import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 
 // ?Imports for forms 
 import PostProperty from "./Components/Form/PostProperty";
+import PropertyDescription from "./Components/PropertyDescription/PropertyDescription";
 
 
 
@@ -47,12 +47,11 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
 
-          <Route path="/buyPackages" element={<BuyPackages />}></Route>
-          <Route path="/rentPackages" element={<RentPackages />}></Route>
+          <Route path="/buy" element={<BuyPackages />}></Route>
+          <Route path="/rent" element={<RentPackages />}></Route>
 
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/about" element={<AboutUs />}></Route>
-          <Route path="/form" element={<Forms />}></Route>
 
           <Route path="/adminlogin" element={<AdminLogin />}></Route>
 
@@ -71,6 +70,9 @@ function App() {
 
 
           <Route path="/postproperty" element={<PostProperty />}></Route>
+
+          {/* //TODO: Temporary route path for the about page */}
+          <Route path="/aboutProperty" element={<PropertyDescription />}></Route>
 
         </Routes>
       </BrowserRouter>

@@ -1,0 +1,128 @@
+.about-page-top-hero {
+    display: flex;
+    height: 350px;
+    width: 100%;
+    border-radius: 0px 200px 200px 200px;
+    background-color: rgb(234, 223, 234);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.about-page-top-hero-left {
+    width: 50%;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(173, 171, 171);
+}
+
+.about-page-top-hero-left p {
+    max-width: 400px;
+    font-size: 50px;
+    letter-spacing: 3px;
+}
+
+.about-page-top-hero-right {
+    width: 50%;
+    margin-top: 50px;
+
+}
+
+.about-page-top-hero-right img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 350px 0px 200px 90px;
+}
+
+
+/* //!Content below hero */
+
+
+/*This is the main container*/
+.about-us-topic1 {
+    margin-top: 100px;
+    display: flex;
+    height: 500px;
+    width: 100%;
+
+}
+
+.about-page-mission-left {
+    font-style: italic;
+    width: 50%;
+}
+
+.about-page-mission-left-text {
+    text-align: center;
+    max-width: 520px;
+}
+
+.about-us-image2-right {
+    width: 50%;
+    border-radius: 100px;
+}
+
+.about-us-image2-right img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 150px 10px 150px 10px;
+    margin-left: 100px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+.about-page-topic1 {
+    margin-top: 150px;
+    display: flex;
+    height: 500px;
+    width: 100%;
+}
+
+.about-page-story-left {
+    font-style: italic;
+    width: 50%;
+}
+
+.about-page-story-left-text {
+    text-align: center;
+    max-width: 520px;
+}
+
+.about-us-image3-right {
+    width: 50%;
+    border-radius: 100px;
+}
+
+.about-us-image3-right img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 150px 10px 150px 10px;
+    margin-left: 100px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+
+.meet-the-team {
+    margin-top: 20px;
+}
+
+#meet-the-team-pic {
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.meet-team-heading {
+    font-weight: bold;
+    color: #7a4bcf;
+}
+
+.meet-the-team h5 {
+    font-weight: bold;
+    font-style: italic;
+}

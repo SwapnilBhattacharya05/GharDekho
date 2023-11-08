@@ -33,6 +33,7 @@
     margin-top: 5px;
     font-size: 25px;
 }
+
 .signup-container .left-part img {
     height: 100%;
     width: 100%;
@@ -41,155 +42,39 @@
     z-index: -1;
 }
 
-
 .signup-container .right-part h1 {
     font-size: 30px;
 }
 
-.signup-form .signup-group input {
-    width: 450px;
+.signup-form .signup-group input[type="text"],
+.signup-form .signup-group input[type="number"],
+.signup-form .signup-group input[type="password"],
+.signup-form .signup-group input[type="email"] {
     border: none;
+    outline: none;
+    height: 45px;
+    border-radius: 10px;
     border-left: 10px solid #7a4bcf;
     background-color: #EEEEEE;
-    height: 35px;
+    margin: 20px 0px 0px 0px;
 }
 
 
-.signup-form .signup-group input:hover {
-    border-left: 10px solid #7a4bcf;
-    background-color: #EEEEEE;
-}
-
-.signup-label {
-    font-size: 15px;
-}
-
-.footer-text .text {
-    font-size: 15px;
-}
-
-.eye-symbol-signup {
-    position: absolute;
-    left: 420px;
-    top: 45px;
-    color: rgb(90, 90, 90);
-}
-
-
-
-@media(max-width:950px) {
-    .signup-container .left-part img {
-        object-fit: cover;
-    }
-
-    .main-body .signup-form .signup-group input {
-        width: 250px;
-    }
-
-    .eye-symbol-signup {
-        left: 200px;
-    }
-}
-
-
-@media(width:540px) {
-    .signup-container .left-part img {
-        object-fit: cover;
-    }
-
-    .main-body .signup-form .signup-group input {
-        width: 150px;
-    }
-
-    .eye-symbol-signup {
-        left: 135px;
-    }
-}
-
-@media(max-width:450px) {
-    .main-body .signup-container .left-part {
-        width: 40%;
-    }
-
-    .main-body .signup-container .right-part {
-        width: 60%;
-    }
-
-    .main-body .signup-form .signup-group input {
-        width: 200px;
-    }
-
-    .signup-container .left-part img {
-        object-fit: cover;
-    }
-
-    .footer-text {
-        max-width: 1000px;
-        font-size: 5px;
-    }
-
-    .eye-symbol-signup {
-        left: 140px;
-    }
-}
-
-@media(width:375px) {
-
-    .main-body .signup-form .signup-group input {
-        width: 150px;
-    }
-
-    .signup-container .left-part img {
-        object-fit: cover;
-    }
-
-}
-
-@media(max-width:400px) {
-    .main-body .signup-form .signup-group input {
-        width: 170px;
-    }
-
+@media(width<=672px) {
     .signup-container .left-part img {
         object-fit: cover;
     }
 }
 
-@media(max-width:600px) {
-    .main-body .signup-container .left-part .div-msg {
-        font-size: 10px;
-    }
 
-    .footer-text {
-        max-width: 200px;
-        font-size: 5px;
-    }
-}
-@media(width:912px) {
-    .signup-container .left-part img {
-        object-fit: cover;
-    }
-
-    .main-body .signup-form .signup-group input {
-        width: 300px;
-    }
-
-    .eye-symbol-signup {
-        left: 260px;
+@media(width<=695px) {
+    .footer-text .text {
+        font-size: 12px;
     }
 }
 
-@media (width:1024px) {
-    .eye-symbol-signup {
-        left: 320px;
-    }
-}
-@media(max-width:1075px) {
-    .signup-container .left-part img {
-        object-fit: cover;
-    }
-
-    .main-body .signup-form .signup-group input {
-        width: 350px;
+@media(max-width:739px) {
+    .submit-button {
+        width: 75px;
     }
 }

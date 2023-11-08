@@ -16,18 +16,18 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div class="container-fluid footer-conatiner text-center text-lg-start text-white pb-4">
+            <div className="container-fluid footer-conatiner text-center text-lg-start text-white pb-4">
                 <footer>
-                    <div class="row pt-5">
-                        <div class="col-lg-3 col-md-6" style={{ borderRight: "1px dashed white" }}>
-                            <div class=" d-flex align-items-center justify-content-center mb-4 mx-auto" style={{ width: "150px", height: "150px" }}>
+                    <div className="row pt-5">
+                        <div className="col-lg-3 col-md-6" style={{ borderRight: "1px dashed white" }}>
+                            <div className=" d-flex align-items-center justify-content-center mb-4 mx-auto" style={{ width: "150px", height: "150px" }}>
 
                                 <img src="img/brand-logo.jpg" alt="img/brand-logo.jpg" height={"70px"} width={"70px"} />
                                 <strong style={{ marginLeft: "5px", color: "white", fontSize: "40px" }}><span className="text-purple">Ghar</span>Dekho</strong>
 
                             </div>
-                            <p class="text-center">Follow us @</p>
-                            <ul class="list-unstyled d-flex flex-row justify-content-center">
+                            <p className="text-center">Follow us @</p>
+                            <ul className="list-unstyled d-flex flex-row justify-content-center">
                                 <li>
                                     <Link className="social-media-icons" to="https://www.facebook.com/ghardekho" target="_blank">
                                         <i className="fa-brands fa-square-facebook"></i>
@@ -41,7 +41,7 @@ const Footer = () => {
                                 </li>
                                 <li >
                                     <Link className="social-media-icons" to="https://twitter.com/ghardekho" target="_blank">
-                                        <i class="fa-brands fa-x-twitter"></i>
+                                        <i className="fa-brands fa-x-twitter"></i>
                                     </Link>
                                     <Link className="social-media-icons" to="https://www.youtube.com/@ghardekho" target="_blank">
                                         <i className="fa-brands fa-youtube"></i>
@@ -54,7 +54,7 @@ const Footer = () => {
 
                         </div>
 
-                        <div class="col-lg-3 col-md-6" style={{ borderRight: "1px dashed white" }}>
+                        <div className="col-lg-3 col-md-6" style={{ borderRight: "1px dashed white" }}>
                             <h5 className="text-uppercase mt-5 mb-4">
                                 <span className="footer-col-heading" style={{ borderBottom: "1px dotted white", fontSize: "25px" }}>Useful Links</span></h5>
                             <ul className="list-unstyled">
@@ -63,48 +63,48 @@ const Footer = () => {
                                         Home
                                     </Link>
                                 </li>
-                                <li class="mb-2 font-weight-bold ">
-                                    <Link to="/blogs" class="footer-text-link text-decoration-none" onClick={backToTop}>
+                                <li className="mb-2 font-weight-bold ">
+                                    <Link to="/blogs" className="footer-text-link text-decoration-none" onClick={backToTop}>
                                         Blog
                                     </Link>
                                 </li>
-                                <li class="mb-2 font-weight-bold ">
-                                    <Link to="/about" class="footer-text-link text-decoration-none" onClick={backToTop}>
+                                <li className="mb-2 font-weight-bold ">
+                                    <Link to="/about" className="footer-text-link text-decoration-none" onClick={backToTop}>
                                         About Us
                                     </Link>
                                 </li>
-                                <li class="mb-2 font-weight-bold ">
-                                    <Link to="/contact" class="footer-text-link text-decoration-none" onClick={backToTop}>
+                                <li className="mb-2 font-weight-bold ">
+                                    <Link to="/contact" className="footer-text-link text-decoration-none" onClick={backToTop}>
                                         Contact Us
                                     </Link>
                                 </li>
                             </ul>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 mb-4">
+                        <div className="col-lg-3 col-md-6 mb-4" >
                             <h5 className="text-uppercase mt-5 mb-4">
                                 <span style={{ borderBottom: "1px dotted white", fontSize: "25px" }}>Properties</span></h5>
 
                             <ul className="list-unstyled">
-                                <li class="mb-2 font-weight-bold ">
-                                    <Link to="/buyPackages" className="footer-text-link text-decoration-none" onClick={backToTop}>
+                                <li className="mb-2 font-weight-bold ">
+                                    <Link to="/buy" className="footer-text-link text-decoration-none" onClick={backToTop}>
                                         Buy
                                     </Link>
                                 </li>
-                                <li class="mb-2 font-weight-bold ">
-                                    <Link to="/" class="footer-text-link text-decoration-none" onClick={backToTop}>
-                                        Sell
+                                <li className="mb-2 font-weight-bold">
+                                    <Link to="/postproperty" className="footer-text-link text-decoration-none" onClick={backToTop}>
+                                        Rent
                                     </Link>
                                 </li>
-                                <li class="mb-2 font-weight-bold ">
-                                    <Link to="/rentPackages" class="footer-text-link text-decoration-none" onClick={backToTop}>
-                                        Rent
+                                <li className="mb-2 font-weight-bold ">
+                                    <Link to="/postproperty" className="footer-text-link text-decoration-none" onClick={backToTop}>
+                                        Advertise
                                     </Link>
                                 </li>
                             </ul>
                         </div>
 
-                        <div class="col-lg-3 col-md-6" style={{ borderLeft: "1px dashed white" }}>
+                        <div className="col-lg-3 col-md-6" style={{ borderLeft: "1px dashed white" }}>
                             <h5 className="text-uppercase mt-5 mb-4">
                                 <span style={{ borderBottom: "1px dotted white", fontSize: "25px" }}>Contact</span></h5>
 
@@ -120,7 +120,7 @@ const Footer = () => {
                                     <Link to={"tel:+919062306723"} className="footer-text-link text-decoration-none"><p><i className="fa-solid fa-phone mr-2 "></i>+ 91 9062306723</p></Link>
                                 </li>
                                 <li className="font-weight-bold">
-                                    <Link to={"mailto:ghardekho@support.com"} className="footer-text-link text-decoration-none "><p><i class="fa-solid fa-envelope mr-2"></i>ghardekho@support.com</p></Link>
+                                    <Link to={"mailto:ghardekho@support.com"} className="footer-text-link text-decoration-none "><p><i className="fa-solid fa-envelope mr-2"></i>ghardekho@support.com</p></Link>
                                 </li>
                             </ul>
                         </div>

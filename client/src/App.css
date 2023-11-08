@@ -29,3 +29,7 @@
   background-color: #9469e2;
   color: white;
 }
+
+img {
+  object-fit: cover;
+}

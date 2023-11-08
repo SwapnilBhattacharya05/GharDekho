@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 const Login = () => {
+    const [credentials, setCredentials] = useState({ email: "", password: "" });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+    }
+
+    const onChange = (e) => {
+        setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    }
+
     return (
         <>
             <div className="main-body">
@@ -16,22 +27,17 @@ const Login = () => {
                         <img src="img/login1.jpg" alt="img/login1.jpg"></img>
                     </div>
                     <div className="right-part">
-                        <div className="container-fluid">
-                            <h1 className="mb-5" style={{ borderBottom: "1px solid #7a4bcf" }}>Log In</h1>
-                            <form className="login-form">
+                        <div className="container my-5">
+                            <h1 style={{ borderBottom: "1px solid #7a4bcf", fontSize: "40px" }} className="text-md-center text-sm-left">Log In</h1>
+                            <form className="login-form container" onSubmit={handleSubmit}>
                                 <div className="row">
                                     <div className="login-group col-12">
-                                        <label htmlFor="userEmail" className="login-label" >Email address<span style={{ color: "red" }}>*</span></label>
-                                        <input name="email" type="email" className="form-control" id="userEmail" aria-describedby="emailHelp" autoComplete="false" />
-                                        <span className="mandatory-field"><i style={{ color: 'red' }}>enter your email *</i></span>
+                                        <input name="email" type="email" className="form-control" id="email" onChange={onChange} value={credentials.email} autoComplete="false" required placeholder="Email" />
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="login-group col-12">
-                                        <label htmlFor="exampleInputPassword1" className="login-label">Password<span style={{ color: "red" }}>*</span></label>
-                                        <input id="exampleInputPassword1" name="password" type="password" className="form-control" autoComplete="false" />
-                                        <i style={{ cursor: "pointer" }} className="fa-solid fa-eye eye-symbol-login"></i>
-                                        <span className="mandatory-field"><i style={{ color: 'red' }}>enter your password *</i></span>
+                                        <input name="password" type="password" className="form-control" onChange={onChange} autoComplete="false" required value={credentials.password} placeholder="Password" />
                                     </div>
                                 </div>
                                 <div className="row">

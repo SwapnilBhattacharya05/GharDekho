@@ -49,122 +49,43 @@
     font-size: 30px;
 }
 
-.login-form .login-group input {
-    width: 450px;
+.login-form .login-group input[type="text"],
+.login-form .login-group input[type="number"],
+.login-form .login-group input[type="password"],
+.login-form .login-group input[type="email"] {
     border: none;
+    outline: none;
+    height: 45px;
+    border-radius: 10px;
     border-left: 10px solid #7a4bcf;
     background-color: #EEEEEE;
-    height: 40px;
+    margin: 20px 0px 0px 0px;
 }
 
 
 .submit-button {
-    width: 140px;
+    width: 100px;
 }
 
-.login-label {
-    font-size: 15px;
-}
 
 .footer-text .text {
     font-size: 15px;
 }
-.eye-symbol-login{
-    position: absolute;
-    left: 400px;
-    top: 45px;
-    color: rgb(90, 90, 90);
-}
-.mandatory-field{
-    font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    display: none;
-}
 
-
-
-
-
-@media(width:375px) {
-    
-    .main-body .login-form .login-group input {
-        width: 150px;
-    }
-    .login-container .left-part img {
-        object-fit: cover;
-    }
-
-}
-
-@media(max-width:400px) {
-    .main-body .login-form .login-group input {
-        width: 170px;
-    }
-    .login-container .left-part img {
+@media(max-width:672px) {
+    .signup-container .left-part img {
         object-fit: cover;
     }
 }
-@media(max-width:450px) {
-    .main-body .login-container .left-part {
-        width: 40%;
-    }
 
-    .main-body .login-container .right-part {
-        width: 60%;
+@media(width<=695px) {
+    .footer-text .text {
+        font-size: 12px;
     }
+}
 
-    .main-body .login-form .login-group input {
-        width: 200px;
-    }
-
-    .login-container .left-part img {
-        object-fit: cover;
-    }
-
-    .footer-text {
-        max-width: 1000px;
-        font-size: 5px;
-    }
-}
-@media(width:540px) {
-    .login-container .left-part img {
-        object-fit: cover;
-    }
-    .main-body .login-form .login-group input {
-        width: 150px;
-    }
-}
-@media(max-width:600px) {
-    .main-body .login-container .left-part .div-msg{
-        font-size: 10px;
-    }
-    .footer-text{
-        max-width: 200px;
-        font-size: 5px;
-    }
-}
-@media(width:912px) {
-    .login-container .left-part img {
-        object-fit: cover;
-    }
-    .main-body .login-form .login-group input {
-        width: 300px;
-    }
-}
-@media(max-width:950px) {
-    .login-container .left-part img {
-        object-fit: cover;
-    }
-    .main-body .login-form .login-group input {
-        width: 250px;
-    }
-}
-@media(max-width:1075px) {
-    .login-container .left-part img {
-        object-fit: cover;
-    }
-    .main-body .login-form .login-group input {
-        width: 350px;
+@media(max-width:739px) {
+    .submit-button {
+        width: 75px;
     }
 }

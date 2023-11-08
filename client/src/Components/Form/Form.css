@@ -8,9 +8,9 @@
 }
 
 .form-filed .form-group input[type="text"],
-input[type="email"],
-input[type="file"],
-input[type="number"] {
+.form-filed .form-group input[type="email"],
+.form-filed .form-group input[type="file"],
+.form-filed .form-group input[type="number"] {
     height: 45px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
@@ -20,6 +20,12 @@ input[type="number"] {
     height: 45px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+.form-group .btn-light {
+    border-radius: 30px;
+    padding: 4px 7px;
+    margin-right: 5px;
 }
 
 .submit-btn {
