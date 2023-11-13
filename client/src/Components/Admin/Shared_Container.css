@@ -1,12 +1,11 @@
 .admin-main-container{
     background-color: rgb(230, 227, 213);
     padding:10px;
-    height: 92vh;
+    height: 92.5vh;
 }
 .admin-page-main-headers{
     color: #885adf;
-    margin-left: 60px;
-    
+    margin-left: 60px;    
 }
 @media only screen and  (min-width: 768px){
 	.admin-main-container{

@@ -1,3 +1,7 @@
+import { React } from "react";
+import { Link } from "react-router-dom";
+import "./Sidebar.css";
+import "../Shared_Container.css"
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import BarChartIcon from '@mui/icons-material/BarChart';
@@ -9,9 +13,6 @@ import PersonIcon from '@mui/icons-material/Person';
 import SellIcon from '@mui/icons-material/Sell';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SsidChartIcon from '@mui/icons-material/SsidChart';
-import { React } from "react";
-import { Link } from "react-router-dom";
-import "./Sidebar.css";
 
 
 
