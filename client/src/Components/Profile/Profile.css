@@ -1,0 +1,34 @@
+.profile-container{
+    margin-top: 80px;
+}   
+
+.profile-form .profile-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-form .profile-group input[type="text"],
+.profile-form .profile-group input[type="number"],
+.profile-form .profile-group input[type="password"],
+.profile-form .profile-group input[type="email"] {
+    border: none;
+    outline: none;
+    height: 45px;
+    border-radius: 10px;
+    border-left: 10px solid #7a4bcf;
+    background-color: #EEEEEE;
+    margin: 20px 0px 0px 0px;
+    width: 60%;
+}
+
+.profile-form .profile-group button{
+    width: 60%;
+}
+
+.profile-form .profile-group img{
+    height: 96px;
+    width: 96px;
+    border-radius: 50%;
+    cursor: pointer;
+}

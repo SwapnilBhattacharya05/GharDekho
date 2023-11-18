@@ -75,13 +75,13 @@ const Sidebar = () => {
 
                                     </Link>
                                 </li>
-                                <li class="nav-item">
+                                {/* <li class="nav-item">
                                     <Link className="nav-link" to="/adminsellpage" onClick={backToTop}>
                                         <SellIcon className="admin-sidebar-icons" />
                                         <span className="admin-sidebar-options">Sell</span>
 
                                     </Link>
-                                </li>
+                                </li> */}
                                 <li class="nav-item">
                                     <Link class="nav-link" to="/adminrentpage" onClick={backToTop}>
                                         <AccessTimeIcon className="admin-sidebar-icons" />

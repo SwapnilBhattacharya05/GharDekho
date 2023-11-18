@@ -1,14 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import './Contact.css';
 import Menu from "../Menu/Menu";
 import Footer from "../Footer/Footer";
+import UserContext from "../../Context/user/UserContext";
+import { Flip, toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
 
     const [contact, setContact] = useState({ name: "", email: "", phone: "", message: "" });
+    const context = useContext(UserContext);
+    const { userData } = context;
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        const getUserData = () => {
+            setContact({ name: userData.username, email: userData.email, phone: userData.phone });
+            console.log(userData.username);
+        }
+        if (localStorage.getItem("token")) {
+            getUserData();
+        }
+        // eslint-disable-next-line
     }, []);
 
     const onChange = (e) => {
@@ -16,16 +29,50 @@ const Contact = () => {
         console.log(contact);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        //call to add a note to API
-        // postContact(contact.name, contact.email, contact.phone, contact.message);
+        const response = await fetch("http://localhost:8000/api/contact/postcontact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem("token")
+            },
+            body: JSON.stringify(contact)
+        })
 
-        // notification
+        const json = await response.json();
+
+        if (json.success) {
+            toast.success(json.msg, {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                transition: Flip,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        } else {
+            toast.error(json.errors[0].msg, {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                transition: Flip,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        }
 
         //clear the input fields
-        setContact({ name: "", email: "", phone: "", message: "" });
+        setTimeout(() => {
+            setContact({ name: userData.username, email: userData.email, phone: userData.phone, message: "" });
+        }, 3700);
     }
     return (
         <>
@@ -106,7 +153,7 @@ const Contact = () => {
                     referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <Footer />
-
+            <ToastContainer />
         </>
     )
 }

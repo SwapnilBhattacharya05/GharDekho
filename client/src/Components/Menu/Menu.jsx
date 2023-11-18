@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Menu.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import UserContext from "../../Context/user/UserContext";
 const Menu = () => {
 
-    const navigate = useNavigate();
+    const userContext = useContext(UserContext);
+    const { userData } = userContext;
 
-    const handleLogOut = () => {
-        localStorage.removeItem("token");
-        navigate("/login");
-    }
+    // const handleLogOut = () => {
+    //     localStorage.removeItem("token");
+    //     navigate("/login");
+    // }
 
     return (
         <>
@@ -82,8 +84,8 @@ const Menu = () => {
                         </li>
                     </ul>
                     {
-                        !localStorage.getItem("token") ?
-                            <>
+                        userData.username === "" ?
+                            <div className="d-flex justify-content-center">
                                 <Link to="/login">
                                     <button type="button" className="btn btn-outline-purple">
                                         Log in
@@ -94,12 +96,16 @@ const Menu = () => {
                                         Sign up
                                     </button>
                                 </Link>
-                            </>
+                            </div>
                             :
                             <>
-                                <button type="button" className="btn btn-outline-purple mx-3" onClick={handleLogOut}>
-                                    Log Out
-                                </button>
+
+                                <Link to={"/profile"}>
+                                    <img src={userData.photo} alt="profile" className="profile-avatar mx-4 nav-item" />
+                                </Link>
+                                {/* <button type="button" className="btn btn-outline-purple mx-3" onClick={handleLogOut}>
+                                    <i className="fa-solid fa-right-from-bracket"></i> Log Out
+                                </button> */}
                             </>
                     }
                 </div>

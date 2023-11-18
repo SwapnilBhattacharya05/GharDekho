@@ -185,21 +185,3 @@
     top: 170px;
     left: 460px;
 }
-
-.buy-page-link-wrapper {
-    text-decoration: none;
-    color: inherit;
-
-    &:hover {
-        text-decoration: none;
-        color: inherit;
-
-    }
-}
-
-.wishlist-buy{
-    margin-left: -40px;
-    margin-top: 10px;
-    font-size: 25px;
-    color: #7a4bcf;
-}

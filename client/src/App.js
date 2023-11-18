@@ -1,14 +1,15 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter,Navigate, Route, Routes } from "react-router-dom";
 
 // ?Buy and rent packages Imports
-import BuyPackages from "./Components/BuyCategory/Buy";
+import BuyPackages from "./Components/Buy/Buy";
 import RentPackages from "./Components/Rent/Rent";
 
 // ?Home Contact About and Forms Imports
 import Home from "./Components/Home/Home";
 import Contact from "./Components/Contact/Contact";
 import AboutUs from "./Components/About/About";
+import Form from "./Components/Form/Form";
 
 // ?Login and Signup Imports
 import Login from "./Components/Login/Login"
@@ -35,17 +36,40 @@ import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 import PostProperty from "./Components/Form/PostProperty";
 import PropertyDescription from "./Components/PropertyDescription/PropertyDescription";
 
+import { useContext, useEffect } from 'react';
+
+import UserContext from "./Context/user/UserContext";
+import Profile from "./Components/Profile/Profile";
 
 
 function App() {
+  const userContext = useContext(UserContext);
+  const { setUser } = userContext;
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        await setUser();
+      } catch (error) {
+        console.log("Error while fetching userData: ", error);
+      }
+    }
+    if (localStorage.getItem('token')) {
+      fetchUser();
+    }
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
 
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/signup" element={<Signup />}></Route>
+          <Route exact path='/login' element={!(localStorage.getItem("token")) ? <Login /> : <Navigate to="/" />}></Route>
+          <Route exact path='/signup' element={!(localStorage.getItem("token")) ? <Signup /> : <Navigate to="/" />}></Route>
+
+          <Route exact path='/listproperty' element={(localStorage.getItem("token")) ? <Form /> : <Navigate to="/login" />}></Route>
 
           <Route path="/buy" element={<BuyPackages />}></Route>
           <Route path="/rent" element={<RentPackages />}></Route>
@@ -60,7 +84,7 @@ function App() {
 
           <Route path="/adminhomepage" element={<AdminHomePage />}></Route>
           <Route path="/adminbuypage" element={<AdminBuyPage />}></Route>
-          <Route path="/adminsellpage" element={<AdminSellPage />}></Route>
+          {/* <Route path="/adminsellpage" element={<AdminSellPage />}></Route> */}
           <Route path="/adminrentpage" element={<AdminRentPage />}></Route>
           <Route path="/adminblogpage" element={<AdminBlogPage />}></Route>
 
@@ -73,6 +97,8 @@ function App() {
 
           {/* //TODO: Temporary route path for the about page */}
           <Route path="/aboutProperty" element={<PropertyDescription />}></Route>
+
+          <Route exact path='/profile' element={(localStorage.getItem("token")) ? <Profile /> : <Navigate to="/" />}></Route>
 
         </Routes>
       </BrowserRouter>

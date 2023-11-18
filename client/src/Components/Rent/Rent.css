@@ -1,5 +1,6 @@
 /* Controls the Css for the card */
 .rent-card {
+    position: relative;
     border-radius: 20px 20px 20px 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     /* background-color: blue; */
@@ -11,6 +12,14 @@
     height: 180px;
     width: 100%;
     border-radius: 20px 20px 0px 0px;
+}
+
+.wishlist {
+    position: absolute;
+    right: 26px;
+    cursor: pointer;
+    top: 21px;
+    font-size: 31px;
 }
 
 .rent-card-top img {
@@ -119,72 +128,68 @@
 }
 
 .renting .renting-page-header-hero {
-    height: 450px;
-    width: 100%;
     background-color: #7a4bcf;
-
 }
-
 
 .renting .renting-page-header-heading-hero {
     position: absolute;
-    top: 180px;
-    left: 420px;
+    top: 110px;
+    left: 330px;
     letter-spacing: 2px;
     font-size: 50px;
     color: white;
     font-weight: bold;
     background-color: transparent;
-    z-index: 3;
 }
 
 .renting .renting-page-header-subheading-hero {
     position: absolute;
-    top: 250px;
-    left: 430px;
+    top: 170px;
+    left: 420px;
     letter-spacing: 2px;
     color: white;
     font-weight: bold;
     background-color: transparent;
-    z-index: 3;
 }
 
-
-
-.rent-page-header-hero-search-complete {
-    display: flex;
-    justify-content: center;
-
-}
-
-.renting-page-header-hero-search-button {
-    padding: 8px 9px 8px 9px;
-    color: white;
-    border: none;
-    background-color: black;
-    border-radius: 100px 100px;
-    position: absolute;
-    top: 304px;
-    right: 500.5px;
-
+#rent-page-header-image {
+    opacity: 70%;
+    z-index: 2;
 
 }
 
 .renting-page-header-hero-search {
-    position: absolute;
-    top: 300px;
-    border: none;
-    border-radius: 15px;
-    width: 550px;
-    padding: 9px 5px;
-    border: 2.5px solid #7a4bcf;
-    text-decoration: none;
+    background-color: rgb(204, 204, 204);
+    border-radius: 100px 100px;
+    width: 50%;
+    color: black;
+    text-align: left;
+    padding: 15px;
+    border: 3px solid #7a4bcf;
     opacity: 70%;
-    text-align: left !important;
+
 }
 
-.wishlist-rent{
-    margin-left: -40px;
-    font-size: 25px;
-    color: #7a4bcf;
+.renting-page-header-hero-search-button {
+    padding: 9px 10px 9px 10px;
+    color: white;
+    background-color: black;
+    border-radius: 100px 100px;
+    position: absolute;
+    left: 920px;
+    top: 227px;
+    opacity: 70%;
+    border: none;
+
+}
+
+.rent-page-header-hero-search-complete {
+    /* margin-top: -10px; */
+    z-index: 10;
+    /* position: absolute; */
+    margin-top: -230px;
+    margin-bottom: 230px;
+    margin-left: 460px;
+    top: 170px;
+    left: 460px;
 }

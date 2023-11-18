@@ -13,9 +13,10 @@ import mockUsers from "../../../Data/MockUserData";
 
 const AdminUser = () => {
 
-    // *Add unique IDs to each user in mockUsers
 
     // TODO: change the 'mockUsers' to the required API
+
+    // *Add unique IDs to each user in mockUsers
     const usersWithIds = mockUsers.map((value, index, array) => ({
         id: index + 1,
         ...value,

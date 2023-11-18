@@ -42,3 +42,19 @@
     background-color: #7a4bcf;
     border-radius: 5px;
 }
+
+.profile-avatar {
+    border-radius: 50%;
+    height: 50px;
+}
+
+@media(max-width:992px) {
+    .profile-avatar {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-item {
+        margin: auto !important;
+    }
+}

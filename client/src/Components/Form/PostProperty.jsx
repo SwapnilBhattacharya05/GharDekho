@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./PostProperty.css"
 import Menu from '../Menu/Menu'
 import { Link } from 'react-router-dom'
+import Footer from '../Footer/Footer'
 
 const PostProperty = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
             <Menu />
@@ -111,7 +117,7 @@ const PostProperty = () => {
                                     Login
                                 </Link>
                             </p>
-                            <Link to="">
+                            <Link to="/listproperty">
                                 <input type='submit'
                                     value="Start Now"
                                     className='rent-sell-property-start-button'
@@ -121,6 +127,7 @@ const PostProperty = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

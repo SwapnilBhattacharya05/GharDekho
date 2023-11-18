@@ -64,9 +64,12 @@
 
 
 .submit-button {
-    width: 100px;
+    width: 270px;
 }
 
+.g-btn {
+    width: 270px;
+}
 
 .footer-text .text {
     font-size: 15px;
@@ -87,5 +90,10 @@
 @media(max-width:739px) {
     .submit-button {
         width: 75px;
+    }
+
+    .g-btn {
+        width: 75px;
+        font-size: 17px;
     }
 }

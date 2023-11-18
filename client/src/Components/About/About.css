@@ -73,7 +73,7 @@
 }
 
 
-.about-page-topic1 {
+.about-page-topic1{
     margin-top: 150px;
     display: flex;
     height: 500px;
@@ -85,17 +85,17 @@
     width: 50%;
 }
 
-.about-page-story-left-text {
+.about-page-story-left-text{
     text-align: center;
     max-width: 520px;
 }
 
-.about-us-image3-right {
+.about-us-image3-right{
     width: 50%;
     border-radius: 100px;
 }
 
-.about-us-image3-right img {
+.about-us-image3-right img{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -106,7 +106,7 @@
 
 
 
-.meet-the-team {
+.meet-the-team{
     margin-top: 20px;
 }
 
@@ -114,15 +114,16 @@
     height: 220px;
     width: 220px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: cover   ;
 }
 
-.meet-team-heading {
+.meet-team-heading{
     font-weight: bold;
     color: #7a4bcf;
 }
 
-.meet-the-team h5 {
+.meet-the-team h5{
     font-weight: bold;
     font-style: italic;
 }
+
