@@ -12,7 +12,7 @@ const testimonialSchema = mongoose.Schema({
         type: String,
         required: true
     }
-}, { timestams: true });
+}, { timestamps: true });
 
 const Testimonial = mongoose.model("testimonial", testimonialSchema);
 export default Testimonial;

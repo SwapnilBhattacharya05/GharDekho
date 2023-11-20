@@ -111,7 +111,6 @@ router.post("/google", async (req, res) => {
                 phone: Math.floor(Math.random() * 9000000000) + 1000000000,
                 photo: req.body.photo
             });
-            console.log(user);
             await user.save();
 
             const authToken = jwt.sign({ id: user.id }, process.env.JWT_SECRET);

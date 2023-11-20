@@ -1,7 +1,8 @@
 .admin-main-container{
     background-color: rgb(230, 227, 213);
     padding:10px;
-    height: 92.5vh;
+    min-height: 100vh;
+    overflow: hidden;
 }
 .admin-page-main-headers{
     color: #885adf;

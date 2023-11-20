@@ -59,7 +59,7 @@ export const updateUser = async (req, res) => {
     }
 }
 
-export const delteUser = async (req, res) => {
+export const deleteUser = async (req, res) => {
     try {
         if (req.user.id !== req.params.id) {
             return res.status(401).json({ success: false, msg: "You can only Delete your account" });

@@ -48,6 +48,22 @@
     height: 50px;
 }
 
+#menubar-logout-dropdown-button-handler {
+    color: red;
+}
+
+.menubar-profile-pic-dropdown-options{
+    position: absolute;
+    left: -40px;
+
+}
+.menubar-profile-pic-dropdown-button {
+    border-radius: 50%;
+    height: auto;
+    width: auto;
+    border: none !important;
+    background-color: transparent;
+}
 @media(max-width:992px) {
     .profile-avatar {
         display: flex;

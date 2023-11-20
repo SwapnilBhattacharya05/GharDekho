@@ -1,5 +1,5 @@
 import express from "express";
-import { delteUser, getAllUsers, getUser, updateUser } from "../controller/user.controller.js";
+import { deleteUser, getAllUsers, getUser, updateUser } from "../controller/user.controller.js";
 import fetchUser from "../middleware/fetchUser.js";
 
 const router = express.Router();
@@ -14,5 +14,5 @@ router.get("/getallusers", getAllUsers);
 router.put("/update/:id", fetchUser, updateUser);
 
 //Router 4:DELETE request to delete a user
-router.delete("/delete/:id", fetchUser, delteUser);
+router.delete("/delete/:id", fetchUser, deleteUser);
 export default router;

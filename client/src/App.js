@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter,Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 // ?Buy and rent packages Imports
 import BuyPackages from "./Components/Buy/Buy";
@@ -22,7 +22,7 @@ import Dashboard from "./Components/Admin/Dashboard/Dashboard";
 import AdminUser from "./Components/Admin/AdminUsers/AdminUsers";
 import AdminHomePage from "./Components/Admin/AdminPages/AdminHomePage";
 import AdminBuyPage from "./Components/Admin/AdminPages/AdminBuyPage";
-import AdminSellPage from "./Components/Admin/AdminPages/AdminSellPage";
+// import AdminSellPage from "./Components/Admin/AdminPages/AdminSellPage";
 import AdminRentPage from "./Components/Admin/AdminPages/AdminRentPage";
 import AdminBlogPage from "./Components/Admin/AdminPages/AdminBlogPage";
 
@@ -40,6 +40,8 @@ import { useContext, useEffect } from 'react';
 
 import UserContext from "./Context/user/UserContext";
 import Profile from "./Components/Profile/Profile";
+import MyProperty from './Components/Profile/MyProperty';
+import UpdateProperty from './Components/UpdateProperty/UpdateProperty';
 
 
 function App() {
@@ -95,10 +97,12 @@ function App() {
 
           <Route path="/postproperty" element={<PostProperty />}></Route>
 
-          {/* //TODO: Temporary route path for the about page */}
+          {/* //TODO: Temporary route path for the about property page */}
           <Route path="/aboutProperty" element={<PropertyDescription />}></Route>
 
           <Route exact path='/profile' element={(localStorage.getItem("token")) ? <Profile /> : <Navigate to="/" />}></Route>
+          <Route exact path='/myproperty' element={(localStorage.getItem("token")) ? <MyProperty /> : <Navigate to="/" />}></Route>
+          <Route exact path='/updateproperty/:propertyid' element={(localStorage.getItem("token")) ? <UpdateProperty /> : <Navigate to="/" />}></Route>
 
         </Routes>
       </BrowserRouter>

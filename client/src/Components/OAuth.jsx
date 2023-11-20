@@ -45,7 +45,7 @@ const OAuth = () => {
                 setTimeout(() => {
                     navigate("/");
                 }, 3700);
-            }else{
+            } else {
                 toast.error("Something Went Wrong, Please Try Again Later!", {
                     position: "top-right",
                     autoClose: 3000,

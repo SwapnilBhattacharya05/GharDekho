@@ -1,10 +1,14 @@
 .form {
-    height: auto;
-    width: auto;
+    height: 100%;
     padding-bottom: 10px;
-    background-color: #ebcff7;
-    border-radius: 10px;
+    background-color: rgba(162, 109, 201, 0.47);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
     box-shadow: rgba(125, 103, 138, 0.2) 0px 7px 29px 0px;
+}
+
+#form-property-roads-uploading {
+    font-size: 10px;
 }
 
 .form-filed .form-group input[type="text"],
@@ -22,40 +26,31 @@
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
-.form-group .btn-light {
-    border-radius: 30px;
-    padding: 4px 7px;
-    margin-right: 5px;
-}
-
-.submit-btn {
-    display: block;
-    float: right;
-}
-
-.submit-btn .btn-submit {
-    background-color: #0079FF;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    padding: 8px 40px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-}
-
-.submit-btn input[type="reset"] {
-    background-color: #FF0060;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    padding: 8px 40px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-}
-
 #name {
     font-size: 13px;
     letter-spacing: 2px;
     font-weight: 500;
     display: none;
+}
+
+#submit-posting-property-buy-sell {
+    padding: 10px 40px;
+
+}
+
+.submit-posting-property-buy-sell-wrapper {
+    justify-content: center;
+}
+
+#posting-property-all-wrapper {
+    background-image: url("../../../public/img/posting_property_background_image.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    padding-bottom: 100px;
+    height: 100%;
+    width: 100%;
+    margin-bottom: -50px !important;
+    font-weight: bold;
 }

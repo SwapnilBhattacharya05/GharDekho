@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import "../Shared_Container.css"
 import "./AdminUser.css"
@@ -6,36 +6,64 @@ import { Box, Button, colors } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import DeleteIcon from '@mui/icons-material/Delete';
 
-// TODO:Mock data for testing the table can change with the API
-import mockUsers from "../../../Data/MockUserData";
 
+const AdminUsers = () => {
 
+    const [allUsers, setAllUsers] = useState([]);
 
-const AdminUser = () => {
+    const fetchAllUsers = async () => {
+        try {
+            const response = await fetch("http://localhost:8000/api/user/getallusers", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
 
+            const json = await response.json();
+            // console.log(json.users);
+            await setAllUsers(json.users);
+        } catch (error) {
+            console.error("Error fetching users:", error.message);
+        }
+    }
 
-    // TODO: change the 'mockUsers' to the required API
+    useEffect(() => {
+        fetchAllUsers();
+    }, []);
+
+    useEffect(() => {
+        console.log(allUsers);
+    }, [allUsers]);
 
     // *Add unique IDs to each user in mockUsers
-    const usersWithIds = mockUsers.map((value, index, array) => ({
+    // TODO: change the 'mockUsers' to the required API
+    const usersWithIds = allUsers.map((value, index, array) => ({
         id: index + 1,
         ...value,
     }));
 
     const columns = [
         {
-            field: "id",
-            headerName: "ID"
+            field: "_id",
+            headerName: "ID",
+            width: 90,
         },
 
-        // {
-        //     field: "photo",
-        //     headerName: "Photo",
-        // },
+        {
+            field: "photo",
+            headerName: "Avatar",
+            width: 100,
+            cellClassName: "photo-column-cell",
+            renderCell: (params) => <img src={params.value}
+                alt="There was something here"
+                id="admin-user-images"
+            />,
+        },
 
         {
-            field: "name",
-            headerName: "Name",
+            field: "username",
+            headerName: "Username",
             flex: 1,
             cellClassName: "name-column-cell"
         },
@@ -151,4 +179,4 @@ const AdminUser = () => {
     );
 };
 
-export default AdminUser;
+export default AdminUsers;

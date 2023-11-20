@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 import Menu from "../Menu/Menu";
 import { Link } from "react-router-dom";
-import BuyCategories from "../../Data/BuyingPageCategories.js";
-import RentCategory from "../../Data/RentingPageCategories.js";
+import buyProperty from "../../Data/BuyingPageCategories.js"
+import rentProperty from "../../Data/RentingPageCategories.js"
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../Footer/Footer";
@@ -18,8 +18,8 @@ const Home = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        setSalesData(BuyCategories.slice(0, 4));
-        setRentsData(RentCategory.slice(0, 4));
+        setSalesData(buyProperty.slice(0, 4));
+        setRentsData(rentProperty.slice(0, 4));
         fetchTestimonials();
     }, []);
 
@@ -278,7 +278,7 @@ const Home = () => {
                         <p style={{ fontSize: "17px" }}><i>Subscribe to our newsletter for the latest property listings. Let's stay updated!</i></p>
                         <form method="post" className="d-flex justify-content-center align-content-center" onSubmit={handleSubmit}>
                             <input name="newsletterEmail" id="newsletter" type="email" placeholder="demo@gmail.com" style={{ border: "1px solid #7a4bcf", outline: "none" }} required onChange={onChange} value={user.newsletterEmail}></input>
-                            <input className="btn btn-purple newsletter-btn ml-2" type="submit" value={"Subscribe"}></input>
+                            <button className="btn btn-purple newsletter-btn ml-2" type="submit"><i className="fa-solid fa-envelope"></i> Subscribe</button>
                         </form>
                     </div>
                 </div>

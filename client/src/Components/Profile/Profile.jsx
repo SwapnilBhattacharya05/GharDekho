@@ -26,7 +26,7 @@ const Profile = () => {
             handleFileUpload(file);
         }
         // eslint-disable-next-line
-    }, [, file]);
+    }, [userData, file]);
 
     const navigate = useNavigate();
     const fileRef = useRef(null);
@@ -64,13 +64,7 @@ const Profile = () => {
                     "Content-Type": "application/json",
                     "auth-token": localStorage.getItem("token")
                 },
-                body: JSON.stringify({
-                    username: credentials.userName,
-                    email: credentials.userEmail,
-                    phone: credentials.userPhn,
-                    password: credentials.userPassword,
-                    photo: formData.photo
-                })
+                body: JSON.stringify({ username: credentials.userName, email: credentials.userEmail, phone: credentials.userPhn, password: credentials.userPassword, photo: formData.photo })
             });
 
             const json = await response.json();
@@ -128,7 +122,7 @@ const Profile = () => {
                     transition: Flip,
                     hideProgressBar: false,
                     closeOnClick: true,
-                    pauseOnHover: false,
+                    pauseOnHover: true,
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
@@ -143,7 +137,7 @@ const Profile = () => {
                     transition: Flip,
                     hideProgressBar: false,
                     closeOnClick: true,
-                    pauseOnHover: false,
+                    pauseOnHover: true,
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
@@ -263,6 +257,7 @@ const Profile = () => {
                     <div className="row" style={{ marginLeft: "19%", marginRight: "19%" }}>
                         <div className="d-flex justify-content-between col-12">
                             <button className="btn btn-danger"
+                                type='button'
                                 data-toggle="modal"
                                 data-target="#staticBackdrop"
                             >
@@ -304,8 +299,9 @@ const Profile = () => {
                                             >
                                                 no
                                             </button>
-                                            <button type="button"
+                                            <button
                                                 class="btn btn-danger"
+                                                data-dismiss="modal"
                                                 onClick={handleProfileDelete}
                                             >
                                                 Yes
@@ -315,7 +311,8 @@ const Profile = () => {
                                 </div>
                             </div>
 
-                            <button onClick={handleLogOut}
+                            <button
+                                onClick={handleLogOut}
                                 className="btn btn-purple">
                                 Log out
                             </button>

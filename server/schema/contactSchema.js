@@ -20,7 +20,7 @@ const contactSchema = mongoose.Schema({
         type: String,
         required: true
     }
-}, { timestams: true });
+}, { timestamps: true });
 
 const Contact = mongoose.model("contact", contactSchema);
 export default Contact;
