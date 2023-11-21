@@ -1,0 +1,25 @@
+.blog-card {
+    border-radius: 20px 20px 20px 20px;
+    border: 2px solid #7a4bcf;
+}
+.blogs{
+    min-height: 80vh;
+}
+.blogs .blogs-page-header-hero {
+    height: 400px;
+    width: 100%;
+    background-color: #7a4bcf;
+
+}
+
+.blogs .blogs-page-header-heading-hero {
+    position: absolute;
+    top: 380px;
+    left: 385px;
+    right: 100px;
+    font-size: 55px;
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    z-index: 3;
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Rent.css";
-import RentCategories from "../../Data/RentingPageCategories";
+import RentCategories from "../../Data/RentingPageCategories.js";
 import Footer from "../Footer/Footer";
 import Menu from "../Menu/Menu";
 
@@ -29,7 +29,7 @@ const RentPackages = () => {
 
                     <div className="rent-page-header-hero-search-complete">
                         <input type="text" className="renting-page-header-hero-search" placeholder="Look for your dream home here!"></input>
-                        <button className="renting-page-header-hero-search-button"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+                        <button className="renting-page-header-hero-search-button"><i className="fa-solid fa-magnifying-glass fa-lg"></i></button>
                     </div>
 
                     <div className="container">

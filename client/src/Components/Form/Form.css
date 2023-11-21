@@ -26,12 +26,12 @@
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
-#name {
+/* #name {
     font-size: 13px;
     letter-spacing: 2px;
     font-weight: 500;
     display: none;
-}
+} */
 
 #submit-posting-property-buy-sell {
     padding: 10px 40px;

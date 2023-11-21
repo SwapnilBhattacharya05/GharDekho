@@ -1,7 +1,3 @@
-import { React } from "react";
-import { Link } from "react-router-dom";
-import "./Sidebar.css";
-import "../Shared_Container.css"
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import BarChartIcon from '@mui/icons-material/BarChart';
@@ -10,18 +6,26 @@ import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PersonIcon from '@mui/icons-material/Person';
-import SellIcon from '@mui/icons-material/Sell';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SsidChartIcon from '@mui/icons-material/SsidChart';
+import { React, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "../Shared_Container.css";
+import "./Sidebar.css";
 
 
 
 
 const Sidebar = () => {
 
-    const backToTop = () => {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+        sessionStorage.removeItem("isAdmin");
+        window.location.href = "/adminlogin";
     }
 
     return (
@@ -48,14 +52,14 @@ const Sidebar = () => {
                             <ul class="nav flex-column">
                                 <div className="admin-title">MAIN</div>
                                 <li class="nav-item">
-                                    <Link className="nav-link" to="/adminhome" onClick={backToTop}>
+                                    <Link className="nav-link" to="/adminhome" >
                                         <DashboardIcon className="admin-sidebar-icons" />
                                         <span className="admin-sidebar-options">Dashboard</span>
 
                                     </Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="nav-link" to="/adminuser" onClick={backToTop}>
+                                    <Link class="nav-link" to="/adminuser" >
                                         <PersonIcon className="admin-sidebar-icons" />
                                         <span className="admin-sidebar-options">Users</span>
 
@@ -63,34 +67,34 @@ const Sidebar = () => {
                                 </li>
                                 <div className="admin-title">PAGES</div>
                                 <li class="nav-item">
-                                    <Link className="nav-link" to="/adminhomepage" onClick={backToTop}>
+                                    <Link className="nav-link" to="/adminhomepage" >
                                         <HomeIcon className="admin-sidebar-icons" />
                                         <span className="admin-sidebar-options">Home</span>
                                     </Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="nav-link" to="/adminbuypage" onClick={backToTop}>
+                                    <Link class="nav-link" to="/adminbuypage" >
                                         <ShoppingCartIcon className="admin-sidebar-icons" />
                                         <span className="admin-sidebar-options">Buy</span>
 
                                     </Link>
                                 </li>
                                 {/* <li class="nav-item">
-                                    <Link className="nav-link" to="/adminsellpage" onClick={backToTop}>
+                                    <Link className="nav-link" to="/adminsellpage" >
                                         <SellIcon className="admin-sidebar-icons" />
                                         <span className="admin-sidebar-options">Sell</span>
 
                                     </Link>
                                 </li> */}
                                 <li class="nav-item">
-                                    <Link class="nav-link" to="/adminrentpage" onClick={backToTop}>
+                                    <Link class="nav-link" to="/adminrentpage" >
                                         <AccessTimeIcon className="admin-sidebar-icons" />
 
                                         <span className="admin-sidebar-options">Rent</span>
                                     </Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link className="nav-link" to="/adminblogpage" onClick={backToTop}>
+                                    <Link className="nav-link" to="/adminblogpage" >
                                         <AutoStoriesIcon className="admin-sidebar-icons" />
 
                                         <span className="admin-sidebar-options">Blogs</span>
@@ -99,21 +103,21 @@ const Sidebar = () => {
                                 <div className="admin-title">CHARTS</div>
 
                                 <li class="nav-item">
-                                    <Link class="nav-link" to="/barchart" onClick={backToTop}>
+                                    <Link class="nav-link" to="/barchart" >
                                         <BarChartIcon className="admin-sidebar-icons" />
                                         <span className="admin-sidebar-options">Bar Chart</span>
                                     </Link>
                                 </li>
 
                                 <li class="nav-item">
-                                    <Link class="nav-link" to="/linechart" onClick={backToTop}>
+                                    <Link class="nav-link" to="/linechart" >
                                         <SsidChartIcon className="admin-sidebar-icons" />
                                         <span className="admin-sidebar-options">Line Chart</span>
                                     </Link>
                                 </li>
 
                                 <li class="nav-item">
-                                    <Link class="nav-link" to="/piechart" onClick={backToTop}>
+                                    <Link class="nav-link" to="/piechart" >
                                         <DonutLargeIcon className="admin-sidebar-icons" />
                                         <span className="admin-sidebar-options">Pie Chart</span>
                                     </Link>
@@ -126,13 +130,11 @@ const Sidebar = () => {
                                 </li>
                                 <div className="admin-title">SERVICE</div>
                                 <li class="nav-item">
-                                    <Link class="nav-link" to="/adminlogin" onClick={backToTop}>
+                                    <button className='btn btn-text-danger' onClick={handleLogout}>
                                         <LogoutIcon className="admin-sidebar-icons" />
                                         <span className="admin-sidebar-options">Log out</span>
-
-                                    </Link>
+                                    </button>
                                 </li>
-
                             </ul>
                         </div>
                     </nav>

@@ -153,7 +153,7 @@ const Form = () => {
                     theme: "colored",
                 });
                 setTimeout(() => {
-                    navigate(`/property/${json.property._id}`);
+                    navigate(`/propertydescription/${json.property._id}`);
                 }, 3700);
             } else {
                 toast.error(json.error[0].msg, {

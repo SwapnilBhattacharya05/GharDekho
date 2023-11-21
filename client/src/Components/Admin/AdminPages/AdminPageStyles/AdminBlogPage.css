@@ -1,0 +1,34 @@
+#admin-blog-add-button {
+    margin-left: 90px;
+}
+.modal-title-admin-blog-page{
+    color: #43345a;
+    font-weight: bold;
+}
+.blog-admin-page-form-all-wrapper input,
+textarea {
+    margin-bottom: 15px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid #885adf;
+    padding: 7px 5px;
+
+    &:focus{
+        outline: 2px solid #7943dd;
+    }
+}
+#blog-admin-img{
+    border: none;
+    outline: none;
+    width: 21%;
+}
+.blog-form-admin-page-wrapper{
+    color: #4d4658;
+}
+
+#admin-blog-images {
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #9b86c1;
+}

@@ -15,6 +15,10 @@ import Form from "./Components/Form/Form";
 import Login from "./Components/Login/Login"
 import Signup from "./Components/SignUp/Signup";
 
+// ?Blogs import
+import Blogs from './Components/Blogs/Blogs';
+import BlogPost from "./Components/Blogs/BlogPost";
+
 // ?Dashboard Import
 import Dashboard from "./Components/Admin/Dashboard/Dashboard";
 
@@ -33,7 +37,7 @@ import AdminPieChart from "./Components/Admin/AdminChartPage/AdminPieChart";
 import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 
 // ?Imports for forms 
-import PostProperty from "./Components/Form/PostProperty";
+// import PostProperty from "./Components/Form/PostProperty";
 import PropertyDescription from "./Components/PropertyDescription/PropertyDescription";
 
 import { useContext, useEffect } from 'react';
@@ -73,36 +77,39 @@ function App() {
 
           <Route exact path='/listproperty' element={(localStorage.getItem("token")) ? <Form /> : <Navigate to="/login" />}></Route>
 
-          <Route path="/buy" element={<BuyPackages />}></Route>
-          <Route path="/rent" element={<RentPackages />}></Route>
+          <Route exact path="/buy" element={<BuyPackages />}></Route>
+          <Route exact path="/rent" element={<RentPackages />}></Route>
 
-          <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/about" element={<AboutUs />}></Route>
+          <Route exact path='/blogshome' element={<Blogs />}></Route>
+          <Route exact path='/blogpost/:blogid' element={<BlogPost />}></Route>
 
-          <Route path="/adminlogin" element={<AdminLogin />}></Route>
+          <Route exact path="/contact" element={<Contact />}></Route>
 
-          <Route path="/adminhome" element={<Dashboard />}></Route>
-          <Route path="/adminuser" element={<AdminUser />}></Route>
+          <Route exact path="/about" element={<AboutUs />}></Route>
+          <Route exact path='/adminlogin' element={sessionStorage.getItem("isAdmin") ? <Dashboard /> : <AdminLogin />}></Route>
+          <Route exact path='/adminuser' element={sessionStorage.getItem("isAdmin") ? <AdminUser /> : <Navigate to={"/adminlogin"} />}></Route>
+          <Route exact path='/adminhome' element={sessionStorage.getItem("isAdmin") ? <Dashboard /> : <Navigate to={"/adminlogin"} />}></Route>
+          <Route exact path='/adminblogpage' element={sessionStorage.getItem("isAdmin") ? <AdminBlogPage /> : <Navigate to={"/adminlogin"} />}></Route>
+          <Route exact path="/adminbuypage" element={sessionStorage.getItem("isAdmin") ? <AdminBuyPage /> : <Navigate to={"/adminlogin"} />}></Route>
+          <Route exact path="/adminrentpage" element={sessionStorage.getItem("isAdmin") ? <AdminRentPage /> : <Navigate to={"/adminlogin"} />}></Route>
 
-          <Route path="/adminhomepage" element={<AdminHomePage />}></Route>
-          <Route path="/adminbuypage" element={<AdminBuyPage />}></Route>
-          {/* <Route path="/adminsellpage" element={<AdminSellPage />}></Route> */}
-          <Route path="/adminrentpage" element={<AdminRentPage />}></Route>
-          <Route path="/adminblogpage" element={<AdminBlogPage />}></Route>
+          <Route exact path="/barchart" element={<AdminBarChart />}></Route>
+          <Route exact path="/linechart" element={<AdminLineChart />}></Route>
+          <Route exact path="/piechart" element={<AdminPieChart />}></Route>
 
-          <Route path="/barchart" element={<AdminBarChart />}></Route>
-          <Route path="/linechart" element={<AdminLineChart />}></Route>
-          <Route path="/piechart" element={<AdminPieChart />}></Route>
-
-
-          <Route path="/postproperty" element={<PostProperty />}></Route>
-
-          {/* //TODO: Temporary route path for the about property page */}
-          <Route path="/aboutProperty" element={<PropertyDescription />}></Route>
 
           <Route exact path='/profile' element={(localStorage.getItem("token")) ? <Profile /> : <Navigate to="/" />}></Route>
           <Route exact path='/myproperty' element={(localStorage.getItem("token")) ? <MyProperty /> : <Navigate to="/" />}></Route>
           <Route exact path='/updateproperty/:propertyid' element={(localStorage.getItem("token")) ? <UpdateProperty /> : <Navigate to="/" />}></Route>
+
+          <Route exact path="/propertydescription/:propertyid" element={<PropertyDescription />}></Route>
+
+
+          {/* // !Removed routes */}
+          {/* <Route path="/adminhomepage" element={<AdminHomePage />}></Route> */}
+          {/* <Route path="/adminsellpage" element={<AdminSellPage />}></Route> */}
+          {/* <Route path="/postproperty" element={<PostProperty />}></Route> */}
+
 
         </Routes>
       </BrowserRouter>

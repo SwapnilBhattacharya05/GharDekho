@@ -8,6 +8,7 @@ import userRouter from "./routes/user.route.js";
 import contactRouter from "./routes/contact.route.js";
 import testimonialRouter from "./routes/testimonial.route.js";
 import propertyRouter from "./routes/property.route.js";
+import blogRouter from "./routes/blog.route.js";
 
 const app = express();
 dotenv.config();
@@ -20,6 +21,7 @@ app.use(cors());
 //routers
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
+app.use("/api/blog", blogRouter);
 app.use("/api/property", propertyRouter);
 app.use("/api/contact", contactRouter);
 app.use("/api/testimonial", testimonialRouter);

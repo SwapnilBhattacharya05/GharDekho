@@ -3,7 +3,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -37,7 +37,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -70,7 +70,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -103,7 +103,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -136,7 +136,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -169,7 +169,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -202,7 +202,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -235,7 +235,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -268,7 +268,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -301,7 +301,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -334,7 +334,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -367,7 +367,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -400,7 +400,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -433,7 +433,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -466,7 +466,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',
@@ -499,7 +499,7 @@ const BuyCategories = [
     {
         photo: 'img/elysia.jpg',
         photoAlt: 'elysia img',
-        buyPrize: '65.4Lakhs',
+        buyPrize: 65000,
         buyHeading: 'Tiru Elysia',
         sqftIcon: 'fa-solid fa-building',
         sqft: '1650 Sqft',

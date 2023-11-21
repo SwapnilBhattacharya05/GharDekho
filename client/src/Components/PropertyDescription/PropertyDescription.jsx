@@ -1,15 +1,22 @@
-import React, { useContext, useEffect, useState } from 'react'
-import './PropertyDescription.css'
-import Menu from '../Menu/Menu';
-import BedIcon from '@mui/icons-material/Bed';
 import BathtubIcon from '@mui/icons-material/Bathtub';
-import LightbulbIcon from '@mui/icons-material/Lightbulb';
-import ElevatorIcon from '@mui/icons-material/Elevator';
-import Footer from '../Footer/Footer';
-import UserContext from '../../Context/user/UserContext';
+import BedIcon from '@mui/icons-material/Bed';
+import ChairIcon from '@mui/icons-material/Chair';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import EmailIcon from '@mui/icons-material/Email';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import HouseIcon from '@mui/icons-material/House';
+import NoCrashIcon from '@mui/icons-material/NoCrash';
+import PersonIcon from '@mui/icons-material/Person';
+import PhoneEnabledIcon from '@mui/icons-material/PhoneEnabled';
+import TaxiAlertIcon from '@mui/icons-material/TaxiAlert';
+import React, { useContext, useEffect, useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import { useParams } from 'react-router-dom';
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import UserContext from '../../Context/user/UserContext';
+import Footer from '../Footer/Footer';
+import Menu from '../Menu/Menu';
+import './PropertyDescription.css';
 
 const PropertyDescription = () => {
     const userContext = useContext(UserContext);
@@ -55,6 +62,7 @@ const PropertyDescription = () => {
             }
         }
         fetchPropertyData();
+        // eslint-disable-next-line
     }, []);
 
     useEffect(() => {
@@ -78,13 +86,18 @@ const PropertyDescription = () => {
 
                     {/* //?Property sub heading / location */}
                     <h6 className='property-description-sub-header'>
-                        {(propertyData.street && propertyData.street.concat(`, ${propertyData.state && propertyData.state.concat(`, ${propertyData.country && propertyData.country}`)}`)) || <Skeleton />}
+                        {(propertyData.street && propertyData.street.concat(
+                            `, ${propertyData.state && propertyData.state.concat(`, ${propertyData.country && propertyData.country}`)}`))
+                            ||
+                            <Skeleton />}
                     </h6>
 
                     {/* //?Property Images for description page */}
                     <div className='property-description-album d-flex'>
                         <div className='property-description-album-left'>
-                            <img src={(propertyData.imageUrls && propertyData.imageUrls[0]) || "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png"}
+                            <img src={(propertyData.imageUrls && propertyData.imageUrls[0])
+                                ||
+                                "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png"}
                                 alt='elysia.jpg'
                                 height="100%"
                                 width="100%"
@@ -93,12 +106,16 @@ const PropertyDescription = () => {
                             />
                         </div>
                         <div className='property-description-album-right'>
-                            <img src={(propertyData.imageUrls && propertyData.imageUrls[1]) || "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png"}
+                            <img src={(propertyData.imageUrls && propertyData.imageUrls[1])
+                                ||
+                                "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png"}
                                 alt='tiru_elysia_room.jpg'
                                 id='pic-catalogue'
                                 style={{ border: loading ? "none" : "2px solid #7a4bcf" }}
                             />
-                            <img src={(propertyData.imageUrls && propertyData.imageUrls[2]) || "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png"}
+                            <img src={(propertyData.imageUrls && propertyData.imageUrls[2])
+                                ||
+                                "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png"}
                                 alt='tiru_elysia_room2.jpg'
                                 id='pic-catalogue'
                                 style={{ border: loading ? "none" : "2px solid #7a4bcf" }}
@@ -132,20 +149,27 @@ const PropertyDescription = () => {
                                         <BathtubIcon id='icons-in-description' />
                                     </div>
                                     <div className='icon-text-container'>
-                                        <div className='icons-blacktext-description'>Power Backup:
+                                        <div className='icons-blacktext-description'>Type:
                                             <span className='icons-description-blacktext-status'>
-                                                yes
                                             </span>
                                         </div>
-                                        <LightbulbIcon id='icons-in-description' />
+                                        <span id='icons-in-description'>{(propertyData.propertyType)}</span>
                                     </div>
                                     <div className='icon-text-container'>
-                                        <div className='icons-blacktext-description'>Lift:
+                                        <div className='icons-blacktext-description'>Construction:
                                             <span className='icons-description-blacktext-status'>
-                                                2
                                             </span>
                                         </div>
-                                        <ElevatorIcon id='icons-in-description' />
+                                        {
+                                            (propertyData.availability === 'ready') ?
+                                                <CheckCircleOutlineIcon
+                                                    id='icons-in-description'
+                                                />
+                                                :
+                                                <EngineeringIcon
+                                                    id='icons-in-description-under-construction'
+                                                />
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -204,29 +228,84 @@ const PropertyDescription = () => {
                                     Enter the Details below...
                                 </div>
 
-                                <input type='text'
-                                    placeholder='Name'
-                                    name='name'
-                                    value={contactDetails.name}
-                                    onChange={handleOnChange}
-                                    id='name'
-                                />
+                                <label><PersonIcon /><span> Name</span>
+                                    <input type='text'
+                                        placeholder='Name'
+                                        name='name'
+                                        value={contactDetails.name}
+                                        onChange={handleOnChange}
+                                        id='namepropertyform'
+                                    /></label>
+                                <label><PhoneEnabledIcon /><span> Phone</span>
+                                    <input type='number'
+                                        placeholder='123-456-7891'
+                                        value={contactDetails.phn}
+                                        onChange={handleOnChange}
+                                        name='phn'
+                                        id='phnpropertyform'
+                                    />
+                                </label>
 
-                                <input type='number'
-                                    placeholder='123-456-7891'
-                                    value={contactDetails.phn}
-                                    onChange={handleOnChange}
-                                    name='phn'
-                                    id='phn'
-                                />
+                                <label><EmailIcon /><span> Email</span>
+                                    <input type='email'
+                                        placeholder='demo@gmail.com'
+                                        onChange={handleOnChange}
+                                        value={contactDetails.email}
+                                        name='email'
+                                        id='emailpropertyform'
+                                    />
+                                </label>
+                                <label><HouseIcon /><span> Available for</span>
+                                    <input type='text'
+                                        onChange={handleOnChange}
+                                        value={(propertyData.advertisementType)}
+                                        name='advertisementType'
+                                        id='advertisementType'
+                                        readOnly
+                                    />
+                                </label>
 
-                                <input type='email'
-                                    placeholder='demo@gmail.com'
-                                    onChange={handleOnChange}
-                                    value={contactDetails.email}
-                                    name='email'
-                                    id='email'
-                                />
+                                <div className="propertyData-of-property-sell-rent-all-wrapper d-flex ml-4">
+                                    <div className='propertyData-of-property-sell-rent'>Parking: </div>
+                                    <p
+                                        onChange={handleOnChange}
+                                        name='parking'
+                                        id='parkingpropertyData'
+                                    >
+
+                                        {
+                                            (propertyData.parking) ? <NoCrashIcon
+                                                className='availability-icon-contact-owner'
+                                                style={{ color: "#9ADE7B" }}
+                                            />
+                                                :
+                                                <TaxiAlertIcon
+                                                    className='availability-icon-contact-owner'
+                                                    style={{ color: "#BE3144" }}
+                                                />
+                                        }
+                                    </p>
+                                    <div className='propertyData-of-property-sell-rent'>Furnished: </div>
+                                    <p
+                                        onChange={handleOnChange}
+                                        name='furnished'
+                                        id='furnished'
+                                    >
+
+                                        {
+                                            (propertyData.furnished) ? <ChairIcon
+                                                className='availability-icon-contact-owner'
+                                                style={{ color: "#9ADE7B" }}
+                                            />
+                                                :
+                                                <ChairIcon
+                                                    className='availability-icon-contact-owner'
+                                                    style={{ color: "#BE3144" }}
+                                                />
+                                        }
+                                    </p>
+                                </div>
+
                                 <input type='submit'
                                     value="Contact Owner"
                                     id='owner-contact-button'
@@ -234,11 +313,8 @@ const PropertyDescription = () => {
                             </form>
                         </div>
                     </div>
-
                 </div>
-
                 <Footer />
-
             </div>
         </>
     )

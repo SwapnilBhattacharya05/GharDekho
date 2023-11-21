@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./AdminLogin.css";
 import PersonIcon from '@mui/icons-material/Person';
 import LockIcon from '@mui/icons-material/Lock';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 // !Import required for the toast to work
@@ -17,13 +17,17 @@ const AdminLogin = () => {
         adminPassword: "",
     });
 
+    const navigate = useNavigate();
+
     const onValueChange = (e) => {
         setAdmin({ ...admin, [e.target.name]: e.target.value });
         console.log(admin);
     }
 
-    const authentication = () => {
-        if (admin.adminUserName === "Admin" && admin.adminPassword === "S@s22112211") {
+    const authentication = (e) => {
+        e.preventDefault();
+        if (admin.adminUserName === process.env.REACT_APP_ADMIN_USERNAME && admin.adminPassword === process.env.REACT_APP_ADMIN_PASSWORD) {
+            sessionStorage.setItem("isAdmin", "true");
             toast.success("Login Successful", {
                 position: "top-center",
                 autoClose: 900,
@@ -35,8 +39,8 @@ const AdminLogin = () => {
                 theme: "light",
             });
             setTimeout(() => {
-                window.location.pathname = "/adminhome";
-            }, 2000);
+                window.location.href="/adminhome";
+            }, 1500);
 
         } else {
             toast.error("Enter valid username and password", {
@@ -50,7 +54,7 @@ const AdminLogin = () => {
                 theme: "light",
             });
             setTimeout(() => {
-                window.location.reload();
+                setAdmin({ adminUserName: "", adminPassword: "" });
             }, 2000);
         }
     }
@@ -98,13 +102,11 @@ const AdminLogin = () => {
 
                             />
                         </div>
-                        <Link to="" onClick={authentication}>
-                            <input
-                                type="submit"
-                                id="admin-signup-submit-button"
-                                value="Login" />
-
-                        </Link>
+                        <input
+                            onClick={authentication}
+                            type="submit"
+                            id="admin-signup-submit-button"
+                            value="Login" />
                     </form>
                 </div>
             </div>

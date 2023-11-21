@@ -1,0 +1,13 @@
+.blog-post-container{
+    box-shadow: 0 5px 15px rgba(0,0,0,.35);
+    margin-top: 100px;
+}
+
+.blogs-hero-photo{
+    height:450px;
+    border-radius: 25px;
+    width:85%;
+}
+.blog-description-text{
+    font-size: 18px;
+}

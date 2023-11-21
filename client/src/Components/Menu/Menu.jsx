@@ -7,7 +7,6 @@ import HouseOutlinedIcon from '@mui/icons-material/HouseOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 
 
-
 const Menu = () => {
 
     const navigate = useNavigate();
@@ -71,14 +70,14 @@ const Menu = () => {
                                 <div className="dropdown-divider"></div>
                                 <Link
                                     className="dropdown-item sub-nav-link"
-                                    to="/postproperty"
+                                    to="/listproperty"
                                 >
                                     Advertise
                                 </Link>
                             </div>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/blogs" >
+                            <Link className="nav-link" to="/blogshome" >
                                 Blog
                             </Link>
                         </li>
@@ -108,44 +107,39 @@ const Menu = () => {
                                 </Link>
                             </div>
                             :
-                            <>
-                                <ul className="navbar-nav ml-auto">
-                                    <li className="dropdown menubar-profile-pic-dropdown-button-wrapper nav-item">
-                                        <button className="menubar-profile-pic-dropdown-button"
-                                            type="button"
-                                            data-toggle="dropdown"
-                                            aria-expanded="false">
-                                            <img src={userData.photo}
-                                                alt="profile"
-                                                className="profile-avatar mx-4 nav-item"
-                                                style={{ width: "50px", marginTop: 0 }} />
+                            <ul className="navbar-nav ml-auto">
+                                <li className="dropdown menubar-profile-pic-dropdown-button-wrapper nav-item">
+                                    <button className="menubar-profile-pic-dropdown-button"
+                                        type="button"
+                                        data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <img src={userData.photo || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}
+                                            alt="profile"
+                                            className="profile-avatar mx-4 nav-item"
+                                            style={{ width: "50px", marginTop: 0 }} />
+                                    </button>
+                                    <div className="dropdown-menu menubar-profile-pic-dropdown-options">
+                                        <Link className="dropdown-item sub-nav-link"
+                                            to={"/profile"}
+                                        >
+                                            <AccountCircleOutlinedIcon /> Profile
+                                        </Link>
+                                        <div className="dropdown-divider"></div>
+                                        <Link className="dropdown-item sub-nav-link"
+                                            to={"/myproperty"}
+                                        >
+                                            <HouseOutlinedIcon /> My Properties
+                                        </Link>
+                                        <div className="dropdown-divider"></div>
+                                        <button className="btn dropdown-item sub-nav-link"
+                                            id="menubar-logout-dropdown-button-handler"
+                                            onClick={handleLogOut}
+                                        >
+                                            <LogoutOutlinedIcon /> Log out
                                         </button>
-                                        <div className="dropdown-menu menubar-profile-pic-dropdown-options">
-                                            <Link className="dropdown-item sub-nav-link"
-                                                to={"/profile"}
-                                            >
-                                                <AccountCircleOutlinedIcon /> Profile
-                                            </Link>
-                                            <Link className="dropdown-item sub-nav-link"
-                                                to={"/myproperty"}
-                                            >
-                                                <HouseOutlinedIcon /> My Properties
-                                            </Link>
-                                            <Link className="dropdown-item sub-nav-link"
-                                                to={"/login"}
-                                                id="menubar-logout-dropdown-button-handler"
-                                                onClick={handleLogOut}
-                                            >
-                                                <LogoutOutlinedIcon /> log out
-                                            </Link>
-                                        </div>
-                                    </li>
-                                </ul>
-                                {/* //TODO: Testing */}
-                                {/* <button type="button" className="btn btn-outline-purple mx-3" onClick={handleLogOut}>
-                                    <i className="fa-solid fa-right-from-bracket"></i> Log Out
-                                </button> */}
-                            </>
+                                    </div>
+                                </li>
+                            </ul>
                     }
                 </div>
             </nav>

@@ -55,6 +55,7 @@ const UpdatedProperty = () => {
         availability: "",
         propertyType: "",
     });
+    // eslint-disable-next-line
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -78,6 +79,7 @@ const UpdatedProperty = () => {
             }
         }
         propertyData();
+        // eslint-disable-next-line
     }, []);
 
     const onValueChange = (e) => {
