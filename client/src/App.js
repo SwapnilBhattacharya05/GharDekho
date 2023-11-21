@@ -24,9 +24,7 @@ import Dashboard from "./Components/Admin/Dashboard/Dashboard";
 
 // ?Dasboard Pages Imports
 import AdminUser from "./Components/Admin/AdminUsers/AdminUsers";
-import AdminHomePage from "./Components/Admin/AdminPages/AdminHomePage";
 import AdminBuyPage from "./Components/Admin/AdminPages/AdminBuyPage";
-// import AdminSellPage from "./Components/Admin/AdminPages/AdminSellPage";
 import AdminRentPage from "./Components/Admin/AdminPages/AdminRentPage";
 import AdminBlogPage from "./Components/Admin/AdminPages/AdminBlogPage";
 
@@ -37,7 +35,6 @@ import AdminPieChart from "./Components/Admin/AdminChartPage/AdminPieChart";
 import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 
 // ?Imports for forms 
-// import PostProperty from "./Components/Form/PostProperty";
 import PropertyDescription from "./Components/PropertyDescription/PropertyDescription";
 
 import { useContext, useEffect } from 'react';
@@ -47,6 +44,9 @@ import Profile from "./Components/Profile/Profile";
 import MyProperty from './Components/Profile/MyProperty';
 import UpdateProperty from './Components/UpdateProperty/UpdateProperty';
 
+// !Removed Imports
+// import AdminSellPage from "./Components/Admin/AdminPages/AdminSellPage";
+// import PostProperty from "./Components/Form/PostProperty";
 
 function App() {
   const userContext = useContext(UserContext);
@@ -86,12 +86,13 @@ function App() {
           <Route exact path="/contact" element={<Contact />}></Route>
 
           <Route exact path="/about" element={<AboutUs />}></Route>
+
           <Route exact path='/adminlogin' element={sessionStorage.getItem("isAdmin") ? <Dashboard /> : <AdminLogin />}></Route>
-          <Route exact path='/adminuser' element={sessionStorage.getItem("isAdmin") ? <AdminUser /> : <Navigate to={"/adminlogin"} />}></Route>
           <Route exact path='/adminhome' element={sessionStorage.getItem("isAdmin") ? <Dashboard /> : <Navigate to={"/adminlogin"} />}></Route>
-          <Route exact path='/adminblogpage' element={sessionStorage.getItem("isAdmin") ? <AdminBlogPage /> : <Navigate to={"/adminlogin"} />}></Route>
+          <Route exact path='/adminuser' element={sessionStorage.getItem("isAdmin") ? <AdminUser /> : <Navigate to={"/adminlogin"} />}></Route>
           <Route exact path="/adminbuypage" element={sessionStorage.getItem("isAdmin") ? <AdminBuyPage /> : <Navigate to={"/adminlogin"} />}></Route>
           <Route exact path="/adminrentpage" element={sessionStorage.getItem("isAdmin") ? <AdminRentPage /> : <Navigate to={"/adminlogin"} />}></Route>
+          <Route exact path='/adminblogpage' element={sessionStorage.getItem("isAdmin") ? <AdminBlogPage /> : <Navigate to={"/adminlogin"} />}></Route>
 
           <Route exact path="/barchart" element={<AdminBarChart />}></Route>
           <Route exact path="/linechart" element={<AdminLineChart />}></Route>

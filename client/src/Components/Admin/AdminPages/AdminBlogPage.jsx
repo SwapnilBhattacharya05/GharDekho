@@ -142,7 +142,7 @@ const AdminBlogPage = () => {
                                                 Blogs
                                             </h4>
                                             <button type="button"
-                                                class="close"
+                                                className="close"
                                                 data-dismiss="modal"
                                                 aria-label="Close"
                                             >
@@ -152,18 +152,17 @@ const AdminBlogPage = () => {
                                         <div className="modal-body">
                                             <form method="post">
                                                 <div className="blog-form-admin-page-wrapper">
-                                                    <DriveFileRenameOutlineIcon className="admin-sidebar-icons" id="" /><strong> Blogs Heading</strong>
+                                                    <DriveFileRenameOutlineIcon className="admin-sidebar-icons" /><strong> Blogs Heading</strong>
                                                 </div>
                                                 <input type="text"
                                                     required
                                                     placeholder="Enter the Blog Heading"
                                                     id="blog-heading"
                                                     className="blog-heading"
-                                                // value={''}
                                                 />
-                                                <div className="blog-form-admin-page-wrapper">
+                                                <label className="blog-form-admin-page-wrapper">
                                                     <PersonAddIcon className="admin-sidebar-icons" id="" /><strong> Author</strong>
-                                                </div>
+                                                </label>
                                                 <input type="text"
                                                     required
                                                     placeholder="Enter Author name"

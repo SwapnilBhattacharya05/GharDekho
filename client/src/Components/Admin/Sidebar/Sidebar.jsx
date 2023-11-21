@@ -3,7 +3,6 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
-import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -66,12 +65,6 @@ const Sidebar = () => {
                                     </Link>
                                 </li>
                                 <div className="admin-title">PAGES</div>
-                                <li class="nav-item">
-                                    <Link className="nav-link" to="/adminhomepage" >
-                                        <HomeIcon className="admin-sidebar-icons" />
-                                        <span className="admin-sidebar-options">Home</span>
-                                    </Link>
-                                </li>
                                 <li class="nav-item">
                                     <Link class="nav-link" to="/adminbuypage" >
                                         <ShoppingCartIcon className="admin-sidebar-icons" />
