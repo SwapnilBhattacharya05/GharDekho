@@ -10,7 +10,12 @@ router.post("/postproperty", fetchUser, [
     body('ownerEmail', "Enter a valid email").isEmail(),
     body('ownerPhn', 'Enter a valid Phone number').isLength({ min: 10 }),
     body('propertyName', "Property Name Can't Be Empty").exists(),
-    body('propertyAge', "Property Age Can only be Inetger Value").isInt(),
+    body('propertyAge').custom((value)=>{
+        if(value<0){
+            throw new Error("Property Age Can't be Negative");
+        }
+        return true;
+    }),
     body('imageUrls', "Please upload 3 images").isArray({ min: 3, max: 3 }),
     body('street', "Street field Can't Be Empty").exists(),
     body('city', "City Field Can't Be Empty").exists(),

@@ -196,7 +196,7 @@ const Form = () => {
                                     <label htmlFor="ownerName"><AccountCircleTwoToneIcon /> Name <span style={{ color: 'red' }}>*</span></label>
                                     <input type="text"
                                         required name="ownerName"
-                                        value={formData.ownerName}
+                                        value={formData.ownerName || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="ownerName"
@@ -209,7 +209,7 @@ const Form = () => {
                                     <label htmlFor="ownerEmail"><AttachEmailTwoToneIcon /> Email <span style={{ color: 'red' }}>*</span></label>
                                     <input type="email"
                                         required name="ownerEmail"
-                                        value={formData.ownerEmail}
+                                        value={formData.ownerEmail || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="ownerEmail"
@@ -222,7 +222,7 @@ const Form = () => {
                                     <label htmlFor="ownerPhn"><LocalPhoneTwoToneIcon /> Contact Number <span style={{ color: 'red' }}>*</span></label>
                                     <input type="number"
                                         required name="ownerPhn"
-                                        value={formData.ownerPhn}
+                                        value={formData.ownerPhn || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="ownerPhn"
@@ -256,7 +256,7 @@ const Form = () => {
                                     <label htmlFor="propertyName"><DriveFileRenameOutlineTwoToneIcon /> Property Name <span style={{ color: 'red' }}>*</span></label>
                                     <input type="text"
                                         required name="propertyName"
-                                        value={formData.propertyName}
+                                        value={formData.propertyName || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="propertyName"
@@ -268,7 +268,7 @@ const Form = () => {
                                 <div className="form-group">
                                     <label htmlFor="street"><AddRoadTwoToneIcon /> Street Name <span style={{ color: 'red' }}>*</span></label>
                                     <input type="text"
-                                        required name="street" value={formData.street}
+                                        required name="street" value={formData.street || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="street"
@@ -281,7 +281,7 @@ const Form = () => {
                                     <label htmlFor="city"><ApartmentTwoToneIcon />City <span style={{ color: 'red' }}>*</span></label>
                                     <input type="text"
                                         required name="city"
-                                        value={formData.city}
+                                        value={formData.city || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="city"
@@ -294,7 +294,7 @@ const Form = () => {
                                     <label htmlFor="state">State <span style={{ color: 'red' }}>*</span></label>
                                     <input type="text"
                                         required name="state"
-                                        value={formData.state}
+                                        value={formData.state || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="state"
@@ -307,7 +307,7 @@ const Form = () => {
                                     <label htmlFor="country"><PublicTwoToneIcon />Country <span style={{ color: 'red' }}>*</span></label>
                                     <input type="text"
                                         required name="country"
-                                        value={formData.country}
+                                        value={formData.country || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="country"
@@ -319,7 +319,7 @@ const Form = () => {
                                 <div className="form-group">
                                     <label htmlFor="pincode">Pincode <span style={{ color: 'red' }}>*</span></label>
                                     <input type="number"
-                                        required value={formData.pincode}
+                                        required value={formData.pincode || ""}
                                         name="pincode"
                                         onChange={onValueChange}
                                         className="form-control"
@@ -333,7 +333,7 @@ const Form = () => {
                                     <label htmlFor="price">{formData.advertisementType === "sell" ? "Price(₹)" : "Rent/month(₹)"}<span style={{ color: 'red' }}>*</span></label>
                                     <input type="number"
                                         required name="price"
-                                        value={formData.price}
+                                        value={formData.price || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="price"
@@ -393,7 +393,7 @@ const Form = () => {
                                     rows={5}
                                     cols={5}
                                     onChange={onValueChange}
-                                    value={formData.description}
+                                    value={formData.description || ""}
                                     className="form-control"
                                     id="description"
                                     placeholder="Enter Property Description"
@@ -409,7 +409,7 @@ const Form = () => {
                                         required type="number"
                                         name="bedrooms"
                                         onChange={onValueChange}
-                                        value={formData.bedrooms}
+                                        value={formData.bedrooms || ""}
                                         className="form-control"
                                         id="bedrooms"
                                         placeholder="Enter the number of bedrooms"
@@ -422,7 +422,7 @@ const Form = () => {
                                     <input
                                         required type="number"
                                         name="bathrooms"
-                                        value={formData.bathrooms}
+                                        value={formData.bathrooms || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="bathrooms"
@@ -452,7 +452,7 @@ const Form = () => {
                                     <input
                                         required type="number"
                                         name="propertyAge"
-                                        value={formData.propertyAge}
+                                        value={formData.propertyAge || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="propertyAge"

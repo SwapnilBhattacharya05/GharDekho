@@ -93,7 +93,31 @@ export const getOwnerAvatar = async (req, res) => {
 
 export const getAllRents = async (req, res) => {
     try {
-        const rents = await Property.find({ advertisementType: "rent" });
+        let availability = req.query.availability;
+        if (availability === undefined || availability === "false") {
+            availability = { $in: ["ready", "notready"] };
+        }
+        let furnished = req.query.furnished;
+        if (furnished === undefined || furnished === "false") {
+            furnished = { $in: [true, false] };
+        }
+        let parking = req.query.parking;
+        if (parking === undefined || parking === "false") {
+            parking = { $in: [true, false] };
+        }
+        let searchTerm = req.query.searchTerm || '';
+
+        const sort = req.query.sort || "createdAt";
+        const order = req.query.order || 'desc';
+
+        const rents = await Property.find({
+            propertyName: { $regex: searchTerm, $options: 'i' },
+            advertisementType: "rent",
+            availability,
+            furnished,
+            parking
+        }).sort({ [sort]: order });
+
 
         if (!rents) {
             return res.status(404).send("Rent Property Not Found");
@@ -108,12 +132,35 @@ export const getAllRents = async (req, res) => {
 
 export const getAllSells = async (req, res) => {
     try {
-        const sells = await Property.find({ advertisementType: "sell" });
+        let availability = req.query.availability;
+        if (availability === undefined || availability === "false") {
+            availability = { $in: ["ready", "notready"] };
+        }
+        let furnished = req.query.furnished;
+        if (furnished === undefined || furnished === "false") {
+            furnished = { $in: [true, false] };
+        }
+        let parking = req.query.parking;
+        if (parking === undefined || parking === "false") {
+            parking = { $in: [true, false] };
+        }
+        let searchTerm = req.query.searchTerm || '';
+
+        const sort = req.query.sort || "createdAt";
+        const order = req.query.order || 'desc';
+
+        const sells = await Property.find({
+            propertyName: { $regex: searchTerm, $options: 'i' },
+            advertisementType: "sell",
+            availability,
+            furnished,
+            parking
+        }).sort({ [sort]: order });
 
         if (!sells) {
             return res.status(404).send("Sell Property Not Found");
         }
-
+        
         return res.status(200).json({ success: true, sells });
     } catch (error) {
         console.log(error.message);

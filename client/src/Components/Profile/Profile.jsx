@@ -116,20 +116,8 @@ const Profile = () => {
             console.log(json);
             if (json.success) {
                 await setUserData({ id: "", username: "", email: "", phone: "", photo: "" });
-                toast.warn(json.msg, {
-                    position: "top-right",
-                    autoClose: 3000,
-                    transition: Flip,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                });
-                setTimeout(() => {
-                    localStorage.removeItem("token");
-                }, 3700);
+                localStorage.removeItem("token");
+                navigate("/login");
             } else {
                 return toast.warn(json.msg, {
                     position: "top-right",
@@ -207,7 +195,7 @@ const Profile = () => {
                                 id="userName"
                                 placeholder="Username"
                                 onChange={onChange}
-                                value={credentials.userName}
+                                value={credentials.userName || ""}
                             />
                         </div>
                     </div>
@@ -219,7 +207,7 @@ const Profile = () => {
                                 id="userEmail"
                                 placeholder="Email"
                                 onChange={onChange}
-                                value={credentials.userEmail}
+                                value={credentials.userEmail || ""}
                             />
                         </div>
                     </div>
@@ -231,7 +219,7 @@ const Profile = () => {
                                 id="userPhn"
                                 placeholder="Phone"
                                 onChange={onChange}
-                                value={credentials.userPhn} />
+                                value={credentials.userPhn || ""} />
                         </div>
                     </div>
                     <div className="row">
@@ -242,7 +230,7 @@ const Profile = () => {
                                 id="userPassword"
                                 placeholder="Password"
                                 onChange={onChange}
-                                value={credentials.userPassword}
+                                value={credentials.userPassword || ""}
                             />
                         </div>
                     </div>
@@ -256,8 +244,8 @@ const Profile = () => {
                     </div>
                     <div className="row" style={{ marginLeft: "19%", marginRight: "19%" }}>
                         <div className="d-flex justify-content-between col-12">
-                            <button className="btn btn-danger"
-                                type='button'
+                            <button type='button'
+                                className="btn btn-danger"
                                 data-toggle="modal"
                                 data-target="#staticBackdrop"
                             >
@@ -265,42 +253,42 @@ const Profile = () => {
                             </button>
 
                             {/* //!Modal to show upon clicking delete account */}
-                            <div class="modal fade"
+                            <div className="modal fade"
                                 id="staticBackdrop"
                                 data-backdrop="static"
                                 data-keyboard="false"
-                                tabindex="-1"
+                                tabIndex="-1"
                                 aria-labelledby="staticBackdropLabel"
                                 aria-hidden="true"
                             >
-                                <div class="modal-dialog modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title"
+                                <div className="modal-dialog modal-dialog modal-dialog-centered">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h5 className="modal-title"
                                                 id="staticBackdropLabel"
                                             >
                                                 This action can't be reversed
                                             </h5>
                                             <button type="button"
-                                                class="close"
+                                                className="close"
                                                 data-dismiss="modal"
                                                 aria-label="Close"
                                             >
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
+                                        <div className="modal-body">
                                             Do you want to continue?
                                         </div>
-                                        <div class="modal-footer">
+                                        <div className="modal-footer">
                                             <button type="button"
-                                                class="btn btn-secondary"
+                                                className="btn btn-secondary"
                                                 data-dismiss="modal"
                                             >
                                                 no
                                             </button>
-                                            <button
-                                                class="btn btn-danger"
+                                            <button type="button"
+                                                className="btn btn-danger"
                                                 data-dismiss="modal"
                                                 onClick={handleProfileDelete}
                                             >
@@ -311,7 +299,7 @@ const Profile = () => {
                                 </div>
                             </div>
 
-                            <button
+                            <button type='button'
                                 onClick={handleLogOut}
                                 className="btn btn-purple">
                                 Log out

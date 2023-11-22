@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import "../Shared_Container.css";
 import Sidebar from "../Sidebar/Sidebar";
-import { Box, colors } from "@mui/material";
+import { Box } from "@mui/material";
 import { CircularProgress, Typography } from "@mui/material";
 import EmailIcon from '@mui/icons-material/Email';
-import TrafficIcon from '@mui/icons-material/Traffic';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
-import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
+import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
+import SellIcon from '@mui/icons-material/Sell';
 import BarChart from "../AdminDataCharts/BarChart";
 import LineChart from "../AdminDataCharts/LineChart";
 import PieChart from "../AdminDataCharts/PieChart"
-
 
 function CircularProgressWithLabel(props) {
     return (
@@ -31,7 +30,7 @@ function CircularProgressWithLabel(props) {
                 }}
             >
                 <Typography variant="caption" component="div" color="cadetblue">
-                    {`${Math.round(props.value)}%`}
+                    {`${Math.round(props.value)}`}
                 </Typography>
             </Box>
         </Box>
@@ -39,6 +38,125 @@ function CircularProgressWithLabel(props) {
 }
 
 const Dashboard = () => {
+
+    // !fetching contacts
+    const [allContacts, setAllContacts] = useState([])
+    const [allUsers, setAllUsers] = useState([]);
+    const [contactsRecieved, setContactsRecieved] = useState(0)
+    const [usersRecieved, setUsersRecieved] = useState(0)
+
+    const fetchAllContacts = async () => {
+        try {
+            const response = await fetch("http://localhost:8000/api/contact/fetchcontacts", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            const json = await response.json()
+            await setAllContacts(json.contacts);
+            setContactsRecieved(json.contacts.length)
+
+        } catch (error) {
+            console.error("Error fetching contact:", error.message)
+        }
+    }
+    useEffect(() => {
+        fetchAllContacts()
+    }, [])
+
+    useEffect(() => {
+        console.log(allContacts)
+    }, [allContacts])
+
+
+    // !Fetching all users
+
+    const fetchAllUsers = async () => {
+        try {
+            const response = await fetch("http://localhost:8000/api/user/getallusers", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            const json = await response.json();
+            // console.log(json.users);
+            await setAllUsers(json.users);
+            setUsersRecieved(json.users.length)
+        } catch (error) {
+            console.error("Error fetching users:", error.message);
+        }
+    }
+
+    useEffect(() => {
+        fetchAllUsers();
+    }, []);
+
+    useEffect(() => {
+        console.log(allUsers);
+    }, [allUsers]);
+
+
+    // !Fetching all sells data
+    const [allSells, setAllSells] = useState([]);
+    const [sellsRecieved, setSellsRecieved] = useState(0)
+
+    const fetchAllSells = async () => {
+        try {
+            const response = await fetch("http://localhost:8000/api/property/getallsells", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            const json = await response.json();
+            await setAllSells(json.sells);
+            setSellsRecieved(json.sells.length)
+        } catch (error) {
+            console.error("Error fetching users:", error.message);
+        }
+    }
+
+    useEffect(() => {
+        fetchAllSells();
+    }, []);
+
+    useEffect(() => {
+        console.log(allSells);
+    }, [allSells]);
+
+    // !Fetching rents data
+    const [allRents, setAllRents] = useState([])
+    const [rentsRecieved, setRentsRecieved] = useState(0)
+    const fetchAlllRents = async () => {
+        try {
+            const response = await fetch("http://localhost:8000/api/property/getallrents", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            const json = await response.json();
+            await setAllRents(json.rents);
+            setRentsRecieved(json.rents.length)
+            // console.log(json.rents)
+        } catch (error) {
+            console.error("Error fetching rents:", error.message)
+        }
+    }
+    useEffect(() => {
+        fetchAlllRents();
+    }, [])
+    useEffect(() => {
+        console.log(allRents)
+    }, [allRents])
+
+
+
+
     return (
         <>
             <Sidebar />
@@ -54,12 +172,12 @@ const Dashboard = () => {
                                     <div className="admin-stat-boxes-top d-flex">
                                         <div className="admin-stat-boxes-top-left">
                                             <EmailIcon className="admin-stat-boxes-icons" />
-                                            <div className="admin-stat-boxes-numbers">3,450</div>
+                                            <div className="admin-stat-boxes-numbers">{contactsRecieved}</div>
                                             <p className="admin-stat-boxes-text">Contacts Recieved</p>
                                         </div>
                                         <div className="admin-stat-boxes-top-right">
                                             <CircularProgressWithLabel
-                                                value={50}
+                                                value={contactsRecieved}
                                                 className="admin-stat-boxes-top-progress"
                                             />
                                         </div>
@@ -69,12 +187,12 @@ const Dashboard = () => {
                                     <div className="admin-stat-boxes-top d-flex">
                                         <div className="admin-stat-boxes-top-left">
                                             <PersonAddIcon className="admin-stat-boxes-icons" />
-                                            <div className="admin-stat-boxes-numbers">10,200</div>
+                                            <div className="admin-stat-boxes-numbers">{usersRecieved}</div>
                                             <p className="admin-stat-boxes-text">New Clients</p>
                                         </div>
                                         <div className="admin-stat-boxes-top-right">
                                             <CircularProgressWithLabel
-                                                value={10}
+                                                value={usersRecieved}
                                                 className="admin-stat-boxes-top-progress"
                                             />
                                         </div>
@@ -83,13 +201,13 @@ const Dashboard = () => {
                                 <div className="col-lg-3 col-md-6 col-sm-12">
                                     <div className="admin-stat-boxes-top d-flex">
                                         <div className="admin-stat-boxes-top-left">
-                                            <PointOfSaleIcon className="admin-stat-boxes-icons" />
-                                            <div className="admin-stat-boxes-numbers">52,500</div>
-                                            <p className="admin-stat-boxes-text">Sales Obtained</p>
+                                            <SellIcon className="admin-stat-boxes-icons" />
+                                            <div className="admin-stat-boxes-numbers">{sellsRecieved}</div>
+                                            <p className="admin-stat-boxes-text">Sells Created</p>
                                         </div>
                                         <div className="admin-stat-boxes-top-right">
                                             <CircularProgressWithLabel
-                                                value={21}
+                                                value={sellsRecieved}
                                                 className="admin-stat-boxes-top-progress"
                                             />
                                         </div>
@@ -98,13 +216,13 @@ const Dashboard = () => {
                                 <div className="col-lg-3 col-md-6 col-sm-12">
                                     <div className="admin-stat-boxes-top d-flex">
                                         <div className="admin-stat-boxes-top-left">
-                                            <TrafficIcon className="admin-stat-boxes-icons" />
-                                            <div className="admin-stat-boxes-numbers">1,325,200</div>
-                                            <p className="admin-stat-boxes-text">Traffic Recieved</p>
+                                            <SupervisorAccountIcon className="admin-stat-boxes-icons" />
+                                            <div className="admin-stat-boxes-numbers">{rentsRecieved}</div>
+                                            <p className="admin-stat-boxes-text">Rents Created</p>
                                         </div>
                                         <div className="admin-stat-boxes-top-right">
                                             <CircularProgressWithLabel
-                                                value={43}
+                                                value={rentsRecieved}
                                                 className="admin-stat-boxes-top-progress"
                                             />
                                         </div>
@@ -159,24 +277,24 @@ const Dashboard = () => {
                                         <PieChart />
                                     </Box>
                                 </div>
-                                    <div className="col-lg-4 col-md-4 col-sm-12">
-                                        <Box
-                                            height="195px"
-                                            width="100%"
-                                            className="admin-dashboard-graph-bg-color"
+                                <div className="col-lg-4 col-md-4 col-sm-12">
+                                    <Box
+                                        height="195px"
+                                        width="100%"
+                                        className="admin-dashboard-graph-bg-color"
+                                    >
+                                        <div className="admin-dashboard-bottom-graph-heading">
+                                            Total Created
+                                        </div>
+                                        <CircularProgress
+                                            variant="determinate"
+                                            value={rentsRecieved + sellsRecieved}
+                                            className="admin-dashboard-total-profit-progressbar"
                                         >
-                                            <div className="admin-dashboard-bottom-graph-heading">
-                                                Total Sales
-                                            </div>
-                                            <CircularProgress
-                                                variant="determinate"
-                                                value={50}
-                                                className="admin-dashboard-total-profit-progressbar"
-                                            >
-                                            </CircularProgress>
-                                            <div className="admin-dashboard-total-profit-text">₹21,400 total sales</div>
-                                        </Box>
-                                    </div>
+                                        </CircularProgress>
+                                        <div className="admin-dashboard-total-profit-text">{rentsRecieved + sellsRecieved} Created</div>
+                                    </Box>
+                                </div>
                             </div>
                         </div>
                     </div>

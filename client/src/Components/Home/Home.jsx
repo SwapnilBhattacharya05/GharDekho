@@ -170,7 +170,7 @@ const Home = () => {
                                                 </div>
                                                 {/* bottom side if the card */}
                                                 <div className="buy-card-bottom">
-                                                    <p className="buy-card-prize">₹{price}/month<span className="buy-persqft" style={{ color: "#B7B7B7" }}></span></p>
+                                                    <p className="buy-card-prize">₹{price}<span className="buy-persqft" style={{ color: "#B7B7B7" }}></span></p>
                                                     <p className="buy-card-heading">{propertyName}</p>
 
 

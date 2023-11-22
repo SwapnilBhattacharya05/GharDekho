@@ -8,6 +8,15 @@
     margin-bottom: 20px;
 }
 
+.about-text-description-page-sub-header-checker {
+    font-size: 14px;
+    color: #614499;
+}
+
+.about-text-description-page-price-sub-header {
+    color: #7a4bcf;
+}
+
 .property-description-album {
     height: 450px;
     border-radius: 30px 30px 30px 30px;
@@ -204,7 +213,7 @@
 
 .contact-property-agent-form {
     margin-left: 10px;
-    height: 500px;
+    height: 350px;
 
 }
 
@@ -256,9 +265,7 @@
 
     }
 }
-.propertyData-of-property-sell-rent{
+
+.propertyData-of-property-sell-rent {
     font-weight: bold;
-}
-.availability-icon-contact-owner {
-    margin-right: 55px;
 }
