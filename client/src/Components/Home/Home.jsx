@@ -2,26 +2,70 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 import Menu from "../Menu/Menu";
 import { Link } from "react-router-dom";
-import buyProperty from "../../Data/BuyingPageCategories.js"
-import rentProperty from "../../Data/RentingPageCategories.js"
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../Footer/Footer";
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import BathtubIcon from '@mui/icons-material/Bathtub';
+import BedIcon from '@mui/icons-material/Bed';
 
 const Home = () => {
-    const [salesData, setSalesData] = useState([]);
-    const [renstData, setRentsData] = useState([]);
+    const [buyData, setSalesData] = useState([]);
+    const [rentsData, setRentsData] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [testimonialsData, setTestimonials] = useState([]);
     const [user, setUser] = useState({
         newsletterEmail: "",
     });
 
     useEffect(() => {
+
+        const fetchAllSells = async () => {
+            try {
+                const response = await fetch("http://localhost:8000/api/property/getallsells", {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const json = await response.json();
+                setTimeout(() => {
+                    setLoading(false);
+                }, 2700);
+                setSalesData(json.sells)
+            } catch (error) {
+                console.log("Error While Fetching Sell Properties");
+            }
+        }
+        fetchAllSells();
+
+        const fetchAllRents = async () => {
+            try {
+                const response = await fetch("http://localhost:8000/api/property/getallrents", {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const json = await response.json();
+                setTimeout(() => {
+                    setLoading(false);
+                }, 2700);
+                setRentsData(json.rents)
+            } catch (error) {
+                console.log("Error While Fetching Rent Properties");
+            }
+        }
+
+        fetchAllRents();
+
         window.scrollTo(0, 0);
-        setSalesData(buyProperty.slice(0, 4));
-        setRentsData(rentProperty.slice(0, 4));
         fetchTestimonials();
+        setSalesData((prevBuyData) => prevBuyData.slice(0, 4));
+        setRentsData((prevRentsData) => prevRentsData.slice(0, 4));
     }, []);
+
 
     const fetchTestimonials = async () => {
         const response = await fetch("http://localhost:8000/api/testimonial/fetchtestimonials", {
@@ -108,72 +152,90 @@ const Home = () => {
                 <h3><b>For Sale</b></h3>
                 <div className="row text-left">
                     {
-                        salesData.map((value) => {
-                            const { photo, photoAlt, buyHeading, bhk, buyPrize, sqftIcon, sqft,
-                                statusIcon, status, doorIcon, buildLoc, buildLocText } = value;
-                            return (
+                        loading === true ?
+                            <img src='https://cdn.dribbble.com/users/330915/screenshots/2311781/media/2e95edec9c2a16605982c96d1044023b.gif' alt='Loading...' style={{ margin: "0 auto", display: "block" }} />
+                            :
+                            buyData.map((value) => {
+                                const { buyHeading, imageUrls, propertyName, bathrooms, price, bedrooms, street, city, state, } = value;
+                                return (
 
-                                // !list of flats and cards
-                                <div className="container col-lg-3 col-md-6 col-sm-12 mb-5" key={buyHeading}>
-                                    <div className="buy-card bg-light">
+                                    // !list of cards
+                                    <div className="container col-lg-3 col-md-6 col-sm-12 mb-5" key={buyHeading}>
+                                        <Link to={`/propertydescription/${value._id}`} className="buy-card-wrapper">
+                                            <div className="buy-card bg-light">
 
-                                        {/* top side of the card */}
-                                        <div className="buy-card-top">
-                                            <img src={photo} alt={photoAlt} height={"100%"} width={"100%"}></img>
-                                            <i className="fa-regular fa-heart wishlist"></i>
-                                        </div>
-
-                                        {/* bottom side if the card */}
-                                        <div className="buy-card-bottom">
-                                            <p className="buy-card-prize">₹{buyPrize}<span className="buy-persqft" style={{ color: "#B7B7B7" }}></span></p>
-                                            <p className="buy-card-heading">{buyHeading}</p>
-                                            {/* <p className="buy-card-bhk">{bhk}</p> */}
+                                                {/* top side of the card */}
+                                                <div className="buy-card-top">
+                                                    <img src={imageUrls[0]} alt={"buy img"} height={"100%"} width={"100%"} />
+                                                </div>
+                                                {/* bottom side if the card */}
+                                                <div className="buy-card-bottom">
+                                                    <p className="buy-card-prize">₹{price}/month<span className="buy-persqft" style={{ color: "#B7B7B7" }}></span></p>
+                                                    <p className="buy-card-heading">{propertyName}</p>
 
 
-                                            {/* Sybmbol and text to check location */}
-                                            <div className="buy-card-Loc-status d-flex">
-                                                <p className="buy-card-build-symbol">
-                                                    <i className={buildLoc ? buildLoc : ""}></i>
-                                                </p>
-                                                <p className="buy-card-Loc-status-text">
-                                                    {buildLocText}
-                                                </p>
+                                                    {/* Sybmbol and text to check location */}
+                                                    <div className="buy-card-Loc-status d-flex">
+                                                        <p className="buy-card-build-symbol">
+                                                            <i className={"fa-solid fa-location-dot"}></i>
+                                                        </p>
+                                                        <p className="buy-card-Loc-status-text">
+                                                            {`${street}, ${city}, ${state} `}
+                                                        </p>
 
+                                                    </div>
+                                                    <div className="container">
+                                                        <hr className="buy-card-hr-line-custom" style={{ marginTop: "-10px" }} />
+                                                    </div>
+                                                    {/* Dimensions icon and status */}
+                                                    <ul className="buy-icons d-flex">
+                                                        <li className="includesWrapper">
+                                                            <p className="buildingstatus">
+                                                                <i><BathtubIcon /></i>
+                                                            </p>
+                                                            <p className="blackText">{bathrooms}<span className="sub-blacktext">Bathroom{(value.bathrooms > 1) ? "s" : ""}</span></p>
+                                                        </li>
+
+
+                                                        {/* Total Floors */}
+                                                        <li className="includesWrapper">
+                                                            <p className="buildingstatus">
+                                                                <i><BedIcon /></i>
+                                                            </p>
+                                                            <p className="blackText">{bedrooms}<span className="sub-blacktext">Bedroom{(value.bedrooms > 1) ? "s" : ""}</span></p>
+                                                        </li>
+                                                        {/* Ready to move or not icon and status */}
+                                                        <li className="includesWrapper">
+                                                            <p className="buildingstatus">
+                                                                <i>{(value.availability === "ready") ?
+                                                                    <CheckCircleOutlineIcon
+                                                                        className="availability-icon-status-ready-buy"
+                                                                    />
+                                                                    :
+                                                                    <EngineeringIcon
+                                                                        className="availability-icon-status-not-ready-buy"
+
+                                                                    />
+                                                                }
+                                                                </i>
+                                                            </p>
+                                                            <p className="blackText">
+                                                                <span className="sub-blacktext">
+                                                                    {(value.availability === "ready") ?
+                                                                        "Ready"
+                                                                        :
+                                                                        "Not Ready"
+                                                                    }
+                                                                </span>
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                            <div className="container">
-                                                <hr className="buy-card-hr-line-custom" style={{ marginTop: "-10px" }} />
-                                            </div>
-                                            {/* Dimensions icon and status */}
-                                            <ul className="buy-icons d-flex">
-
-                                                <li className="includesWrapper">
-                                                    <p className="buildingstatus">
-                                                        <i className={sqftIcon}></i>
-                                                    </p>
-                                                    <p className="blackText">{sqft}</p>
-                                                </li>
-
-                                                {/* Ready to move or not icon and status */}
-                                                <li className="includesWrapper">
-                                                    <p className="buildingstatus">
-                                                        <i className={statusIcon}></i>
-                                                    </p>
-                                                    <p className="blackText">{status}</p>
-                                                </li>
-
-                                                {/* Total Floors */}
-                                                <li className="includesWrapper">
-                                                    <p className="buildingstatus">
-                                                        <i className={doorIcon}></i>
-                                                    </p>
-                                                    <p className="blackText">{bhk}</p>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        </Link>
                                     </div>
-                                </div>
-                            )
-                        })
+                                )
+                            })
                     }
                 </div>
             </div>
@@ -183,57 +245,88 @@ const Home = () => {
                 <h3><b>For Rent</b></h3>
                 <div className="row text-left">
                     {
-                        renstData.map((value) => {
-                            const { photo, photoAlt, rentHeading, bhk, rentPrice, sqftIcon, sqft,
-                                statusIcon, status, doorIcon, buildLoc, buildLocText } = value;
-                            return (
-                                <div className="container col-lg-3 col-md-6 col-sm-12 mb-5" key={rentHeading}>
-                                    <div className="rent-card bg-light" >
-                                        <div className="rent-card-top">
-                                            <img src={photo} alt={photoAlt} height={"100%"} width={"100%"}></img>
-                                            <i className="fa-regular fa-heart wishlist" style={{ position: "absolute" }}></i>
-                                        </div>
-                                        <div className="rent-card-bottom">
-                                            <p className="rent-card-prize">₹{rentPrice}<span className="rent-persqft" style={{ color: "#B7B7B7" }}></span></p>
-                                            <p className="rent-card-heading">{rentHeading}</p>
-                                            <div className="rent-card-Loc-status d-flex">
-                                                <p className="rent-card-build-symbol">
-                                                    <i className={buildLoc}></i>
-                                                </p>
-                                                <p className="rent-card-Loc-status-text">
-                                                    {buildLocText}
-                                                </p>
+                        loading === true ?
+                            <img src='https://cdn.dribbble.com/users/330915/screenshots/2311781/media/2e95edec9c2a16605982c96d1044023b.gif' alt='Loading...' style={{ margin: "0 auto", display: "block" }} />
+                            :
+                            rentsData.map((value) => {
+                                const { rentHeading, imageUrls, propertyName, bathrooms, price, bedrooms, street, city, state, } = value;
+                                return (
+                                    <div className="container col-lg-3 col-md-6 col-sm-12 mb-5" key={rentHeading}>
+                                        <Link to={`/propertydescription/${value._id}`} className="rent-card-wrapper">
+                                            <div className="rent-card bg-light">
 
-                                            </div>
-                                            <div className="container">
-                                                <hr className="rent-card-hr-line-custom" style={{ marginTop: "-10px" }} />
-                                            </div>
-                                            <ul className="rent-icons d-flex">
+                                                {/* top side of the card */}
+                                                <div className="rent-card-top">
+                                                    <img src={imageUrls[0]} alt={"rent img"} height={"100%"} width={"100%"} />
+                                                </div>
+                                                {/* bottom side if the card */}
+                                                <div className="rent-card-bottom">
+                                                    <p className="rent-card-prize">₹{price}/month<span className="rent-persqft" style={{ color: "#B7B7B7" }}></span></p>
+                                                    <p className="rent-card-heading">{propertyName}</p>
 
-                                                <li className="includesWrapper">
-                                                    <p className="buildingstatus">
-                                                        <i className={sqftIcon}></i>
-                                                    </p>
-                                                    <p className="blackText">{sqft}</p>
-                                                </li>
-                                                <li className="includesWrapper">
-                                                    <p className="buildingstatus">
-                                                        <i className={statusIcon}></i>
-                                                    </p>
-                                                    <p className="blackText">{status}</p>
-                                                </li>
-                                                <li className="includesWrapper">
-                                                    <p className="buildingstatus">
-                                                        <i className={doorIcon}></i>
-                                                    </p>
-                                                    <p className="blackText">{bhk}</p>
-                                                </li>
-                                            </ul>
-                                        </div>
+
+                                                    {/* Sybmbol and text to check location */}
+                                                    <div className="rent-card-Loc-status d-flex">
+                                                        <p className="rent-card-build-symbol">
+                                                            <i className={"fa-solid fa-location-dot"}></i>
+                                                        </p>
+                                                        <p className="rent-card-Loc-status-text">
+                                                            {`${street}, ${city}, ${state} `}
+                                                        </p>
+
+                                                    </div>
+                                                    <div className="container">
+                                                        <hr className="rent-card-hr-line-custom" style={{ marginTop: "-10px" }} />
+                                                    </div>
+                                                    {/* Dimensions icon and status */}
+                                                    <ul className="rent-icons d-flex">
+                                                        <li className="includesWrapper">
+                                                            <p className="buildingstatus">
+                                                                <i><BathtubIcon /></i>
+                                                            </p>
+                                                            <p className="blackText">{bathrooms}<span className="sub-blacktext">Bathroom{(value.bathrooms > 1) ? "s" : ""}</span></p>
+                                                        </li>
+
+
+                                                        {/* Total Floors */}
+                                                        <li className="includesWrapper">
+                                                            <p className="buildingstatus">
+                                                                <i><BedIcon /></i>
+                                                            </p>
+                                                            <p className="blackText">{bedrooms}<span className="sub-blacktext">Bedroom{(value.bedrooms > 1) ? "s" : ""}</span></p>
+                                                        </li>
+                                                        {/* Ready to move or not icon and status */}
+                                                        <li className="includesWrapper">
+                                                            <p className="buildingstatus">
+                                                                <i>{(value.availability === "ready") ?
+                                                                    <CheckCircleOutlineIcon
+                                                                        className="availability-icon-status-ready-rent"
+                                                                    />
+                                                                    :
+                                                                    <EngineeringIcon
+                                                                        className="availability-icon-status-not-ready-rent"
+
+                                                                    />
+                                                                }
+                                                                </i>
+                                                            </p>
+                                                            <p className="blackText">
+                                                                <span className="sub-blacktext">
+                                                                    {(value.availability === "ready") ?
+                                                                        "Ready"
+                                                                        :
+                                                                        "Not Ready"
+                                                                    }
+                                                                </span>
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </Link>
                                     </div>
-                                </div>
-                            )
-                        })
+                                )
+                            })
                     }
                 </div>
             </div>

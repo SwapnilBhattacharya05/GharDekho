@@ -75,12 +75,46 @@ export const getOwnerAvatar = async (req, res) => {
         const property = await Property.findById(req.params.id);
 
         if (!property) {
-            return res.status(404).send("Property Not Found");
+            return res.status(404).json({ msg: "Property Not Found", success: false });
         }
 
         const user = await User.findById(property.userRef);
+
+        if (!user) {
+            return res.status(404).json({ msg: "User Not Found", success: false });
+        }
         return res.status(200).json({ success: true, photo: user.photo })
 
+    } catch (error) {
+        console.log(error.message);
+        return res.status(500).send("Internal Server error");
+    }
+}
+
+export const getAllRents = async (req, res) => {
+    try {
+        const rents = await Property.find({ advertisementType: "rent" });
+
+        if (!rents) {
+            return res.status(404).send("Rent Property Not Found");
+        }
+
+        return res.status(200).json({ success: true, rents });
+    } catch (error) {
+        console.log(error.message);
+        return res.status(500).send("Internal Server error");
+    }
+}
+
+export const getAllSells = async (req, res) => {
+    try {
+        const sells = await Property.find({ advertisementType: "sell" });
+
+        if (!sells) {
+            return res.status(404).send("Sell Property Not Found");
+        }
+
+        return res.status(200).json({ success: true, sells });
     } catch (error) {
         console.log(error.message);
         return res.status(500).send("Internal Server error");

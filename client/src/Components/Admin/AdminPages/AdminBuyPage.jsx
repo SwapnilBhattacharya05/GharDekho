@@ -1,57 +1,87 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Sidebar from "../Sidebar/Sidebar"
 import "../Shared_Container.css"
 import "../AdminPages/AdminPageStyles/AdminBuyPage.css"
 import { Box, Button, colors } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import DeleteIcon from '@mui/icons-material/Delete';
-import BuyCategories from "../../../Data/BuyingPageCategories"
 
 
 const AdminBuyPage = () => {
-    // TODO: change the 'BuyCategories' to the required API
+    const [allSells, setAllSells] = useState([]);
 
-    // *Add unique IDs to each property in BuyCategories
-    const buyWithIds = BuyCategories.map((value, index, array) => ({
-        id: index + 1,
+    const fetchAllSells = async () => {
+        try {
+            const response = await fetch("http://localhost:8000/api/property/getallsells", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            const json = await response.json();
+            await setAllSells(json.sells);
+        } catch (error) {
+            console.error("Error fetching users:", error.message);
+        }
+    }
+
+    useEffect(() => {
+        fetchAllSells();
+    }, []);
+
+    useEffect(() => {
+        console.log(allSells);
+    }, [allSells]);
+
+    // *Add unique IDs to each user in mockUsers
+    // TODO: change the 'mockUsers' to the required API
+    const sellsWithIds = allSells.map((value, index, array) => ({
+        id: value._id,
         ...value,
     }));
-
     const columns = [
         {
-            field: "id",
+            field: "_id",
             headerName: "ID",
+            width: 90,
         },
 
-        // {
-        //     field: "photo",
-        //     headerName: "Photo",
-        // },
+        {
+            field: "imageUrls",
+            headerName: "Image",
+            width: 100,
+            cellClassName: "photo-column-cell",
+            renderCell: (params) => <img src={params.row.imageUrls[0]}
+                alt="There was something here"
+                id="admin-property-images"
+            />,
+        },
 
         {
-            field: "buyHeading",
-            headerName: "Property",
-            // flex: 1,
+            field: "ownerName",
+            headerName: "Owner Name",
+            flex: 1,
             cellClassName: "name-column-cell"
         },
-        // {
-        //     field: "buildLocText",
-        //     headerName: "Location",
-        //     flex: 2
-        // },
         {
-            field: "propertyOwnerName",
-            headerName: "Owner",
+            field: "ownerPhn",
+            headerName: "Owner Phone",
             flex: 1
         },
         {
-            field: "propertyOwnerPhone",
-            headerName: "Phone",
+            field: "ownerEmail",
+            headerName: "Owner Email",
             flex: 1
         },
         {
-            field: "propertyOwnerEmail",
-            headerName: "Email",
+            field: "propertyName",
+            headerName: "Property Name",
+            flex: 1
+        },
+        {
+            field: "price",
+            headerName: "Price",
             flex: 1
         },
         {
@@ -80,6 +110,7 @@ const AdminBuyPage = () => {
             ),
         },
     ];
+
     return (
         <>
             <Sidebar />
@@ -88,7 +119,6 @@ const AdminBuyPage = () => {
                     <h2 className="ml-2"><strong className="admin-page-main-headers">Buy Page</strong></h2>
 
                     {/* //!Start Writing Code from here */}
-
                     <Box className="container"
                         height="auto"
                         width="100%"
@@ -129,7 +159,7 @@ const AdminBuyPage = () => {
                                     color: "#504099 !important",
                                 },
                             }}
-                            rows={buyWithIds}
+                            rows={sellsWithIds}
                             columns={columns}
                             slots={{ toolbar: GridToolbar }}
                             initialState={{
@@ -152,6 +182,6 @@ const AdminBuyPage = () => {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 export default AdminBuyPage;

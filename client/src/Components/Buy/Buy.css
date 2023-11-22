@@ -5,8 +5,19 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     /* background-color: blue; */
 
-    &:hover{
+    &:hover {
         animation: cardshoveranimation 1s ease 0s 1 normal forwards;
+    }
+}
+
+.buy-card-wrapper {
+    text-decoration: none;
+    color: currentColor;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: none;
+        color: currentColor;
     }
 }
 
@@ -21,6 +32,14 @@
 .buy-card-top img {
     object-fit: cover;
     border-radius: 20px 20px 0px 0px;
+}
+
+.availability-icon-status-ready-buy {
+    color: #975fff;
+}
+
+.availability-icon-status-not-ready-buy {
+    color: rgb(255, 225, 0);
 }
 
 /* Controls the Css for the bottom part of the card*/
@@ -43,10 +62,9 @@
 }
 
 .buy-card .buy-card-bottom .buy-card-heading {
-    font-size: 25px;
+    font-size: 20px;
     margin-left: 10px;
     margin-top: -13px;
-    font-weight: bold;
 }
 
 
@@ -64,8 +82,8 @@
 .buy-icons {
     font-size: 13px;
     position: absolute;
-    top: 345px;
-    left: -22px;
+    top: 340px;
+    left: -30px;
 
 }
 
@@ -81,12 +99,19 @@
 }
 
 .buy-card .buy-card-bottom .buy-icons .includesWrapper .blackText {
-    font-size: 9px;
+    font-size: 14px;
+    color: #8f52ff;
     display: flex;
+    font-weight: bold;
     margin-left: 2px;
     align-items: center;
     justify-content: center;
 
+}
+
+.buy-card .buy-card-bottom .buy-icons .includesWrapper .blackText .sub-blacktext {
+    font-size: 8px;
+    color: rgb(53, 52, 52);
 }
 
 /* Controls the Css for the card description of the bottom part of the card*/

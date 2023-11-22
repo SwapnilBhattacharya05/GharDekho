@@ -11,11 +11,11 @@ import PhoneEnabledIcon from '@mui/icons-material/PhoneEnabled';
 import TaxiAlertIcon from '@mui/icons-material/TaxiAlert';
 import React, { useContext, useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
 import { useParams } from 'react-router-dom';
 import UserContext from '../../Context/user/UserContext';
 import Footer from '../Footer/Footer';
 import Menu from '../Menu/Menu';
+import 'react-loading-skeleton/dist/skeleton.css';
 import './PropertyDescription.css';
 
 const PropertyDescription = () => {
@@ -53,7 +53,12 @@ const PropertyDescription = () => {
 
                 const json = await propertyResponse.json();
                 const userPhoto = await userResponse.json();
-                json.property.ownerPhoto = userPhoto.photo;
+
+                if (userPhoto.success === false) {
+                    json.property.ownerPhoto = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+                }else{
+                    json.property.ownerPhoto = userPhoto.photo;
+                }
                 setLoading(false);
                 setPropertData(json.property);
 

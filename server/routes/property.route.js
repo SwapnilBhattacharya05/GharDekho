@@ -2,7 +2,7 @@ import express from "express";
 import { body, validationResult } from "express-validator";
 import fetchUser from "../middleware/fetchUser.js";
 import Property from "../schema/propertySchema.js";
-import { deleteProperty, getMyProperty, updateProperty, getProperty, getOwnerAvatar } from "../controller/property.controller.js";
+import { deleteProperty, getMyProperty, updateProperty, getProperty, getOwnerAvatar, getAllRents, getAllSells } from "../controller/property.controller.js";
 const router = express.Router();
 
 //ROUTE 1:POST request to post a property. Login required
@@ -76,7 +76,14 @@ router.get("/getowneravatar/:id", getOwnerAvatar);
 //ROUTE 5:DELETE request to delete an existing property. Login required
 router.delete("/deleteproperty/:id", fetchUser, deleteProperty);
 
-//ROUTE 6:PUT request to update an existing property. Login required
+//ROUTE 5:PUT request to update an existing property. Login required
 router.put("/updateproperty/:id", fetchUser, updateProperty);
+
+//ROUTE 6:GET request to get all Rent properties. Login Not required
+router.get("/getallrents", getAllRents);
+
+//ROUTE 6:GET request to get all Rent properties. Login Not required
+router.get("/getallsells", getAllSells);
+
 
 export default router;

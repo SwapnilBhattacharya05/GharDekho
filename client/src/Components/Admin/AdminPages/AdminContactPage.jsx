@@ -1,48 +1,63 @@
-import React, { useEffect, useState } from "react";
-import Sidebar from "../Sidebar/Sidebar";
-import "../Shared_Container.css"
-import "./AdminUser.css"
+import React, { useEffect, useState } from 'react'
+import Sidebar from '../Sidebar/Sidebar'
+import "./AdminPageStyles/AdminContactPage.css"
 import { Box, Button, colors } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
-const AdminUsers = () => {
-
-    const [allUsers, setAllUsers] = useState([]);
-
-    const fetchAllUsers = async () => {
+const AdminContactPage = () => {
+    const [allContacts, setAllContacts] = useState([])
+    const fetchAllContacts = async () => {
         try {
-            const response = await fetch("http://localhost:8000/api/user/getallusers", {
+            const response = await fetch("http://localhost:8000/api/contact/fetchcontacts", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
                 }
             });
+            const json = await response.json()
+            await setAllContacts(json.contacts);
 
-            const json = await response.json();
-            // console.log(json.users);
-            await setAllUsers(json.users);
         } catch (error) {
-            console.error("Error fetching users:", error.message);
+            console.error("Error fetching contact:", error.message)
         }
     }
+    useEffect(() => {
+        fetchAllContacts()
+    }, [])
 
     useEffect(() => {
-        fetchAllUsers();
-    }, []);
+        console.log(allContacts)
+    }, [allContacts])
 
-    useEffect(() => {
-        console.log(allUsers);
-    }, [allUsers]);
 
-    // *Add unique IDs to each user in mockUsers
-    // TODO: change the 'mockUsers' to the required API
-    const usersWithIds = allUsers.map((value, index, array) => ({
+    const handleDelete = async (contact) => {
+        const contactId = contact.id;
+
+        console.log("Deleting contact with ID:", contactId);
+
+        setAllContacts((prev) => prev.filter((e) => e._id !== contactId));
+
+        try {
+            const response = await fetch(`http://localhost:8000/api/contact/deletecontact/${contactId}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            const json = await response.json();
+            console.log(json);
+        } catch (error) {
+            console.error("Error While Deleting contact:", error.message);
+        }
+    };
+
+
+    const contactWithIds = allContacts.map((value, index, array) => ({
         id: value._id,
         ...value,
-    }));
-
+    }))
     const columns = [
         {
             field: "_id",
@@ -51,31 +66,27 @@ const AdminUsers = () => {
         },
 
         {
-            field: "photo",
-            headerName: "Avatar",
-            width: 100,
-            cellClassName: "photo-column-cell",
-            renderCell: (params) => <img src={params.value}
-                alt="There was something here"
-                id="admin-user-images"
-            />,
+            field: "name",
+            headerName: "Name",
+            flex: 1,
         },
 
         {
-            field: "username",
-            headerName: "Username",
-            flex: 1,
-            cellClassName: "name-column-cell"
-        },
-        {
-            field: "phone",
-            headerName: "Phone Number",
-            flex: 1
-        },
-        {
             field: "email",
             headerName: "Email",
-            flex: 1
+            flex: 1,
+        },
+
+        {
+            field: "phone",
+            headerName: "Phone No.",
+            flex: 1,
+        },
+
+        {
+            field: "message",
+            headerName: "Message",
+            flex: 2,
         },
         {
             field: "action",
@@ -96,29 +107,28 @@ const AdminUsers = () => {
                     <Button
                         color="error"
                         className="admin-user-table-action-button"
-                        id="admin-user-table-action-button">
+                        id="admin-user-table-action-button"
+                        onClick={handleDelete}
+                    >
                         <DeleteIcon />Delete
                     </Button>
                 </Box>
             ),
-        },
-    ];
+        }
+    ]
 
     return (
         <>
             <Sidebar />
             <div className="admin-main-container">
                 <div className="dashboard-main">
-                    <h2 className="ml-2">
-                        <strong className="admin-page-main-headers">Users</strong>
-                    </h2>
-                    {/* //!Start Writing Code from here */}
+                    <h2 className="ml-2"><strong className="admin-page-main-headers">Contact Page</strong></h2>
+                    {/* // !Start Writing code from here */}
                     <Box className="container"
                         height="auto"
                         width="100%"
                         mt="50px"
                     >
-
                         <DataGrid
 
                             sx={{
@@ -153,7 +163,7 @@ const AdminUsers = () => {
                                     color: "#504099 !important",
                                 },
                             }}
-                            rows={usersWithIds}
+                            rows={contactWithIds}
                             columns={columns}
                             slots={{ toolbar: GridToolbar }}
                             initialState={{
@@ -172,11 +182,14 @@ const AdminUsers = () => {
                             disableRowSelectionOnClick
 
                         />
-                    </Box>
-                </div>
-            </div>
-        </>
-    );
-};
 
-export default AdminUsers;
+
+                    </Box>
+
+                </div>
+            </div >
+        </>
+    )
+}
+
+export default AdminContactPage

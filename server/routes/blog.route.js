@@ -1,11 +1,11 @@
 import express from "express";
 import { body, validationResult } from "express-validator";
 import Blog from "../schema/blogSchema.js";
-import { getAllBlogs, getBlog } from "../controller/blog.controller.js";
+import { deleteBlog, getAllBlogs, getBlog, updateBlog } from "../controller/blog.controller.js";
 const router = express.Router();
 
 router.post("/postblog", [
-    body('title', "Enter title at least of 8 characters").isLength({ min: 8 }),
+    body('title', "Title must be of at least 8 characters and at most 50 characters").isLength({ min: 8, max: 50 }),
     body('author', "Author Field Can't be Blank").exists(),
     body('content', "Enter content at least of 100 characters").isLength({ min: 100 }),
     body("image", "Upload at least 1 image").exists()
@@ -18,7 +18,7 @@ router.post("/postblog", [
 
     try {
         const blog = await Blog.create(req.body);
-        return res.status(200).json({ success: true, blog })
+        return res.status(200).json({ success: true, blog, msg: "Blog posted successfully" });
     } catch (error) {
         console.log(error.message);
         return res.status(500).send("Internal Server error");
@@ -26,7 +26,9 @@ router.post("/postblog", [
 });
 
 
-router.get("/getblog/:id",getBlog);
-router.get("/getallblogs",getAllBlogs);
+router.get("/getblog/:id", getBlog);
+router.delete("/deleteblog/:id",deleteBlog);
+router.put("/updateblog/:id",updateBlog);
+router.get("/getallblogs", getAllBlogs);
 
 export default router;

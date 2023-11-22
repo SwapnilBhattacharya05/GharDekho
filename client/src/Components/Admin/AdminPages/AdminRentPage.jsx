@@ -1,59 +1,92 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Sidebar from "../Sidebar/Sidebar"
 import "../Shared_Container.css"
 import "../AdminPages/AdminPageStyles/AdminRentPage.css"
-import RentCategories from "../../../Data/RentingPageCategories"
 import { Box, Button, colors } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
 const AdminRentPage = () => {
-    // TODO: change the 'rentCategories' to the required API
+    const [allRents, setAllRents] = useState([])
 
-    // *Add unique IDs to each property in rentCategories
-    const rentWithIds = RentCategories.map((value, index, array) => ({
-        id: index + 1,
+    const fetchAlllRents = async () => {
+        try {
+            const response = await fetch("http://localhost:8000/api/property/getallrents", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            const json = await response.json();
+            await setAllRents(json.rents);
+            // console.log(json.rents)
+        } catch (error) {
+            console.error("Error fetching rents:", error.message)
+        }
+    }
+    useEffect(() => {
+        fetchAlllRents();
+    }, [])
+    useEffect(() => {
+        console.log(allRents)
+    }, [allRents])
+
+
+
+    const rentWithIds = allRents.map((value, index, array) => ({
+        id: value._id,
         ...value,
     }));
 
     const columns = [
         {
-            field: "id",
+            field: "_id",
             headerName: "ID",
+            width: 90,
         },
 
-        // {
-        //     field: "photo",
-        //     headerName: "Photo",
-        // },
+        {
+            field: "imageUrls",
+            headerName: "Image",
+            width: 100,
+            cellClassName: "photo-column-cell",
+            renderCell: (params) => <img src={params.row.imageUrls[0]}
+                alt="There was something here"
+                id="admin-property-images"
+            />,
+        },
 
         {
-            field: "rentHeading",
-            headerName: "Property",
-            // flex: 1,
+            field: "ownerName",
+            headerName: "Owner Name",
+            flex: 1,
             cellClassName: "name-column-cell"
         },
-        // {
-        //     field: "buildLocText",
-        //     headerName: "Location",
-        //     flex: 2
-        // },
+
         {
-            field: "propertyOwnerName",
-            headerName: "Owner",
+            field: "ownerPhn",
+            headerName: "Owner Phone",
+            flex: 1
+        },
+
+        {
+            field: "ownerEmail",
+            headerName: "Owner Email",
+            flex: 1
+        },
+
+        {
+            field: "propertyName",
+            headerName: "Property Name",
             flex: 1
         },
         {
-            field: "propertyOwnerPhone",
-            headerName: "Phone",
+            field: "price",
+            headerName: "Price",
             flex: 1
         },
-        {
-            field: "propertyOwnerEmail",
-            headerName: "Email",
-            flex: 1
-        },
+
         {
             field: "action",
             headerName: "Action",

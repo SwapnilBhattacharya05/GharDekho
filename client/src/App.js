@@ -23,16 +23,17 @@ import BlogPost from "./Components/Blogs/BlogPost";
 import Dashboard from "./Components/Admin/Dashboard/Dashboard";
 
 // ?Dasboard Pages Imports
+import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 import AdminUser from "./Components/Admin/AdminUsers/AdminUsers";
 import AdminBuyPage from "./Components/Admin/AdminPages/AdminBuyPage";
 import AdminRentPage from "./Components/Admin/AdminPages/AdminRentPage";
 import AdminBlogPage from "./Components/Admin/AdminPages/AdminBlogPage";
+import AdminContactPage from "./Components/Admin/AdminPages/AdminContactPage";
 
 // ?Dashboard Chart Pages Imports
 import AdminBarChart from "./Components/Admin/AdminChartPage/AdminBarChart";
 import AdminLineChart from "./Components/Admin/AdminChartPage/AdminLineChart";
 import AdminPieChart from "./Components/Admin/AdminChartPage/AdminPieChart";
-import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 
 // ?Imports for forms 
 import PropertyDescription from "./Components/PropertyDescription/PropertyDescription";
@@ -72,20 +73,17 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
 
+          <Route exact path="/buy" element={<BuyPackages />}></Route>
+          <Route exact path="/rent" element={<RentPackages />}></Route>
+
           <Route exact path='/login' element={!(localStorage.getItem("token")) ? <Login /> : <Navigate to="/" />}></Route>
           <Route exact path='/signup' element={!(localStorage.getItem("token")) ? <Signup /> : <Navigate to="/" />}></Route>
 
           <Route exact path='/listproperty' element={(localStorage.getItem("token")) ? <Form /> : <Navigate to="/login" />}></Route>
 
-          <Route exact path="/buy" element={<BuyPackages />}></Route>
-          <Route exact path="/rent" element={<RentPackages />}></Route>
-
-          <Route exact path='/blogshome' element={<Blogs />}></Route>
-          <Route exact path='/blogpost/:blogid' element={<BlogPost />}></Route>
-
           <Route exact path="/contact" element={<Contact />}></Route>
-
           <Route exact path="/about" element={<AboutUs />}></Route>
+
 
           <Route exact path='/adminlogin' element={sessionStorage.getItem("isAdmin") ? <Dashboard /> : <AdminLogin />}></Route>
           <Route exact path='/adminhome' element={sessionStorage.getItem("isAdmin") ? <Dashboard /> : <Navigate to={"/adminlogin"} />}></Route>
@@ -93,17 +91,22 @@ function App() {
           <Route exact path="/adminbuypage" element={sessionStorage.getItem("isAdmin") ? <AdminBuyPage /> : <Navigate to={"/adminlogin"} />}></Route>
           <Route exact path="/adminrentpage" element={sessionStorage.getItem("isAdmin") ? <AdminRentPage /> : <Navigate to={"/adminlogin"} />}></Route>
           <Route exact path='/adminblogpage' element={sessionStorage.getItem("isAdmin") ? <AdminBlogPage /> : <Navigate to={"/adminlogin"} />}></Route>
-
-          <Route exact path="/barchart" element={<AdminBarChart />}></Route>
-          <Route exact path="/linechart" element={<AdminLineChart />}></Route>
-          <Route exact path="/piechart" element={<AdminPieChart />}></Route>
-
+          <Route exact path='/admincontactpage' element={sessionStorage.getItem("isAdmin") ? <AdminContactPage /> : <Navigate to={"/adminlogin"} />}></Route>
 
           <Route exact path='/profile' element={(localStorage.getItem("token")) ? <Profile /> : <Navigate to="/" />}></Route>
           <Route exact path='/myproperty' element={(localStorage.getItem("token")) ? <MyProperty /> : <Navigate to="/" />}></Route>
           <Route exact path='/updateproperty/:propertyid' element={(localStorage.getItem("token")) ? <UpdateProperty /> : <Navigate to="/" />}></Route>
-
           <Route exact path="/propertydescription/:propertyid" element={<PropertyDescription />}></Route>
+
+
+          <Route exact path="/barchart" element={localStorage.getItem("isAdmin") ? <AdminBarChart /> : <Navigate to={"/adminlogin"} />}></Route>
+          <Route exact path="/linechart" element={localStorage.getItem("isAdmin") ? <AdminLineChart /> : <Navigate to={"/adminlogin"} />}></Route>
+          <Route exact path="/piechart" element={localStorage.getItem("isAdmin") ? <AdminPieChart /> : <Navigate to={"/adminlogin"} />}></Route>
+
+          <Route exact path='/blogshome' element={<Blogs />}></Route>
+          <Route exact path='/blogpost/:blogid' element={<BlogPost />}></Route>
+
+
 
 
           {/* // !Removed routes */}

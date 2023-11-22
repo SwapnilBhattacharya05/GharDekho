@@ -20,9 +20,9 @@ export default function Blogs() {
         }
       });
       const json = await resposne.json();
-      setTimeout(()=>{
+      setTimeout(() => {
         setLoading(false);
-      },2700);
+      }, 2700);
 
       setBlogs(json.blogs)
     }
@@ -44,6 +44,7 @@ export default function Blogs() {
             {
               loading === true ? <img src='https://cdn.dribbble.com/users/330915/screenshots/2311781/media/2e95edec9c2a16605982c96d1044023b.gif' alt='spinner' style={{ margin: "80px auto", display: "block" }} /> :
                 blogs && blogs.map((blog) => {
+                  // eslint-disable-next-line
                   const { _id, title, content, author, image } = blog;
                   return (
 
