@@ -47,7 +47,7 @@ const Dashboard = () => {
 
     const fetchAllContacts = async () => {
         try {
-            const response = await fetch("http://localhost:8000/api/contact/fetchcontacts", {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/contact/fetchcontacts`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -74,7 +74,7 @@ const Dashboard = () => {
 
     const fetchAllUsers = async () => {
         try {
-            const response = await fetch("http://localhost:8000/api/user/getallusers", {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/user/getallusers`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -105,7 +105,7 @@ const Dashboard = () => {
 
     const fetchAllSells = async () => {
         try {
-            const response = await fetch("http://localhost:8000/api/property/getallsells", {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/getallsells`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -133,7 +133,7 @@ const Dashboard = () => {
     const [rentsRecieved, setRentsRecieved] = useState(0)
     const fetchAlllRents = async () => {
         try {
-            const response = await fetch("http://localhost:8000/api/property/getallrents", {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/getallrents`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"

@@ -20,7 +20,7 @@ const RentPackages = () => {
 
         const fetchAllRents = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/property/getallrents?searchTerm=${searchTerm}`, {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/getallrents?searchTerm=${searchTerm}`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json"
@@ -37,7 +37,6 @@ const RentPackages = () => {
         }
 
         fetchAllRents();
-
         // eslint-disable-next-line
     }, [window.location.search]);
 
@@ -87,7 +86,7 @@ const RentPackages = () => {
                         </button>
                     </form>
 
-                    <div className="container" style={{ minHeight: "500px" }}>
+                    <div className="container" style={{minHeight:"500px"}}>
 
                         <div>
                             <h3 className="renting-flats-header mt-1 mb-5"><b>Search Properties to Rent</b></h3>

@@ -27,7 +27,7 @@ const MyProperty = () => {
     const fetchMyProperties = async () => {
         console.log(loading);
         try {
-            const response = await fetch(`http://localhost:8000/api/property/getmyproperty/${userData.id}`, {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/getmyproperty/${userData.id}`, {
                 method: "GET",
                 headers: {
                     "Content-type": "application/json",
@@ -36,9 +36,9 @@ const MyProperty = () => {
             });
 
             const json = await response.json();
-            setTimeout(()=>{
+            setTimeout(() => {
                 setLoading(false);
-            },2700);
+            }, 2700);
 
             setProperty(json.property);
         } catch (error) {
@@ -52,7 +52,7 @@ const MyProperty = () => {
 
         //API call to delete in DB
         try {
-            const response = await fetch(`http://localhost:8000/api/property/deleteProperty/${propertyId}`, {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/deleteProperty/${propertyId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -97,7 +97,7 @@ const MyProperty = () => {
             <div className='my-property-main container'>
                 <h1 className='text-center font-weight-bold my-2'>My Properties</h1>
                 {
-                    loading === true ? <img src='https://cdn.dribbble.com/users/330915/screenshots/2311781/media/2e95edec9c2a16605982c96d1044023b.gif'  alt='spinner' style={{ margin: "80px auto", display: "block" }} /> :
+                    loading === true ? <img src='https://cdn.dribbble.com/users/330915/screenshots/2311781/media/2e95edec9c2a16605982c96d1044023b.gif' alt='spinner' style={{ margin: "80px auto", display: "block" }} /> :
                         property && property.length > 0 ?
                             (<div className="row">
                                 {

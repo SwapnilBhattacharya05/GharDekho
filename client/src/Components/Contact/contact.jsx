@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import UserContext from "../../Context/user/UserContext";
 import { Flip, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
 
@@ -22,57 +23,68 @@ const Contact = () => {
             getUserData();
         }
         // eslint-disable-next-line
-    }, []);
+    }, [userData]);
 
     const onChange = (e) => {
         setContact({ ...contact, [e.target.name]: e.target.value });
         console.log(contact);
     }
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch("http://localhost:8000/api/contact/postcontact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "auth-token": localStorage.getItem("token")
-            },
-            body: JSON.stringify(contact)
-        })
-
-        const json = await response.json();
-
-        if (json.success) {
-            toast.success(json.msg, {
-                position: "top-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                transition: Flip,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-            });
+        if (!localStorage.getItem("token")) {
+            navigate("/login");
         } else {
-            toast.error(json.errors[0].msg, {
-                position: "top-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                transition: Flip,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-            });
-        }
 
-        //clear the input fields
-        setTimeout(() => {
-            setContact({ name: userData.username, email: userData.email, phone: userData.phone, message: "" });
-        }, 3700);
+            try {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/contact/postcontact`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "auth-token": localStorage.getItem("token")
+                    },
+                    body: JSON.stringify(contact)
+                })
+
+                const json = await response.json();
+
+                if (json.success) {
+                    toast.success(json.msg, {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        transition: Flip,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                    });
+                } else {
+                    toast.error(json.errors[0].msg, {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        transition: Flip,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                    });
+                }
+
+                //clear the input fields
+                setTimeout(() => {
+                    setContact({ name: userData.username, email: userData.email, phone: userData.phone, message: "" });
+                }, 3700);
+            } catch (error) {
+                console.log("Error While Submitting the contact form", error);
+            }
+        }
     }
     return (
         <>

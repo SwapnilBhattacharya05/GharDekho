@@ -23,7 +23,7 @@ const BuyPackages = () => {
 
         const fetchAllSells = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/property/getallsells?searchTerm=${searchTerm}`, {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/getallsells?searchTerm=${searchTerm}`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json"

@@ -23,7 +23,7 @@ const Home = () => {
 
         const fetchAllSells = async () => {
             try {
-                const response = await fetch("http://localhost:8000/api/property/getallsells", {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/getallsells`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json"
@@ -33,16 +33,16 @@ const Home = () => {
                 setTimeout(() => {
                     setLoading(false);
                 }, 2700);
-                setSalesData(json.sells)
+                setSalesData(json.sells.slice(0, 4))
             } catch (error) {
                 console.log("Error While Fetching Sell Properties");
             }
         }
-        fetchAllSells();
+
 
         const fetchAllRents = async () => {
             try {
-                const response = await fetch("http://localhost:8000/api/property/getallrents", {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/getallrents`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json"
@@ -52,23 +52,20 @@ const Home = () => {
                 setTimeout(() => {
                     setLoading(false);
                 }, 2700);
-                setRentsData(json.rents)
+                setRentsData(json.rents.slice(0, 4))
             } catch (error) {
                 console.log("Error While Fetching Rent Properties");
             }
         }
-
+        fetchAllSells();
         fetchAllRents();
-
         window.scrollTo(0, 0);
         fetchTestimonials();
-        setSalesData((prevBuyData) => prevBuyData.slice(0, 4));
-        setRentsData((prevRentsData) => prevRentsData.slice(0, 4));
+
     }, []);
 
-
     const fetchTestimonials = async () => {
-        const response = await fetch("http://localhost:8000/api/testimonial/fetchtestimonials", {
+        const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/testimonial/fetchtestimonials`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -85,10 +82,10 @@ const Home = () => {
     }
 
     const onChange = (e) => {
-        setUser({ ...user, [e.target.name]: e.target.value });
+        setUser({ newsletterEmail: e.target.value });
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(user.newsletterEmail)) {
@@ -102,19 +99,47 @@ const Home = () => {
                 progress: undefined,
                 theme: "colored",
             });
+
         }
 
-        toast.success('Thanks for subscription!', {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-        });
+        try {
 
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/email/send-email`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ userEmail: user.newsletterEmail })
+            });
+
+            const json = await response.json();
+
+            if (json.success) {
+                toast.success('Thanks for subscription!', {
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
+            }
+
+        } catch (error) {
+            toast.error('Something Went Wrong, Please Try Again Later!', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+
+        }
         //clear the newsletter input value
         setTimeout(() => {
             setUser({ newsletterEmail: "" });
@@ -156,11 +181,11 @@ const Home = () => {
                             <img src='https://cdn.dribbble.com/users/330915/screenshots/2311781/media/2e95edec9c2a16605982c96d1044023b.gif' alt='Loading...' style={{ margin: "0 auto", display: "block" }} />
                             :
                             buyData.map((value) => {
-                                const { buyHeading, imageUrls, propertyName, bathrooms, price, bedrooms, street, city, state, } = value;
+                                const { imageUrls, propertyName, bathrooms, price, bedrooms, street, city, state, } = value;
                                 return (
 
                                     // !list of cards
-                                    <div className="container col-lg-3 col-md-6 col-sm-12 mb-5" key={buyHeading}>
+                                    <div className="container col-lg-3 col-md-6 col-sm-12 mb-5" key={value._id}>
                                         <Link to={`/propertydescription/${value._id}`} className="buy-card-wrapper">
                                             <div className="buy-card bg-light">
 
@@ -249,9 +274,9 @@ const Home = () => {
                             <img src='https://cdn.dribbble.com/users/330915/screenshots/2311781/media/2e95edec9c2a16605982c96d1044023b.gif' alt='Loading...' style={{ margin: "0 auto", display: "block" }} />
                             :
                             rentsData.map((value) => {
-                                const { rentHeading, imageUrls, propertyName, bathrooms, price, bedrooms, street, city, state, } = value;
+                                const { imageUrls, propertyName, bathrooms, price, bedrooms, street, city, state, } = value;
                                 return (
-                                    <div className="container col-lg-3 col-md-6 col-sm-12 mb-5" key={rentHeading}>
+                                    <div className="container col-lg-3 col-md-6 col-sm-12 mb-5" key={value._id}>
                                         <Link to={`/propertydescription/${value._id}`} className="rent-card-wrapper">
                                             <div className="rent-card bg-light">
 
@@ -341,7 +366,7 @@ const Home = () => {
                                 testimonialsData.map((value) => {
                                     const { _id, quotes, name, image } = value;
                                     return (
-                                        <div className={`carousel-item ${_id.toString() === "654aacb4a3b7811766bdd2fb" ? "active" : ""}`}>
+                                        <div key={_id} className={`carousel-item ${_id.toString() === "654aacb4a3b7811766bdd2fb" ? "active" : ""}`}>
                                             <div className="testimonilas-caption text-center">
                                                 <div className="pl-4 pl-4 testimonilas-quotes">{`"${quotes}"`}</div>
                                                 <p className="mt-2" id="image-caption" style={{ fontSize: "17px", fontWeight: "10px" }}>━ {name}</p>

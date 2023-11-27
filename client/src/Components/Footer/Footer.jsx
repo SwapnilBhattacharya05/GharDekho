@@ -28,24 +28,24 @@ const Footer = () => {
                             <p className="text-center">Follow us @</p>
                             <ul className="list-unstyled d-flex flex-row justify-content-center">
                                 <li>
-                                    <Link className="social-media-icons" to="https://www.facebook.com/ghardekho" target="_blank">
+                                    <Link className="social-media-icons" to="https://www.facebook.com/ghardekho" target="_blank" aria-label="facebook icon">
                                         <i className="fa-brands fa-square-facebook"></i>
                                     </Link>
                                 </li>
                                 <li >
-                                    <Link className="social-media-icons" to="https://www.instagram.com/ghardekho" target="_blank">
+                                    <Link className="social-media-icons" to="https://www.instagram.com/ghardekho" target="_blank" aria-label="instagram icon">
                                         <i className="fa-brands fa-instagram"></i>
                                     </Link>
 
                                 </li>
                                 <li >
-                                    <Link className="social-media-icons" to="https://twitter.com/ghardekho" target="_blank">
+                                    <Link className="social-media-icons" to="https://twitter.com/ghardekho" target="_blank" aria-label="x icon">
                                         <i className="fa-brands fa-x-twitter"></i>
                                     </Link>
-                                    <Link className="social-media-icons" to="https://www.youtube.com/@ghardekho" target="_blank">
+                                    <Link className="social-media-icons" to="https://www.youtube.com/@ghardekho" target="_blank" aria-label="youtube icon">
                                         <i className="fa-brands fa-youtube"></i>
                                     </Link>
-                                    <Link className="social-media-icons" to="https://www.pinterest.com/ghardekho" target="_blank">
+                                    <Link className="social-media-icons" to="https://www.pinterest.com/ghardekho" target="_blank" aria-label="pinterest icon">
                                         <i className="fa-brands fa-pinterest"></i>
                                     </Link>
                                 </li>
@@ -96,7 +96,7 @@ const Footer = () => {
                                     </Link>
                                 </li>
                                 <li className="mb-2 font-weight-bold ">
-                                    <Link to="/listproperty" className="footer-text-link text-decoration-none" onClick={backToTop}>
+                                    <Link to="/postproperty" className="footer-text-link text-decoration-none" onClick={backToTop}>
                                         Advertise
                                     </Link>
                                 </li>

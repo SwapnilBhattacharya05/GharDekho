@@ -5,7 +5,7 @@ const UserState = (props) => {
     const [userData, setUserData] = useState({ id: "", username: "", email: "", phone: "", photo: "" });
 
     const setUser = async () => {
-        const response = await fetch("http://localhost:8000/api/user/getuser", {
+        const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/user/getuser`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

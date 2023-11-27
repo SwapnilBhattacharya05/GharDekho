@@ -28,8 +28,8 @@
     width: 40%;
 }
 
-.property-card .right-part p {
-    margin-top: 45px;
+.property-card .right-part p{
+   margin-top: 45px;
 }
 
 .property-crud {
@@ -48,8 +48,7 @@
         padding: 5px;
         margin-top: 5px;
     }
-
-    .property-card .right-part p {
+    .property-card .right-part p{
         margin-top: 20px;
-    }
+     }
 }

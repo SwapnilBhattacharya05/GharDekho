@@ -44,6 +44,7 @@ import UserContext from "./Context/user/UserContext";
 import Profile from "./Components/Profile/Profile";
 import MyProperty from './Components/Profile/MyProperty';
 import UpdateProperty from './Components/UpdateProperty/UpdateProperty';
+import ErrorPage from "./Components/ErrorPage/ErrorPage";
 
 // !Removed Imports
 // import AdminSellPage from "./Components/Admin/AdminPages/AdminSellPage";
@@ -106,6 +107,7 @@ function App() {
           <Route exact path='/blogshome' element={<Blogs />}></Route>
           <Route exact path='/blogpost/:blogid' element={<BlogPost />}></Route>
 
+          <Route path="*" element={<ErrorPage />}></Route>
 
 
 

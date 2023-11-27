@@ -65,7 +65,7 @@ const UpdatedProperty = () => {
         const propertyData = async () => {
             const propertyId = params.propertyid;
             try {
-                const response = await fetch(`http://localhost:8000/api/property/getproperty/${propertyId}`, {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/getproperty/${propertyId}`, {
                     method: "GET",
                 });
 
@@ -145,7 +145,7 @@ const UpdatedProperty = () => {
         e.preventDefault();
         try {
             setLoading(true);
-            const response = await fetch(`http://localhost:8000/api/property/updateproperty/${params.propertyid}`, {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/updateproperty/${params.propertyid}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -210,7 +210,7 @@ const UpdatedProperty = () => {
                                     <label htmlFor="ownerName"><AccountCircleTwoToneIcon /> Name <span style={{ color: 'red' }}>*</span></label>
                                     <input type="text"
                                         required name="ownerName"
-                                        value={formData.ownerName}
+                                        value={formData.ownerName || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="ownerName"
@@ -223,7 +223,7 @@ const UpdatedProperty = () => {
                                     <label htmlFor="ownerEmail"><AttachEmailTwoToneIcon /> Email <span style={{ color: 'red' }}>*</span></label>
                                     <input type="email"
                                         required name="ownerEmail"
-                                        value={formData.ownerEmail}
+                                        value={formData.ownerEmail || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="ownerEmail"
@@ -236,7 +236,7 @@ const UpdatedProperty = () => {
                                     <label htmlFor="ownerPhn"><LocalPhoneTwoToneIcon /> Contact Number <span style={{ color: 'red' }}>*</span></label>
                                     <input type="number"
                                         required name="ownerPhn"
-                                        value={formData.ownerPhn}
+                                        value={formData.ownerPhn || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="ownerPhn"
@@ -258,7 +258,7 @@ const UpdatedProperty = () => {
                                         name="advertisementType"
                                         onChange={onValueChange}
                                         id="advertisementType"
-                                        value={formData.advertisementType}
+                                        value={formData.advertisementType || ""}
                                     >
                                         <option value={'rent'}>On Rent</option>
                                         <option value={'sell'}>On Sell</option>
@@ -270,7 +270,7 @@ const UpdatedProperty = () => {
                                     <label htmlFor="propertyName"><DriveFileRenameOutlineTwoToneIcon /> Property Name <span style={{ color: 'red' }}>*</span></label>
                                     <input type="text"
                                         required name="propertyName"
-                                        value={formData.propertyName}
+                                        value={formData.propertyName || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="propertyName"
@@ -282,7 +282,7 @@ const UpdatedProperty = () => {
                                 <div className="form-group">
                                     <label htmlFor="street"><AddRoadTwoToneIcon /> Street Name <span style={{ color: 'red' }}>*</span></label>
                                     <input type="text"
-                                        required name="street" value={formData.street}
+                                        required name="street" value={formData.street || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="street"
@@ -295,7 +295,7 @@ const UpdatedProperty = () => {
                                     <label htmlFor="city"><ApartmentTwoToneIcon />City <span style={{ color: 'red' }}>*</span></label>
                                     <input type="text"
                                         required name="city"
-                                        value={formData.city}
+                                        value={formData.city || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="city"
@@ -308,7 +308,7 @@ const UpdatedProperty = () => {
                                     <label htmlFor="state">State <span style={{ color: 'red' }}>*</span></label>
                                     <input type="text"
                                         required name="state"
-                                        value={formData.state}
+                                        value={formData.state || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="state"
@@ -321,7 +321,7 @@ const UpdatedProperty = () => {
                                     <label htmlFor="country"><PublicTwoToneIcon />Country <span style={{ color: 'red' }}>*</span></label>
                                     <input type="text"
                                         required name="country"
-                                        value={formData.country}
+                                        value={formData.country || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="country"
@@ -333,7 +333,7 @@ const UpdatedProperty = () => {
                                 <div className="form-group">
                                     <label htmlFor="pincode">Pincode <span style={{ color: 'red' }}>*</span></label>
                                     <input type="number"
-                                        required value={formData.pincode}
+                                        required value={formData.pincode || ""}
                                         name="pincode"
                                         onChange={onValueChange}
                                         className="form-control"
@@ -347,7 +347,7 @@ const UpdatedProperty = () => {
                                     <label htmlFor="price">{formData.advertisementType === "sell" ? "Price(₹)" : "Rent/month(₹)"}<span style={{ color: 'red' }}>*</span></label>
                                     <input type="number"
                                         required name="price"
-                                        value={formData.price}
+                                        value={formData.price || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="price"
@@ -407,7 +407,7 @@ const UpdatedProperty = () => {
                                     rows={5}
                                     cols={5}
                                     onChange={onValueChange}
-                                    value={formData.description}
+                                    value={formData.description || ""}
                                     className="form-control"
                                     id="description"
                                     placeholder="Enter Property Description"
@@ -423,7 +423,7 @@ const UpdatedProperty = () => {
                                         required type="number"
                                         name="bedrooms"
                                         onChange={onValueChange}
-                                        value={formData.bedrooms}
+                                        value={formData.bedrooms || ""}
                                         className="form-control"
                                         id="bedrooms"
                                         placeholder="Enter the number of bedrooms"
@@ -436,7 +436,7 @@ const UpdatedProperty = () => {
                                     <input
                                         required type="number"
                                         name="bathrooms"
-                                        value={formData.bathrooms}
+                                        value={formData.bathrooms || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="bathrooms"
@@ -452,7 +452,7 @@ const UpdatedProperty = () => {
                                         name="parking"
                                         onChange={onValueChange}
                                         id="parking"
-                                        value={formData.parking}
+                                        value={formData.parking || ""}
                                     >
                                         <option value={true}>Available</option>
                                         <option value={false}>Not Available</option>
@@ -466,7 +466,7 @@ const UpdatedProperty = () => {
                                     <input
                                         required type="number"
                                         name="propertyAge"
-                                        value={formData.propertyAge}
+                                        value={formData.propertyAge || ""}
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="propertyAge"
@@ -483,7 +483,7 @@ const UpdatedProperty = () => {
                                         required className="form-control"
                                         name="furnished"
                                         onChange={onValueChange}
-                                        value={formData.furnished}
+                                        value={formData.furnished || ""}
                                         id="furnished"
                                     >
                                         <option value={true}>Furnished</option>
@@ -498,7 +498,7 @@ const UpdatedProperty = () => {
                                         name="availability"
                                         onChange={onValueChange}
                                         id="availability"
-                                        value={formData.availability}
+                                        value={formData.availability || ""}
                                     >
                                         <option value={'ready'}>Ready To Move</option>
                                         <option value={'notready'}>Under Construction</option>
@@ -515,7 +515,7 @@ const UpdatedProperty = () => {
                                         name="propertyType"
                                         onChange={onValueChange}
                                         id="propertyType"
-                                        value={formData.propertyType}
+                                        value={formData.propertyType || ""}
                                     >
                                         <option value={'flat'}>Flat</option>
                                         <option value={'personal'}>Personal property</option>

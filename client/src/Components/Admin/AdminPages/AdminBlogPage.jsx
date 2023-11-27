@@ -24,7 +24,7 @@ const AdminBlogPage = () => {
 
     const fetchBlogData = async () => {
         try {
-            const response = await fetch("http://localhost:8000/api/blog/getallblogs", {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/blog/getallblogs`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -49,7 +49,7 @@ const AdminBlogPage = () => {
         setBlogData((prev) => prev.filter((e) => e._id !== blogId));
 
         try {
-            const response = await fetch(`http://localhost:8000/api/blog/deleteblog/${blogId}`, {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/blog/deleteblog/${blogId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
@@ -89,7 +89,7 @@ const AdminBlogPage = () => {
 
     const addNewBlog = async () => {
         try {
-            const response = await fetch("http://localhost:8000/api/blog/postblog", {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/blog/postblog`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

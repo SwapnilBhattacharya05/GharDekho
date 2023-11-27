@@ -10,7 +10,7 @@ import PhoneEnabledIcon from '@mui/icons-material/PhoneEnabled';
 import TaxiAlertIcon from '@mui/icons-material/TaxiAlert';
 import React, { useContext, useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import UserContext from '../../Context/user/UserContext';
 import Footer from '../Footer/Footer';
 import Menu from '../Menu/Menu';
@@ -21,10 +21,12 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 const PropertyDescription = () => {
     const userContext = useContext(UserContext);
     const { userData } = userContext;
+
     const [contactDetails, setContactDetails] = useState({ name: "", email: "", phn: "" });
     const [propertyData, setPropertData] = useState({});
     const [loading, setLoading] = useState(true);
-
+    //eslint-disable-next-line
+    const [emailBody, setEmailBody] = useState("");
     const params = useParams();
 
     useEffect(() => {
@@ -36,14 +38,14 @@ const PropertyDescription = () => {
 
         const fetchPropertyData = async () => {
             try {
-                const propertyResponse = await fetch(`http://localhost:8000/api/property/getproperty/${params.propertyid}`, {
+                const propertyResponse = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/getproperty/${params.propertyid}`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json"
                     }
                 });
 
-                const userResponse = await fetch(`http://localhost:8000/api/property/getowneravatar/${params.propertyid}`, {
+                const userResponse = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/getowneravatar/${params.propertyid}`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json"
@@ -79,11 +81,12 @@ const PropertyDescription = () => {
 
     return (
         <>
+
             <div>
                 <Menu />
                 <div className='container'>
                     {/* //?Property Header / Name */}
-                    <h3 className='property-description-header'>
+                    <h3 h3 className='property-description-header'>
                         {propertyData.propertyName || <Skeleton />}
                     </h3>
 
@@ -226,7 +229,7 @@ const PropertyDescription = () => {
                                     </span>
                                 </h4>
                                 <div className='about-text-description-blacktexts'>
-                                    {propertyData.description || <Skeleton count={3} />}
+                                    {propertyData.description}
                                 </div>
                             </div>
 
@@ -303,10 +306,14 @@ const PropertyDescription = () => {
                                         id='emailpropertyform'
                                     />
                                 </label>
-                                <input type='submit'
-                                    value="Contact Owner"
-                                    id='owner-contact-button'
-                                />
+                                <Link to={localStorage.getItem("token") ? `mailto:${propertyData.ownerEmail}?subject=Enquiry%20about%20${propertyData.propertyName}&body=Hello%20${propertyData.ownerName},%0D%0A%0D%0AMy%20name%20is%20${contactDetails.name},%20and%20I%20am%20interested%20in%20the%20property%20listed%20on%20GharDekho%20at%20${propertyData.street},%20${propertyData.city}.%20I%20came%20across%20the%20listing%20and%20was%20impressed%20with%20the%20features%20and%20location.%0D%0A%0D%0AI%20would%20appreciate%20it%20if%20you%20could%20provide%20me%20with%20more%20information%20about%20the%20property,%20such%20as%20the%20asking%20price,%20any%20recent%20renovations%20or%20upgrades,%20and%20the%20availability%20for%20viewing.%20Additionally,%20if%20there%20are%20any%20upcoming%20open%20houses%20or%20specific%20viewing%20times,%20please%20let%20me%20know.%0D%0A%0D%0AI%20am%20keenly%20interested%20in%20exploring%20this%20property%20further%20and%20would%20like%20to%20schedule%20a%20visit%20at%20your%20earliest%20convenience.%20Please%20feel%20free%20to%20contact%20me%20via%20email%20or%20phone%20(${contactDetails.email}%20/%20${contactDetails.phn})%20to%20discuss%20the%20details%20further%20or%20to%20set%20up%20a%20suitable%20time%20for%20viewing.%0D%0A%0D%0AThank%20you%20for%20your%20time,%20and%20I%20look%20forward%20to%20hearing%20from%20you%20soon.%0D%0A%0D%0ABest%20regards,%0D%0A${contactDetails.name}%0D%0A${contactDetails.email}%0D%0A${contactDetails.phn}` : "/login"}>
+                                    <input
+                                        disabled={(localStorage.getItem("token") && contactDetails.email === "") || (localStorage.getItem("token") && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(contactDetails.email)) || (localStorage.getItem("token") && contactDetails.name === "") || (localStorage.getItem("token") && contactDetails.phn === "")}
+                                        type='button'
+                                        value="Contact Owner"
+                                        id='owner-contact-button'
+                                    />
+                                </Link>
                             </form>
                         </div>
                     </div>

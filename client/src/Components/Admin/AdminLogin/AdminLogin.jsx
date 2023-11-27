@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./AdminLogin.css";
 import PersonIcon from '@mui/icons-material/Person';
 import LockIcon from '@mui/icons-material/Lock';
-import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 // !Import required for the toast to work
@@ -16,8 +15,6 @@ const AdminLogin = () => {
         adminUserName: "",
         adminPassword: "",
     });
-
-    const navigate = useNavigate();
 
     const onValueChange = (e) => {
         setAdmin({ ...admin, [e.target.name]: e.target.value });

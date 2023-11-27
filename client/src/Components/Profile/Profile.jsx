@@ -58,7 +58,7 @@ const Profile = () => {
     const handleProfileUpdate = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:8000/api/user/update/${userData.id}`, {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/user/update/${userData.id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -104,7 +104,7 @@ const Profile = () => {
     const handleProfileDelete = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:8000/api/user/delete/${userData.id}`, {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/user/delete/${userData.id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -244,8 +244,7 @@ const Profile = () => {
                     </div>
                     <div className="row" style={{ marginLeft: "19%", marginRight: "19%" }}>
                         <div className="d-flex justify-content-between col-12">
-                            <button type='button'
-                                className="btn btn-danger"
+                            <button type='button' className="btn btn-danger"
                                 data-toggle="modal"
                                 data-target="#staticBackdrop"
                             >
@@ -299,8 +298,7 @@ const Profile = () => {
                                 </div>
                             </div>
 
-                            <button type='button'
-                                onClick={handleLogOut}
+                            <button type='button' onClick={handleLogOut}
                                 className="btn btn-purple">
                                 Log out
                             </button>

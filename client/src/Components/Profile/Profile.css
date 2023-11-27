@@ -1,8 +1,8 @@
-.profile-container {
+.profile-container{
     margin-top: 80px;
-}
+}   
 
-.profile-form .profile-group {
+.profile-form .profile-group{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,11 +22,11 @@
     width: 60%;
 }
 
-.profile-form .profile-group button {
+.profile-form .profile-group button{
     width: 60%;
 }
 
-.profile-form .profile-group img {
+.profile-form .profile-group img{
     height: 96px;
     width: 96px;
     border-radius: 50%;

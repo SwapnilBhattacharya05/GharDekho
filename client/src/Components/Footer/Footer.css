@@ -22,16 +22,15 @@
 .footer-conatiner .social-media-icons:hover {
     color: #7a4bcf;
 }
-
-.footer-text-link {
+.footer-text-link{
     color: white;
 }
-
-.footer-text-link:hover {
+.footer-text-link:hover{
     color: #7a4bcf;
 }
-
-.footer-lower-conatiner {
+.footer-lower-conatiner{
     background-color: #13223b;
     height: 60px;
 }
+
+

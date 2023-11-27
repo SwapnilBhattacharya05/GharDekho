@@ -10,7 +10,7 @@ const AdminContactPage = () => {
     const [allContacts, setAllContacts] = useState([])
     const fetchAllContacts = async () => {
         try {
-            const response = await fetch("http://localhost:8000/api/contact/fetchcontacts", {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/contact/fetchcontacts`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -40,7 +40,7 @@ const AdminContactPage = () => {
         setAllContacts((prev) => prev.filter((e) => e._id !== contactId));
 
         try {
-            const response = await fetch(`http://localhost:8000/api/contact/deletecontact/${contactId}`, {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/contact/deletecontact/${contactId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"

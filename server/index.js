@@ -9,6 +9,7 @@ import contactRouter from "./routes/contact.route.js";
 import testimonialRouter from "./routes/testimonial.route.js";
 import propertyRouter from "./routes/property.route.js";
 import blogRouter from "./routes/blog.route.js";
+import emailRouter from "./routes/email.route.js";
 
 const app = express();
 dotenv.config();
@@ -25,11 +26,12 @@ app.use("/api/blog", blogRouter);
 app.use("/api/property", propertyRouter);
 app.use("/api/contact", contactRouter);
 app.use("/api/testimonial", testimonialRouter);
+app.use("/api/email", emailRouter);
 
 //to use static files
 app.use("uploads", express.static("upload"));
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
 

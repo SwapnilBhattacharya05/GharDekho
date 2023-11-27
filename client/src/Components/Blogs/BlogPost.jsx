@@ -14,7 +14,7 @@ function BlogPost() {
         window.scrollTo(0, 0);
 
         const fetchBlogData = async () => {
-            const resposne = await fetch(`http://localhost:8000/api/blog/getblog/${params.blogid}`, {
+            const resposne = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/blog/getblog/${params.blogid}`, {
                 method: "Get",
                 headers: {
                     "Content-Type": "application/json"
@@ -44,7 +44,7 @@ function BlogPost() {
                     <p>BY {blogData.author || <Skeleton />} | {blogData.createdAt && blogData.createdAt.slice(0, 10)}</p>
                     <hr />
                     <div className="blog-description-text d-flex justify-content-center align-items-center my-3">
-                        <p>{blogData.content || <Skeleton count={100} />}</p>
+                        <p>{blogData.content || <Skeleton count={100}/>}</p>
                     </div>
                     <hr />
                     <ul className='d-flex align-items-center'>

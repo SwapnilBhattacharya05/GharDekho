@@ -18,7 +18,7 @@ const OAuth = () => {
             const result = await signInWithPopup(auth, provider);
             console.log(result);
 
-            const resonse = await fetch("http://localhost:8000/api/auth/google", {
+            const resonse = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/auth/google`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

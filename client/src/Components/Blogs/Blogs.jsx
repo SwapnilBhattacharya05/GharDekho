@@ -13,7 +13,7 @@ export default function Blogs() {
     window.scrollTo(0, 0);
 
     const fetchBlogs = async () => {
-      const resposne = await fetch("http://localhost:8000/api/blog/getallblogs", {
+      const resposne = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/blog/getallblogs`, {
         method: "Get",
         headers: {
           "Content-Type": "application/json"
@@ -25,6 +25,7 @@ export default function Blogs() {
       }, 2700);
 
       setBlogs(json.blogs)
+
     }
     fetchBlogs();
 

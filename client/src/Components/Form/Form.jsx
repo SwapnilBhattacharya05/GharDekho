@@ -130,7 +130,7 @@ const Form = () => {
         e.preventDefault();
         try {
             setLoading(true);
-            const response = await fetch("http://localhost:8000/api/property/postproperty", {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/postproperty`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -12,7 +12,7 @@ const AdminBuyPage = () => {
 
     const fetchAllSells = async () => {
         try {
-            const response = await fetch("http://localhost:8000/api/property/getallsells", {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/property/getallsells`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"

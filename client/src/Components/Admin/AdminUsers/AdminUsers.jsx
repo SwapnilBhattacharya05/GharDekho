@@ -13,7 +13,7 @@ const AdminUsers = () => {
 
     const fetchAllUsers = async () => {
         try {
-            const response = await fetch("http://localhost:8000/api/user/getallusers", {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/user/getallusers`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
