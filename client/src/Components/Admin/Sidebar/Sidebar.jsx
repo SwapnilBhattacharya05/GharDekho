@@ -117,11 +117,11 @@ const Sidebar = () => {
                                     </Link>
                                 </li>
 
-                                <div className="admin-title">COLOR OPTIONS</div>
+                                {/* <div className="admin-title">COLOR OPTIONS</div>
                                 <li className="nav-item" id="admin-color-options-wrapper">
                                     <div className="admin-coloroptions"></div>
                                     <div className="admin-coloroptions"></div>
-                                </li>
+                                </li> */}
                                 <div className="admin-title">SERVICE</div>
                                 <li className="nav-item">
                                     <button className='btn btn-text-danger' onClick={handleLogout}>
