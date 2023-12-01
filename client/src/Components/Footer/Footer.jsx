@@ -63,7 +63,7 @@ const Footer = () => {
                                     </Link>
                                 </li>
                                 <li className="mb-2 font-weight-bold ">
-                                    <Link to="/blogs" className="footer-text-link text-decoration-none" onClick={backToTop}>
+                                    <Link to="/blogshome" className="footer-text-link text-decoration-none" onClick={backToTop}>
                                         Blog
                                     </Link>
                                 </li>
@@ -91,12 +91,12 @@ const Footer = () => {
                                     </Link>
                                 </li>
                                 <li className="mb-2 font-weight-bold">
-                                    <Link to="/postproperty" className="footer-text-link text-decoration-none" onClick={backToTop}>
+                                    <Link to="/rent" className="footer-text-link text-decoration-none" onClick={backToTop}>
                                         Rent
                                     </Link>
                                 </li>
                                 <li className="mb-2 font-weight-bold ">
-                                    <Link to="/postproperty" className="footer-text-link text-decoration-none" onClick={backToTop}>
+                                    <Link to="/listproperty" className="footer-text-link text-decoration-none" onClick={backToTop}>
                                         Advertise
                                     </Link>
                                 </li>

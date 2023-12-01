@@ -30,10 +30,6 @@ import AdminRentPage from "./Components/Admin/AdminPages/AdminRentPage";
 import AdminBlogPage from "./Components/Admin/AdminPages/AdminBlogPage";
 import AdminContactPage from "./Components/Admin/AdminPages/AdminContactPage";
 
-// ?Dashboard Chart Pages Imports
-import AdminBarChart from "./Components/Admin/AdminChartPage/AdminBarChart";
-import AdminLineChart from "./Components/Admin/AdminChartPage/AdminLineChart";
-import AdminPieChart from "./Components/Admin/AdminChartPage/AdminPieChart";
 
 // ?Imports for forms 
 import PropertyDescription from "./Components/PropertyDescription/PropertyDescription";
@@ -49,6 +45,9 @@ import ErrorPage from "./Components/ErrorPage/ErrorPage";
 // !Removed Imports
 // import AdminSellPage from "./Components/Admin/AdminPages/AdminSellPage";
 // import PostProperty from "./Components/Form/PostProperty";
+// import AdminBarChart from "./Components/Admin/AdminChartPage/AdminBarChart";
+// import AdminLineChart from "./Components/Admin/AdminChartPage/AdminLineChart";
+// import AdminPieChart from "./Components/Admin/AdminChartPage/AdminPieChart";
 
 function App() {
   const userContext = useContext(UserContext);
@@ -100,9 +99,6 @@ function App() {
           <Route exact path="/propertydescription/:propertyid" element={<PropertyDescription />}></Route>
 
 
-          <Route exact path="/barchart" element={localStorage.getItem("isAdmin") ? <AdminBarChart /> : <Navigate to={"/adminlogin"} />}></Route>
-          <Route exact path="/linechart" element={localStorage.getItem("isAdmin") ? <AdminLineChart /> : <Navigate to={"/adminlogin"} />}></Route>
-          <Route exact path="/piechart" element={localStorage.getItem("isAdmin") ? <AdminPieChart /> : <Navigate to={"/adminlogin"} />}></Route>
 
           <Route exact path='/blogshome' element={<Blogs />}></Route>
           <Route exact path='/blogpost/:blogid' element={<BlogPost />}></Route>
@@ -115,6 +111,9 @@ function App() {
           {/* <Route path="/adminhomepage" element={<AdminHomePage />}></Route> */}
           {/* <Route path="/adminsellpage" element={<AdminSellPage />}></Route> */}
           {/* <Route path="/postproperty" element={<PostProperty />}></Route> */}
+          {/* <Route exact path="/barchart" element={localStorage.getItem("isAdmin") ? <AdminBarChart /> : <Navigate to={"/adminlogin"} />}></Route>
+          <Route exact path="/linechart" element={localStorage.getItem("isAdmin") ? <AdminLineChart /> : <Navigate to={"/adminlogin"} />}></Route>
+          <Route exact path="/piechart" element={localStorage.getItem("isAdmin") ? <AdminPieChart /> : <Navigate to={"/adminlogin"} />}></Route> */}
 
 
         </Routes>

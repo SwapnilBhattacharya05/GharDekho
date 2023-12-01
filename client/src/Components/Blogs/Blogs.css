@@ -2,11 +2,13 @@
     border-radius: 20px 20px 20px 20px;
     border: 2px solid #7a4bcf;
 }
-.blogs{
+
+.blogs {
     min-height: 80vh;
 }
-.blogs .blogs-page-header-hero {
-    height: 400px;
+
+.blogs-page-header-hero {
+    height: 350px;
     width: 100%;
     background-color: #7a4bcf;
 

@@ -1,13 +1,13 @@
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PersonIcon from '@mui/icons-material/Person';
 import PhoneEnabledIcon from '@mui/icons-material/PhoneEnabled';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import SsidChartIcon from '@mui/icons-material/SsidChart';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+// import BarChartIcon from '@mui/icons-material/BarChart';
+// import DonutLargeIcon from '@mui/icons-material/DonutLarge';
+// import SsidChartIcon from '@mui/icons-material/SsidChart';
 import { React, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Shared_Container.css";
@@ -94,7 +94,7 @@ const Sidebar = () => {
                                         <span className="admin-sidebar-options">Contacts</span>
                                     </Link>
                                 </li>
-                                <div className="admin-title">CHARTS</div>
+                                {/* <div className="admin-title">CHARTS</div>
 
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/barchart" >
@@ -115,8 +115,7 @@ const Sidebar = () => {
                                         <DonutLargeIcon className="admin-sidebar-icons" />
                                         <span className="admin-sidebar-options">Pie Chart</span>
                                     </Link>
-                                </li>
-
+                                </li> */}
                                 {/* <div className="admin-title">COLOR OPTIONS</div>
                                 <li className="nav-item" id="admin-color-options-wrapper">
                                     <div className="admin-coloroptions"></div>

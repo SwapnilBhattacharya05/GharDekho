@@ -65,14 +65,20 @@ const RentPackages = () => {
                 <div className="renting mt-5">
 
                     <div className="renting-page-header-hero">
-                        <img src="img/rent_page_head.jpg" style={{ objectFit: "cover" }} height={"400px"} width={"100%"} id="rent-page-header-image" alt="rent_page_header_image"></img>
-
+                        <img src="img/rent_page_head.jpg"
+                            style={{ objectFit: "cover" }}
+                            height={"400px"}
+                            width={"100%"}
+                            id="rent-page-header-image"
+                            alt="rent_page_header_image" />
 
                         <h1 className="renting-page-header-heading-hero">Discover your perfect home</h1>
                         <p className="renting-page-header-subheading-hero">With the most complete source of homes for you to rent</p>
                     </div>
 
-                    <form className="rent-page-header-hero-search-complete" onSubmit={handleSubmit}>
+                    <form className="rent-page-header-hero-search-complete"
+                        onSubmit={handleSubmit}>
+
                         <input name="searchTerm"
                             id="searchTerm"
                             value={searchTerm || ""}
@@ -86,7 +92,9 @@ const RentPackages = () => {
                         </button>
                     </form>
 
-                    <div className="container" style={{minHeight:"500px"}}>
+                    <div className="container"
+                        style={{ minHeight: "500px" }}
+                    >
 
                         <div>
                             <h3 className="renting-flats-header mt-1 mb-5"><b>Search Properties to Rent</b></h3>
@@ -95,20 +103,31 @@ const RentPackages = () => {
                         <div className="row">
                             {
 
-                                loading === true ? <img src='https://cdn.dribbble.com/users/330915/screenshots/2311781/media/2e95edec9c2a16605982c96d1044023b.gif' alt='spinner' style={{ margin: "0 auto", display: "block" }} /> :
+                                loading === true ? <img className="loading-img"
+                                    src='https://cdn.dribbble.com/users/330915/screenshots/2311781/media/2e95edec9c2a16605982c96d1044023b.gif'
+                                    alt='spinner'
+                                    style={{ margin: "0 auto", display: "block" }}
+                                />
+                                    :
                                     rentsData.length !== 0 ?
                                         rentsData.map((value) => {
                                             const { imageUrls, propertyName, bathrooms, price, bedrooms, street, city, state, } = value;
                                             return (
 
+
                                                 // !list of cards
                                                 <div key={value._id} className="container col-lg-3 col-md-6 col-sm-12 mb-5">
-                                                    <Link to={`/propertydescription/${value._id}`} className="rent-card-wrapper">
+                                                    <Link to={`/propertydescription/${value._id}`}
+                                                        className="rent-card-wrapper">
                                                         <div className="rent-card bg-light">
 
                                                             {/* top side of the card */}
                                                             <div className="rent-card-top">
-                                                                <img src={imageUrls[0]} alt={"rent img"} height={"100%"} width={"100%"} />
+                                                                <img src={imageUrls[0]}
+                                                                    alt={"rent img"}
+                                                                    height={"100%"}
+                                                                    width={"100%"}
+                                                                />
                                                             </div>
                                                             {/* bottom side if the card */}
                                                             <div className="rent-card-bottom">
@@ -180,7 +199,9 @@ const RentPackages = () => {
                                         }) :
                                         <div className="m-auto">
                                             <p className="text-center">Oops No Property Found!</p>
-                                            <img src="https://cdn.dribbble.com/users/453325/screenshots/5573953/empty_state.png?resize=400x300&vertical=center" alt="Nothing Found" />
+                                            <img src="https://cdn.dribbble.com/users/453325/screenshots/5573953/empty_state.png?resize=400x300&vertical=center"
+                                                alt="Nothing Found"
+                                            />
                                         </div>
                             }
                         </div>
