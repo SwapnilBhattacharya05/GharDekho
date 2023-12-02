@@ -52,7 +52,7 @@ const Form = () => {
         bedrooms: "",
         parking: "",
         furnished: "",
-        advertisementType: "sale",
+        advertisementType: "",
         availability: "",
         propertyType: "",
     });
@@ -337,7 +337,7 @@ const Form = () => {
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="price"
-                                        placeholder={`Enter Property `.concat(formData.advertisementType === "sale" ? "Price" : "Rent Per Month")}
+                                        placeholder={`Enter Property `.concat(formData.advertisementType === "sell" ? "Price" : "Rent Per Month")}
                                     />
                                 </div>
                             </div>

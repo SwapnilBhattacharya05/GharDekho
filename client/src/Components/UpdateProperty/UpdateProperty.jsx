@@ -351,7 +351,7 @@ const UpdatedProperty = () => {
                                         onChange={onValueChange}
                                         className="form-control"
                                         id="price"
-                                        placeholder={`Enter Property `.concat(formData.advertisementType === "sale" ? "Price" : "Rent Per Month")}
+                                        placeholder={`Enter Property `.concat(formData.advertisementType === "sell" ? "Price" : "Rent Per Month")}
                                     />
                                 </div>
                             </div>
