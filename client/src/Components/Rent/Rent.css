@@ -182,13 +182,12 @@
 .renting-page-header-hero-search {
     background-color: rgb(204, 204, 204);
     border-radius: 100px 100px;
-    width: 50%;
+    width: 40%;
     color: black;
     text-align: left;
     padding: 15px;
     border: 3px solid #7a4bcf;
     opacity: 70%;
-
 }
 
 .renting-page-header-hero-search-button {
@@ -197,20 +196,17 @@
     background-color: black;
     border-radius: 100px 100px;
     position: absolute;
-    left: 965px;
+    right: 470px;
     top: 227px;
     opacity: 70%;
     border: none;
-
 }
 
 .rent-page-header-hero-search-complete {
-    /* margin-top: -10px; */
-    z-index: 10;
-    /* position: absolute; */
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: -230px;
     margin-bottom: 230px;
-    margin-left: 530px;
-    top: 170px;
-    left: 460px;
 }

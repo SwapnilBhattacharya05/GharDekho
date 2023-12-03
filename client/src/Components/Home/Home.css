@@ -187,8 +187,8 @@
     display: block;
 }
 
-@media(max-width:400px){
-    .loading-img{
+@media(max-width:400px) {
+    .loading-img {
         width: 80%;
     }
 }

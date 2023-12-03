@@ -154,14 +154,12 @@
 }
 
 .listed-property-owner-card-left {
-    width: 70%;
-
+    width: 60%;
 }
 
 .listed-property-owner-card-right {
-    width: 30%;
+    width: 40%;
 }
-
 
 .listed-property-owner-email-main {
     margin-top: 5px;

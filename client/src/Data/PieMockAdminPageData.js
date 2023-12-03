@@ -1,32 +1,26 @@
 const PieMockAdminPageData = [
     {
-        "id": "haskell",
-        "label": "haskell",
-        "value": 428,
+        "id": "Buys",
+        "label": "Buys",
+        "value": 8,
         "color": "hsl(29, 70%, 50%)"
     },
     {
-        "id": "php",
-        "label": "php",
-        "value": 215,
+        "id": "Contacts",
+        "label": "Contacts",
+        "value": 6,
         "color": "hsl(99, 70%, 50%)"
     },
     {
-        "id": "elixir",
-        "label": "elixir",
-        "value": 490,
-        "color": "hsl(187, 70%, 50%)"
-    },
-    {
-        "id": "rust",
-        "label": "rust",
-        "value": 579,
+        "id": "Users",
+        "label": "Users",
+        "value": 23,
         "color": "hsl(139, 70%, 50%)"
     },
     {
-        "id": "ruby",
-        "label": "ruby",
-        "value": 445,
+        "id": "Rents",
+        "label": "Rents",
+        "value": 10,
         "color": "hsl(328, 70%, 50%)"
     }
 ]

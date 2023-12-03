@@ -68,11 +68,12 @@ const BuyPackages = () => {
 
                     {/* // *banner Hero for the buy page */}
                     <div className="buying-page-header-hero">
-                        <img src="img/buy_page_head.jpg" height={"400px"} width={"100%"} id="buy-page-header-image" alt="buy_page_header_image"></img>
-
-
-                        {/* //Todo: need to make the search bar work */}
-
+                        <img src="img/buy_page_head.jpg"
+                            height={"400px"}
+                            width={"100%"}
+                            id="buy-page-header-image"
+                            alt="buy_page_header_image"
+                        />
 
                         {/* banner Hero for the buy page search bar */}
                         <h1 className="buying-page-header-heading-hero">Discover your perfect home</h1>

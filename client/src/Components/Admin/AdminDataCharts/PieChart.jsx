@@ -65,56 +65,6 @@ const PieChart = () => {
                         ]
                     ]
                 }}
-                fill={[
-                    {
-                        match: {
-                            id: 'ruby'
-                        },
-
-                    },
-                    {
-                        match: {
-                            id: 'c'
-                        },
-
-                    },
-                    {
-                        match: {
-                            id: 'go'
-                        },
-
-                    },
-                    {
-                        match: {
-                            id: 'python'
-                        },
-
-                    },
-                    {
-                        match: {
-                            id: 'scala'
-                        },
-
-                    },
-                    {
-                        match: {
-                            id: 'lisp'
-                        },
-
-                    },
-                    {
-                        match: {
-                            id: 'elixir'
-                        },
-
-                    },
-                    {
-                        match: {
-                            id: 'javascript'
-                        },
-
-                    }
-                ]}
                 legends={[]}
             />
         </>

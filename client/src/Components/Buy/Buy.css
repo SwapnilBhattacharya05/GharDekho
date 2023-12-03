@@ -170,7 +170,6 @@
     letter-spacing: 2px;
     color: white;
     font-weight: bold;
-    background-color: transparent;
 }
 
 #buy-page-header-image {
@@ -179,17 +178,6 @@
 
 }
 
-.buying-page-header-hero-search {
-    background-color: rgb(204, 204, 204);
-    border-radius: 100px 100px;
-    width: 50%;
-    color: black;
-    text-align: left;
-    padding: 15px;
-    border: 3px solid #7a4bcf;
-    opacity: 70%;
-
-}
 
 .buying-page-header-hero-search-button {
     padding: 9px 10px 9px 10px;
@@ -197,7 +185,7 @@
     background-color: black;
     border-radius: 100px 100px;
     position: absolute;
-    left: 965px;
+    right: 470px;
     top: 227px;
     opacity: 70%;
     border: none;
@@ -205,17 +193,28 @@
 }
 
 .buy-page-header-hero-search-complete {
-    /* margin-top: -10px; */
-    z-index: 10;
-    /* position: absolute; */
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: -230px;
     margin-bottom: 230px;
-    margin-left: 530px;
-    top: 170px;
-    left: 460px;
+
 }
 
-.price-slider-more-text{
+.buying-page-header-hero-search {
+    background-color: rgb(204, 204, 204);
+    border-radius: 100px 100px;
+    width: 40%;
+    color: black;
+    text-align: left;
+    padding: 15px;
+    border: 3px solid #7a4bcf;
+    opacity: 70%;
+}
+
+.price-slider-more-text {
     font-size: 10px;
     color: #b8a6d8;
 }
+
