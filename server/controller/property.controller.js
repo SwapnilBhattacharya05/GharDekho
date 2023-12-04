@@ -1,5 +1,6 @@
 import Property from "../schema/propertySchema.js";
 import User from "../schema/userSchema.js";
+import {validationResult } from "express-validator";
 
 export const getMyProperty = async (req, res) => {
     if (req.params.id !== req.user.id) {
@@ -36,6 +37,12 @@ export const deleteProperty = async (req, res) => {
 }
 
 export const updateProperty = async (req, res) => {
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ error: errors.array() });
+    }
+
     try {
         const property = await Property.findById(req.params.id);
 

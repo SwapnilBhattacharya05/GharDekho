@@ -10,8 +10,8 @@ router.post("/postproperty", fetchUser, [
     body('ownerEmail', "Enter a valid email").isEmail(),
     body('ownerPhn', 'Enter a valid Phone number').isLength({ min: 10 }),
     body('propertyName', "Property Name Can't Be Empty").exists(),
-    body('propertyAge').custom((value)=>{
-        if(value<0){
+    body('propertyAge').custom((value) => {
+        if (value < 0) {
             throw new Error("Property Age Can't be Negative");
         }
         return true;
@@ -82,7 +82,32 @@ router.get("/getowneravatar/:id", getOwnerAvatar);
 router.delete("/deleteproperty/:id", fetchUser, deleteProperty);
 
 //ROUTE 5:PUT request to update an existing property. Login required
-router.put("/updateproperty/:id", fetchUser, updateProperty);
+router.put("/updateproperty/:id", fetchUser, [
+    body('ownerEmail', "Enter a valid email").isEmail(),
+    body('ownerPhn', 'Enter a valid Phone number').isLength({ min: 10 }),
+    body('propertyName', "Property Name Can't Be Empty").exists(),
+    body('propertyAge').custom((value) => {
+        if (value < 0) {
+            throw new Error("Property Age Can't be Negative");
+        }
+        return true;
+    }),
+    body('imageUrls', "Please upload 3 images").isArray({ min: 3, max: 3 }),
+    body('street', "Street field Can't Be Empty").exists(),
+    body('city', "City Field Can't Be Empty").exists(),
+    body('state', "State Field Can't Be Empty").exists(),
+    body('country', "Country Field Can't Be Empty").exists(),
+    body('pincode', "Pincode should be of 6 digits").isLength({ min: 6, max: 6 }),
+    body('price', "Price Field can't be empty").isNumeric(),
+    body('description', "Description Field can't be empty").notEmpty(),
+    body('bathrooms', "No. of Bathrooms can only be Integer Value").isInt(),
+    body('bedrooms', "No. of Bedrooms can only be Integer Value").isInt(),
+    body('parking', "Parking Field can only contain Boolean Value").isBoolean(),
+    body('furnished', "Furnished Field can only contain Boolean Value").isBoolean(),
+    body('advertisementType', "Advertisement Type Can't be Empty").notEmpty(),
+    body('availability', "Availability Can't be Blank").notEmpty(),
+    body('propertyType', "Property Type Can't be Blank").notEmpty(),
+], updateProperty);
 
 //ROUTE 6:GET request to get all Rent properties. Login Not required
 router.get("/getallrents", getAllRents);
